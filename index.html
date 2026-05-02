@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英國旅遊行程 2026 | 倫敦17天</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ============ VARIABLES ============ */
+:root {
+  --navy:#1a2744; --gold:#c9a84c; --gold-light:#f0d898;
+  --cream:#faf8f3; --red:#b5282d; --green:#2d6a4f;
+  --text:#2c2c2c; --muted:#6b6b6b; --border:#e0d8c8;
+  --card:#ffffff; --sidebar-w:300px; --header-h:56px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.7;}
+
+/* ============ HEADER ============ */
+.site-header{
+  background:var(--navy);color:#fff;
+  height:var(--header-h);
+  display:flex;align-items:center;gap:14px;
+  padding:0 20px;
+  position:sticky;top:0;z-index:200;
+  box-shadow:0 2px 12px rgba(0,0,0,.3);
+}
+.site-logo{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold-light);white-space:nowrap;}
+.site-meta{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.08em;white-space:nowrap;}
+.header-nav{display:flex;gap:4px;margin-left:auto;flex-wrap:nowrap;}
+.tab-btn{
+  flex-shrink:0;padding:7px 13px;border:none;background:transparent;
+  cursor:pointer;font-size:12.5px;font-family:'Noto Sans TC',sans-serif;
+  color:rgba(255,255,255,.55);border-radius:6px;transition:all .18s;white-space:nowrap;
+}
+.tab-btn:hover{color:#fff;background:rgba(255,255,255,.1);}
+.tab-btn.active{color:var(--navy);background:var(--gold);font-weight:500;}
+
+/* ============ BODY LAYOUT ============ */
+.app-body{display:flex;min-height:calc(100vh - var(--header-h));}
+
+/* ============ SIDEBAR (desktop) ============ */
+.sidebar{
+  width:var(--sidebar-w);min-width:var(--sidebar-w);
+  background:var(--card);border-right:1px solid var(--border);
+  display:flex;flex-direction:column;
+  position:sticky;top:var(--header-h);
+  height:calc(100vh - var(--header-h));
+  overflow:hidden;
+  transition:transform .28s ease;
+}
+.sidebar-inner{flex:1;overflow-y:auto;padding:12px;}
+.sidebar-inner::-webkit-scrollbar{width:4px;}
+.sidebar-inner::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+
+/* Sidebar search */
+.s-search{
+  position:relative;margin-bottom:10px;
+}
+.s-search input{
+  width:100%;padding:8px 12px 8px 34px;border:1px solid var(--border);
+  border-radius:8px;font-size:13px;font-family:'Noto Sans TC',sans-serif;
+  color:var(--text);background:var(--cream);outline:none;transition:border-color .2s;
+}
+.s-search input:focus{border-color:var(--gold);}
+.s-search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--muted);}
+
+/* Day pills in sidebar */
+.day-pill{
+  border:1px solid var(--border);border-radius:8px;margin-bottom:6px;
+  overflow:hidden;cursor:pointer;transition:border-color .18s,box-shadow .18s;
+  background:var(--card);
+}
+.day-pill:hover{border-color:var(--gold);}
+.day-pill.active{border-color:var(--gold);box-shadow:0 2px 10px rgba(201,168,76,.2);}
+.pill-head{
+  display:flex;align-items:center;gap:8px;padding:8px 12px;
+}
+.pill-badge{
+  font-size:10px;font-weight:500;letter-spacing:.04em;color:var(--navy);
+  background:var(--gold-light);padding:2px 8px;border-radius:12px;white-space:nowrap;
+}
+.pill-badge.nb-special{background:#d4edda;color:#155724;}
+.pill-badge.nb-arrive{background:#cce5ff;color:#004085;}
+.pill-badge.nb-depart{background:#f8d7da;color:#721c24;}
+.pill-title{font-size:13px;font-weight:500;color:var(--text);flex:1;line-height:1.35;}
+.pill-sub{font-size:11px;color:var(--muted);}
+.pill-chevron{color:var(--gold);font-size:10px;transition:transform .2s;margin-left:auto;}
+.day-pill.active .pill-chevron{transform:rotate(180deg);}
+.pill-spots{display:none;padding:0 8px 8px;}
+.day-pill.active .pill-spots{display:block;}
+.ps-item{
+  display:flex;align-items:center;gap:6px;padding:5px 6px;border-radius:6px;
+  cursor:pointer;transition:background .15s;margin-bottom:2px;
+}
+.ps-item:hover{background:rgba(201,168,76,.1);}
+.ps-item.focused{background:rgba(201,168,76,.15);}
+.ps-icon{font-size:13px;min-width:18px;text-align:center;}
+.ps-name{font-size:12.5px;color:var(--text);flex:1;line-height:1.35;}
+.ps-map{
+  font-size:10px;padding:2px 6px;border:1px solid var(--gold);color:var(--gold);
+  border-radius:4px;white-space:nowrap;background:transparent;transition:all .15s;
+  font-family:'Noto Sans TC',sans-serif;cursor:pointer;
+}
+.ps-map:hover{background:var(--gold);color:var(--navy);}
+
+/* ============ MAIN CONTENT ============ */
+.main-content{flex:1;min-width:0;display:flex;flex-direction:column;}
+
+/* Panels */
+.panel{display:none;padding:20px;}
+.panel.active{display:block;}
+
+/* Map area (itinerary panel only) */
+.map-bar{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  margin-bottom:16px;overflow:hidden;
+}
+.map-bar-head{
+  display:flex;align-items:center;gap:10px;padding:10px 14px;
+  border-bottom:1px solid var(--border);
+}
+.map-bar-title{font-size:13px;font-weight:500;color:var(--text);flex:1;}
+.map-open-btn{
+  font-size:12px;padding:5px 14px;background:var(--navy);color:#fff;
+  border:none;border-radius:6px;cursor:pointer;font-family:'Noto Sans TC',sans-serif;
+  transition:background .15s;white-space:nowrap;
+}
+.map-open-btn:hover{background:#2d3f6b;}
+.map-frame-wrap{height:320px;position:relative;background:#e8e0d4;}
+.map-frame-wrap iframe{width:100%;height:100%;border:none;display:block;}
+.map-placeholder{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:8px;
+}
+.map-ph-icon{font-size:32px;}
+.map-ph-text{font-size:13px;color:var(--muted);}
+.map-ph-sub{font-size:11.5px;color:var(--muted);opacity:.7;}
+
+/* Detail cards grid */
+.detail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
+.detail-card{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:14px;cursor:pointer;transition:box-shadow .18s,border-color .18s;
+}
+.detail-card:hover{border-color:var(--gold);box-shadow:0 2px 10px rgba(201,168,76,.15);}
+.dc-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;}
+.dc-icon{font-size:18px;}
+.dc-title{font-size:13.5px;font-weight:500;color:var(--navy);}
+.dc-sub{font-size:11.5px;color:var(--muted);margin-top:2px;}
+.dc-body{font-size:12.5px;color:var(--muted);line-height:1.7;}
+.dc-tags{margin-top:8px;display:flex;gap:5px;flex-wrap:wrap;}
+.tag-price{font-size:11px;padding:2px 8px;background:#eaf4ec;color:var(--green);border-radius:4px;font-weight:500;}
+.tag-map{font-size:11px;padding:2px 8px;background:#e8f0fe;color:#1a5fb4;border-radius:4px;cursor:pointer;transition:background .15s;}
+.tag-map:hover{background:#1a5fb4;color:#fff;}
+.tag-tip{font-size:11px;padding:2px 8px;background:#fff8e7;color:#7a5a00;border-radius:4px;}
+
+/* Tips, budget, border panels */
+.section-title{font-size:14px;font-weight:500;color:var(--navy);margin-bottom:12px;}
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
+.tip-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.tip-card h3{font-size:13.5px;font-weight:500;color:var(--navy);margin-bottom:8px;padding-bottom:7px;border-bottom:1px solid var(--border);}
+.tip-card ul{padding-left:16px;}
+.tip-card li{font-size:12.5px;color:var(--text);line-height:1.85;margin-bottom:1px;}
+.tip-card li strong{color:var(--navy);}
+
+/* Budget */
+.budget-wrap{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:14px;}
+.btable{width:100%;border-collapse:collapse;font-size:13px;}
+.btable th{background:var(--navy);color:#fff;padding:8px 12px;text-align:left;font-weight:500;font-size:12px;}
+.btable td{padding:7px 12px;border-bottom:1px solid var(--border);color:var(--muted);}
+.btable tr:last-child td{border-bottom:none;font-weight:500;color:var(--text);background:#f0f4ff;font-size:13.5px;}
+.btable tr:hover td{background:#fdf8ec;}
+.nt{color:var(--green);font-weight:500;}
+.buy-btn{display:inline-block;background:var(--gold);color:var(--navy);font-size:11px;padding:2px 8px;border-radius:4px;text-decoration:none;font-weight:500;}
+.official-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;}
+.oc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;transition:all .18s;}
+.oc:hover{border-color:var(--gold);box-shadow:0 2px 8px rgba(201,168,76,.15);}
+.oc-icon{font-size:22px;}
+.oc-name{font-size:13px;font-weight:500;color:var(--navy);}
+.oc-url{font-size:11px;color:var(--muted);}
+.oc-badge{font-size:10px;padding:2px 6px;background:#fff8e7;color:#856404;border-radius:4px;margin-top:3px;display:inline-block;}
+
+/* Customs */
+.customs-doc{background:var(--card);border:2px solid var(--navy);border-radius:12px;padding:20px 22px;margin-bottom:14px;}
+.customs-doc-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:4px;}
+.customs-doc-sub{font-size:12px;color:var(--muted);margin-bottom:16px;}
+.cr{padding:10px 0;border-bottom:1px dashed var(--border);}
+.cr:last-child{border-bottom:none;}
+.cr-zh{font-weight:500;font-size:14px;color:var(--navy);line-height:1.6;}
+.cr-en{font-size:13.5px;color:#333;background:#f5f8ff;padding:5px 10px;border-radius:6px;font-family:Georgia,serif;border-left:3px solid var(--navy);margin-top:4px;line-height:1.6;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.info-card h3{font-size:13.5px;font-weight:500;color:var(--navy);margin-bottom:8px;}
+.info-card ul{padding-left:16px;}
+.info-card li{font-size:12.5px;line-height:1.85;margin-bottom:1px;}
+.checklist-item{display:flex;align-items:flex-start;gap:9px;padding:6px 0;border-bottom:1px dashed var(--border);font-size:12.5px;line-height:1.6;}
+.checklist-item:last-child{border-bottom:none;}
+.ckbox{width:17px;height:17px;min-width:17px;border:2px solid var(--border);border-radius:4px;margin-top:1px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;transition:all .15s;}
+.ckbox.chk{background:var(--green);border-color:var(--green);}
+.qa-item{margin-bottom:10px;}
+.qa-q{font-size:11.5px;color:var(--muted);font-style:italic;margin-bottom:3px;}
+.qa-a{font-size:13px;color:var(--navy);font-weight:500;background:#eef6ff;padding:5px 9px;border-radius:6px;border-left:3px solid var(--navy);font-family:Georgia,serif;}
+
+/* Food panel */
+.food-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
+.notice{background:#f0f4ff;border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:14px;font-size:13px;line-height:1.7;}
+.notice strong{color:var(--navy);}
+.warning{background:#fff8e7;border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:14px;font-size:13px;line-height:1.7;}
+.danger{background:#fff0f0;border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:14px;font-size:13px;line-height:1.7;}
+
+/* ============ MOBILE TOGGLE ============ */
+.mob-menu-btn{
+  display:none;background:transparent;border:none;cursor:pointer;
+  color:#fff;font-size:20px;padding:4px 8px;margin-right:4px;
+}
+.mob-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:150;}
+.mob-overlay.show{display:block;}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:860px){
+  :root{--sidebar-w:280px;}
+  .site-logo{font-size:15px;}
+  .site-meta{display:none;}
+  .tab-btn{padding:6px 9px;font-size:11.5px;}
+}
+@media(max-width:640px){
+  :root{--sidebar-w:85vw;}
+  .mob-menu-btn{display:block;}
+  /* On mobile, hide sidebar by default; slide in when open */
+  .sidebar{
+    position:fixed;top:var(--header-h);left:0;
+    height:calc(100vh - var(--header-h));
+    z-index:160;transform:translateX(-100%);
+    box-shadow:4px 0 20px rgba(0,0,0,.15);
+  }
+  .sidebar.open{transform:translateX(0);}
+  .main-content{width:100%;}
+  .panel{padding:14px;}
+  .map-frame-wrap{height:220px;}
+  .detail-grid{grid-template-columns:1fr;}
+  .tips-grid{grid-template-columns:1fr;}
+  .two-col{grid-template-columns:1fr;}
+  .official-grid{grid-template-columns:1fr 1fr;}
+  .food-grid{grid-template-columns:1fr;}
+  /* Compact header nav on mobile */
+  .header-nav{gap:2px;}
+  .tab-btn{padding:5px 7px;font-size:11px;}
+  .btable{font-size:11.5px;}
+  .btable th,.btable td{padding:5px 8px;}
+}
+@media(max-width:400px){
+  .tab-btn{padding:5px 5px;font-size:10.5px;}
+  .official-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <button class="mob-menu-btn" onclick="toggleSidebar()" aria-label="開啟選單">☰</button>
+  <div>
+    <div class="site-logo">🇬🇧 英國之旅 2026</div>
+    <div class="site-meta">JUL 29 – AUG 14 &nbsp;·&nbsp; 3人 &nbsp;·&nbsp; 17天</div>
+  </div>
+  <nav class="header-nav">
+    <button class="tab-btn active" onclick="showPanel('itinerary',this)">📅 行程</button>
+    <button class="tab-btn" onclick="showPanel('tips',this)">💡 提醒</button>
+    <button class="tab-btn" onclick="showPanel('budget',this)">💰 預算</button>
+    <button class="tab-btn" onclick="showPanel('customs',this)">🛂 海關</button>
+    <button class="tab-btn" onclick="showPanel('food',this)">🍽️ 餐廳</button>
+  </nav>
+</header>
+
+<!-- Mobile overlay -->
+<div class="mob-overlay" id="mob-overlay" onclick="toggleSidebar()"></div>
+
+<div class="app-body">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+      <div class="s-search">
+        <span class="s-search-icon">🔍</span>
+        <input type="text" placeholder="搜尋景點…" oninput="filterPills(this.value)" id="s-input">
+      </div>
+      <div id="pill-list"></div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+
+    <!-- ITINERARY PANEL -->
+    <div class="panel active" id="panel-itinerary">
+      <div class="map-bar">
+        <div class="map-bar-head">
+          <span class="map-bar-title" id="map-title">📍 點選左側景點查看地圖</span>
+          <button class="map-open-btn" onclick="openCurrentMap()">Google Maps 開啟 ↗</button>
+        </div>
+        <div class="map-frame-wrap">
+          <div class="map-placeholder" id="map-ph">
+            <div class="map-ph-icon">🗺️</div>
+            <div class="map-ph-text">點選景點顯示位置</div>
+            <div class="map-ph-sub">手機用戶點「Google Maps 開啟」直接導航</div>
+          </div>
+          <iframe id="map-frame" src="" style="display:none;"></iframe>
+        </div>
+      </div>
+      <div class="detail-grid" id="detail-grid">
+        <div style="grid-column:1/-1;text-align:center;padding:32px 16px;background:var(--card);border:2px dashed var(--border);border-radius:10px;">
+          <div style="font-size:28px;margin-bottom:8px;">👈</div>
+          <div style="font-size:13px;color:var(--muted);">點選左側日期展開景點詳細資訊</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px;">手機：點左上角 ☰ 開啟行程列表</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIPS PANEL -->
+    <div class="panel" id="panel-tips">
+      <div class="tips-grid" id="tips-grid"></div>
+    </div>
+
+    <!-- BUDGET PANEL -->
+    <div class="panel" id="panel-budget">
+      <div class="budget-wrap">
+        <table class="btable">
+          <thead><tr><th>景點</th><th>每人票價</th><th>3人合計</th><th>購票</th></tr></thead>
+          <tbody id="budget-tbody"></tbody>
+        </table>
+      </div>
+      <div class="notice">
+        近郊火車票（3人）：溫莎 NT$2,400-3,000、牛津 NT$2,100-2,700、劍橋 NT$2,400-3,000<br>
+        在 <strong>nationalrail.co.uk</strong> 或 <strong>Trainline App</strong> 提前買可省 20-40%。
+      </div>
+      <div class="section-title">🎟️ 官方購票連結（建議提前購票）</div>
+      <div class="official-grid" id="official-grid"></div>
+    </div>
+
+    <!-- CUSTOMS PANEL -->
+    <div class="panel" id="panel-customs">
+      <div class="danger">📲 截圖存手機相簿，或列印攜帶。入境英國遇到語言困難時，直接出示給海關人員。</div>
+      <div class="customs-doc">
+        <div class="customs-doc-title">🇬🇧 入境英國聲明 / UK Entry Statement</div>
+        <div class="customs-doc-sub">Taiwan Passport Holder · Visa-exempt · Tourism Only</div>
+        <div id="customs-rows"></div>
+      </div>
+      <div class="two-col">
+        <div>
+          <div class="section-title">✅ 出發前確認清單</div>
+          <div class="info-card" id="checklist-wrap"></div>
+        </div>
+        <div>
+          <div class="section-title">🗣️ 海關英文問答速查</div>
+          <div class="info-card" id="qa-wrap"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOD PANEL -->
+    <div class="panel" id="panel-food">
+      <div class="notice">所有推薦已排除羊肉主打。不確定時說 <strong>"No lamb, please"</strong>，或用 Google Translate 拍照翻譯菜單。</div>
+      <div class="food-grid" id="food-grid"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ======== DATA ======== */
+const DAYS=[
+  {id:1,date:"7/29",badge:"arrive",day:"Day 1",title:"抵達倫敦",sub:"✈️ 入境日",spots:[
+    {e:"✈️",n:"機場 → Stratford",d:"搭 Elizabeth Line 直達（希斯路約50分鐘）",p:"含在Oyster",q:"Heathrow+Airport+London"},
+    {e:"🏨",n:"Moxy London Stratford",d:"5 Celebration Ave, London E20 1DB\nCheck-in：15:00",p:"已預訂",q:"Moxy+London+Stratford+Hotel"},
+    {e:"🛍️",n:"Westfield Stratford City",d:"飯店旁步行3分鐘，熟悉環境、購買SIM卡及Oyster Card",p:"免費入場",q:"Westfield+Stratford+City+London"},
+    {e:"🍜",n:"晚餐：Wagamama / Nando's",d:"圖文菜單，英文不好完全沒問題",p:"人均NT$400-600",q:"Wagamama+Stratford+London"},
+  ]},
+  {id:2,date:"7/30",badge:"",day:"Day 2",title:"西敏寺區",sub:"👑 皇家核心",spots:[
+    {e:"⛪",n:"西敏寺",d:"開放時間：週一-六 9:30-15:30\n必看：亨利七世禮拜堂、石棺走廊，需1.5-2小時",p:"NT$1,320（含語音導覽）",q:"Westminster+Abbey+London"},
+    {e:"🕰️",n:"大笨鐘 & 國會大廈",d:"Westminster 橋上最佳拍照角度，外觀免費",p:"免費",q:"Big+Ben+London"},
+    {e:"🏰",n:"白金漢宮",d:"7-9月開放內部 State Rooms，含免費中文語音導覽\n衛兵交接：週二/四/日 10:45",p:"NT$1,400",q:"Buckingham+Palace+London"},
+    {e:"🌳",n:"聖詹姆斯公園",d:"白金漢宮旁，可見粉紅鵜鶘（下午3點常出現）",p:"免費",q:"St+James+Park+London"},
+    {e:"🍛",n:"晚餐：Dishoom",d:"Covent Garden 分店，印度料理名店，需現場等位",p:"人均NT$600-900",q:"Dishoom+Covent+Garden+London"},
+  ]},
+  {id:3,date:"7/31",badge:"",day:"Day 3",title:"倫敦塔橋 + 南岸",sub:"🌉 泰晤士河畔",spots:[
+    {e:"🏰",n:"倫敦塔",d:"開放時間：週二-六 9:00-17:30\n必看：皇冠珠寶室（Jewel House），需2-2.5小時",p:"NT$1,500",q:"Tower+of+London"},
+    {e:"🌉",n:"倫敦塔橋",d:"外部過橋免費；入內玻璃步道需購票\n南岸角度拍照最美",p:"外觀免費｜入內NT$690",q:"Tower+Bridge+London"},
+    {e:"🛒",n:"Borough Market",d:"倫敦最古老市場，週四最熱鬧\nLondon Bridge 站步行3分鐘",p:"免費入場",q:"Borough+Market+London"},
+    {e:"👁️",n:"倫敦之眼",d:"建議黃昏17:00搭乘，光線最美\n提前官網購票有折扣",p:"NT$638（促銷）",q:"London+Eye"},
+  ]},
+  {id:4,date:"8/1",badge:"",day:"Day 4",title:"大英博物館 + 蘇活",sub:"🏺 文化 + 購物",spots:[
+    {e:"🏛️",n:"大英博物館",d:"開放時間：10:00-17:00（週五至20:30）\n必看：羅塞塔石碑、埃及木乃伊、帕德嫩廳\n建議停留3-4小時",p:"NT$343（語音導覽）",q:"British+Museum+London"},
+    {e:"🛍️",n:"牛津圓環 Oxford Circus",d:"H&M、Zara、UNIQLO、Primark 一次搞定\nOxford Street 全長1.9公里",p:"免費參觀",q:"Oxford+Circus+London"},
+    {e:"🎭",n:"柯芬園 Covent Garden",d:"街頭藝人免費表演，特色餐廳與咖啡廳\n週末有工藝品市集",p:"免費",q:"Covent+Garden+London"},
+    {e:"🍱",n:"晚餐：Chinatown 中國城",d:"Leicester Square 旁，有中文菜單，完全不用英文",p:"人均NT$400-700",q:"Chinatown+London+Gerrard+Street"},
+  ]},
+  {id:5,date:"8/2",badge:"",day:"Day 5",title:"聖保羅 + 西堤區",sub:"⛪ 金融城古蹟",spots:[
+    {e:"⛪",n:"聖保羅大教堂",d:"開放時間：週一-六 8:30-16:00\n可登頂Golden Gallery（528階）俯瞰全倫敦",p:"NT$1,154",q:"St+Pauls+Cathedral+London"},
+    {e:"🚶",n:"千禧橋 Millennium Bridge",d:"步行至南岸，橋上是拍攝聖保羅最佳角度\n完全免費",p:"免費",q:"Millennium+Bridge+London"},
+    {e:"🏙️",n:"碎片塔 The Shard",d:"倫敦最高建築，69-72樓觀景台\nLondon Bridge 站步行2分鐘",p:"NT$808（可選）",q:"The+Shard+London"},
+    {e:"🍽️",n:"晚餐：Borough 一帶餐廳",d:"Padella（義大利麵名店）或 Côte Brasserie（法式）",p:"人均NT$500-900",q:"Borough+Market+area+London"},
+  ]},
+  {id:6,date:"8/3",badge:"special",day:"Day 6",title:"格林威治一日",sub:"🌐 子午線零度",spots:[
+    {e:"🚤",n:"交通：DLR 至 Cutty Sark",d:"Stratford → Jubilee Line → Canary Wharf → DLR → Cutty Sark\n或搭泰晤士河快船（Thames Clipper，更有氣氛）",p:"含在Oyster",q:"Cutty+Sark+DLR+Greenwich"},
+    {e:"🔭",n:"格林威治皇家天文台",d:"站在東西半球子午線上拍照（必做！）\n視野開闊，俯瞰倫敦全景",p:"一日通票NT$1,445",q:"Royal+Observatory+Greenwich"},
+    {e:"🏛️",n:"國家航海博物館 + 卡帝薩克",d:"含在一日通票內\n1869年茶葉快船卡帝薩克保存完整",p:"含在通票內",q:"National+Maritime+Museum+Greenwich"},
+    {e:"🌄",n:"格林威治公園山丘",d:"免費，俯瞰Canary Wharf天際線\n是倫敦最美的免費景觀點之一",p:"免費",q:"Greenwich+Park+viewpoint+London"},
+  ]},
+  {id:7,date:"8/4",badge:"",day:"Day 7",title:"福爾摩斯 + 馬里波恩",sub:"🔍 文學偵探日",spots:[
+    {e:"🔍",n:"福爾摩斯博物館 221B",d:"地址：221B Baker St, London NW1 6XE\n開放時間：9:30-18:00，平日早上排隊短",p:"約NT$450",q:"Sherlock+Holmes+Museum+221B+Baker+Street"},
+    {e:"🚇",n:"Baker Street 地鐵站",d:"站內有福爾摩斯壁畫，倫敦最早地鐵站之一（1863）",p:"免費（需Oyster）",q:"Baker+Street+Underground+Station"},
+    {e:"🌹",n:"攝政公園玫瑰花園",d:"8月玫瑰盛開，Baker Street 步行10分鐘\n英國最美皇家公園之一",p:"免費",q:"Queen+Mary+Rose+Garden+Regents+Park"},
+    {e:"☕",n:"馬里波恩高街",d:"倫敦最愜意購物街：獨立小店、麵包坊、精品咖啡\n週日早上有農夫市集",p:"自由消費",q:"Marylebone+High+Street+London"},
+  ]},
+  {id:8,date:"8/5",badge:"special",day:"Day 8",title:"溫莎堡近郊",sub:"🏰 皇室居所",spots:[
+    {e:"🚂",n:"搭火車：Paddington → Windsor",d:"Stratford → Paddington（地鐵，約25分鐘）\n→ Windsor & Eton Central（GWR，約30分鐘）",p:"來回約NT$800-1,000/人",q:"Windsor+and+Eton+Central+Station"},
+    {e:"🏰",n:"溫莎堡",d:"開放時間：10:00-17:15\n必看：聖喬治禮拜堂（王室安葬地），含語音導覽\n衛兵換崗：週一/三/五/六/日 11:00",p:"NT$1,360",q:"Windsor+Castle"},
+    {e:"🏘️",n:"Windsor & Eton 小鎮",d:"古色古香英式小鎮，可漫步至Long Walk\nEton College（頂尖貴族學校）外觀免費參觀",p:"免費",q:"Windsor+Town+Centre+England"},
+    {e:"🍺",n:"午餐：Two Brewers",d:"傳統英式Pub，炸魚薯條、各種Pie\nPark St, Windsor",p:"人均NT$500-700",q:"Two+Brewers+Windsor"},
+  ]},
+  {id:9,date:"8/6",badge:"special",day:"Day 9",title:"牛津 + Bicester Village",sub:"🎓 學術城 + 購物村",spots:[
+    {e:"🚂",n:"搭火車：Paddington → Oxford",d:"Stratford → Paddington → Oxford（Chiltern Railways，約1小時）\n建議8:00前出發",p:"來回約NT$700-900/人",q:"Oxford+Railway+Station"},
+    {e:"🎓",n:"牛津大學 Christ Church",d:"哈利波特取景地，Great Hall 為霍格華滋食堂原型\n開放時間：10:00-17:00",p:"NT$600",q:"Christ+Church+College+Oxford"},
+    {e:"📚",n:"博德利圖書館 & Radcliffe Camera",d:"Bodleian Library 外觀免費；Radcliffe Camera 是牛津地標圓形圖書館\n拍照打卡必去",p:"外觀免費",q:"Radcliffe+Camera+Oxford"},
+    {e:"🛍️",n:"Bicester Village Outlet",d:"從牛津搭 S5 巴士直達（約30分鐘，約NT$150）\n品牌折扣30-70%，帶護照退VAT最高20%\n回程搭火車至London Marylebone",p:"免費入場",q:"Bicester+Village+Outlet"},
+  ]},
+  {id:10,date:"8/7",badge:"special",day:"Day 10",title:"劍橋一日",sub:"🚣 撐篙之旅",spots:[
+    {e:"🚂",n:"搭火車：Liverpool St → Cambridge",d:"Stratford → Liverpool St（5分鐘）\n→ Cambridge（Greater Anglia，約1小時10分）",p:"來回約NT$800-1,000/人",q:"Cambridge+Railway+Station"},
+    {e:"🎓",n:"King's College",d:"劍橋最著名學院，哥德式禮拜堂建於1446年\n開放時間：平日9:30-15:30",p:"NT$400",q:"Kings+College+Cambridge"},
+    {e:"🚣",n:"撐篙 Punting（必做！）",d:"沿River Cam欣賞各大學院背面（The Backs）\n包船3人分攤比共乘更合算，景色無法在陸地看到",p:"共乘NT$500/人｜包船NT$1,500",q:"Cambridge+Punting+River+Cam"},
+    {e:"🏛️",n:"費茲威廉博物館",d:"Fitzwilliam Museum — 免費入場\n古埃及、羅馬文物、歐洲繪畫，週二-六10:00-17:00",p:"免費",q:"Fitzwilliam+Museum+Cambridge"},
+  ]},
+  {id:11,date:"8/8",badge:"",day:"Day 11",title:"肯辛頓博物館群",sub:"🦕 免費博物館日",spots:[
+    {e:"🦕",n:"自然史博物館",d:"倫敦最受歡迎免費博物館！\n必看：Blue Whale骨架、恐龍大廳\n建議9:30到門口等開門（10:00）",p:"完全免費！",q:"Natural+History+Museum+London"},
+    {e:"🔬",n:"科學博物館",d:"緊鄰自然史博物館，同樣免費\n航太、科技、醫學互動展覽，適合老幼",p:"免費",q:"Science+Museum+London"},
+    {e:"🛍️",n:"Harrods 百貨",d:"Knightsbridge 站步行2分鐘，全球最著名百貨\nFood Hall 有各種英式伴手禮（茶包、餅乾）",p:"免費參觀",q:"Harrods+London"},
+    {e:"🌺",n:"肯辛頓宮 & 花園",d:"Princess Diana 曾住所，花園完全免費\n8月花園盛開，適合散步",p:"花園免費｜宮殿NT$600",q:"Kensington+Palace+London"},
+  ]},
+  {id:12,date:"8/9",badge:"",day:"Day 12",title:"諾丁丘 + 文青市集",sub:"🎨 文青街區日",spots:[
+    {e:"🏘️",n:"波多貝羅市場",d:"Notting Hill Gate 站步行5分鐘\n週六最熱鬧，古董、二手衣、各國小吃",p:"免費",q:"Portobello+Road+Market+London"},
+    {e:"🏠",n:"諾丁丘彩色房子",d:"Pembridge Road 一帶，馬卡龍色系連排屋\n電影《新娘百分百》取景地",p:"免費",q:"Notting+Hill+colourful+houses+London"},
+    {e:"🖼️",n:"泰特現代美術館",d:"Southwark 站步行5分鐘，免費入場\n週五六夜間開放至22:00",p:"免費（特展另計）",q:"Tate+Modern+London"},
+    {e:"🍝",n:"晚餐：Shoreditch",d:"Padella（義大利麵名店，需排隊）\nBricklane 咖哩街也在附近",p:"人均NT$400-700",q:"Shoreditch+High+Street+London"},
+  ]},
+  {id:13,date:"8/10-11",badge:"",day:"Day 13-14",title:"彈性備用日",sub:"🔄 自由調配",spots:[
+    {e:"🎭",n:"西區音樂劇",d:"TKTS Booth（Leicester Square）當天折扣票\n下午12:00開賣，The Lion King、Hamilton等",p:"NT$800-2,000（折扣票）",q:"TKTS+Booth+Leicester+Square+London"},
+    {e:"🌳",n:"海德公園",d:"倫敦最大皇家公園，週末有免費音樂會\n可免費進入蛇形湖游泳區（夏季開放）",p:"免費",q:"Hyde+Park+London"},
+    {e:"🍵",n:"英式下午茶",d:"推薦：Fortnum & Mason（Piccadilly）或 Sketch（粉紅網美）\n需提前訂位！",p:"人均NT$1,500-3,000",q:"Fortnum+and+Mason+Piccadilly+London"},
+    {e:"🛍️",n:"最後補貨 Westfield",d:"飯店旁，M&S食品、Boots藥妝最後採購",p:"自由消費",q:"Westfield+Stratford+City"},
+  ]},
+  {id:14,date:"8/12-13",badge:"",day:"Day 15-16",title:"行李整理 + 採購",sub:"🎁 收尾",spots:[
+    {e:"💊",n:"Boots 藥妝必買",d:"Bio-Oil護膚油、Nurofen止痛藥\nVitamin C泡騰片、Strepsils喉糖、No7護膚品",p:"自由消費",q:"Boots+Pharmacy+Stratford+London"},
+    {e:"🎁",n:"伴手禮採購",d:"Harrods茶包禮盒、McVitie's消化餅乾\nCadbury巧克力、Fortnum & Mason果醬",p:"自由消費",q:"Harrods+London"},
+    {e:"🧳",n:"行李秤重！",d:"歐洲航班通常限制20-23kg\n超重費用昂貴，提前在飯店用行李秤確認",p:"注意！",q:"Moxy+London+Stratford+Hotel"},
+  ]},
+  {id:15,date:"8/14",badge:"depart",day:"Day 17",title:"離境回台",sub:"✈️ 返程",spots:[
+    {e:"⏰",n:"提前3小時到達 Heathrow",d:"Stratford → Elizabeth Line → Heathrow（約50-60分鐘）\nHeathrow 安檢常排長龍，務必留足時間",p:"Elizabeth Line含在Oyster",q:"London+Heathrow+Airport+Terminal"},
+    {e:"💰",n:"退稅 VAT Refund",d:"重要順序：先找 Customs 蓋章 → 再辦出關\n需保留所有購物收據 + 護照，最高退20%",p:"最高退回20%",q:"Heathrow+Airport+VAT+Refund"},
+    {e:"🧳",n:"行李規定提醒",d:"隨身液體：每件≤100ml，放透明夾鏈袋\n手提行李尺寸：通常56×45×25cm\n筆電、相機可帶上機",p:"",q:"Heathrow+Airport+London"},
+  ]},
+];
+
+const TIPS=[
+  {t:"🚇 交通 — Oyster Card",ls:["入境第一件事：購買 <strong>Oyster Card</strong> 或用台灣信用卡 Contactless 感應（兩者皆可）","住 Stratford（Zone 2-3），日常 Zone 1-2 搭乘每日上限約 £8.10（約NT$330）","Elizabeth Line 從 Stratford 直達 Heathrow，無需換車","近郊火車（Windsor / Oxford / Cambridge）要在 <strong>nationalrail.co.uk</strong> 另行購票","必裝App：<strong>TfL Go</strong>（地鐵）、<strong>Trainline</strong>（火車）、<strong>Google Maps</strong>（導航）"]},
+  {t:"🌦️ 天氣 & 穿著",ls:["7-8月氣溫約 18-25°C，是倫敦最佳旅遊季節","即使晴天也可能突然下雨 → 每天出門必帶：<strong>輕薄防水外套 + 折疊傘</strong>","夏日日照強，準備 <strong>防曬乳 SPF50+</strong>、帽子、太陽眼鏡","穿舒適走路鞋：倫敦石板路多，長時間行走避免高跟鞋"]},
+  {t:"📱 通訊與網路",ls:["建議出發前購買 <strong>英國SIM卡</strong>（EE/Three/Vodafone，蝦皮/淘寶有售，約NT$500-800，30天無限）","或開台灣電信國際漫遊（每日約NT$300-400）","出發前下載 <strong>Google Maps 離線地圖</strong>（倫敦、牛津、劍橋，在WiFi下先下載好）","<strong>Google Translate</strong> 拍照翻譯菜單，出入境表格皆可用","緊急電話：英國 <strong>999</strong>（警察/救護/消防）"]},
+  {t:"💰 金錢 & 消費",ls:["英國用 <strong>英鎊 £ GBP</strong>，不用歐元！","現金在倫敦幾乎不需要，信用卡 Contactless 到處可用（含小市集攤位）","推薦：<strong>Wise 多幣卡</strong> 或 <strong>台新 Richart</strong> 等零手續費海外信用卡","餐廳通常已含 10% Service Charge，Optional 小費給可不給","日常餐食預估：每人每天 NT$800-1,500（含輕食早餐）"]},
+  {t:"🍽️ 餐廳禮儀（與台灣不同）",ls:["進餐廳先等 Host 帶位，<strong>不要自己找位子坐</strong>","點餐後服務生不會主動靠近，需<strong>舉手或眼神示意</strong>","結帳說：<strong>\"Can I get the bill, please?\"</strong>","不吃羊肉：菜單上 <strong>lamb / mutton</strong> 都是羊肉，點餐說 \"No lamb please\"","Google Translate 可拍照翻譯整份菜單，非常實用"]},
+  {t:"🎟️ 購票重要提醒",ls:["<strong>白金漢宮、倫敦塔、溫莎堡</strong> → 現在就去官網購票，夏季旺季常售罄","<strong>倫敦之眼</strong> → 官網購比現場便宜，建議提前訂","劍橋撐篙旺季可提前在 scudamores.com 預訂","Bicester Village 不需門票，帶護照可退 VAT（最高20%），保留所有收據","大英博物館、自然史博物館：完全免費入場"]},
+  {t:"🔒 安全注意",ls:["倫敦整體安全，人多地方（地鐵、市集）注意扒手，<strong>護照和錢包分開放</strong>","地鐵站內避免站在車門旁使用手機（有被搶案例）","拍照時注意周遭，背包保持在視線範圍","建議購買 <strong>旅遊保險</strong>（含醫療、行李遺失）","所有重要文件（護照/機票/訂房）截圖存手機，並備份在雲端"]},
+  {t:"🏨 飯店 Moxy Stratford",ls:["地址：<strong>5 Celebration Ave, London E20 1DB</strong>","地鐵：Stratford 站步行約5分鐘（Jubilee + Central + Elizabeth Line）","飯店旁：Westfield Stratford City 購物中心（最後採購超方便）","Elizabeth Line 直達 Heathrow，出發回台完全不用繞路","附近有 Sainsbury's 超市，可買日用品和早餐"]},
+];
+
+const BUDGET_DATA=[
+  {n:"西敏寺",p:1320,note:"含語音導覽",url:"https://www.westminster-abbey.org/visit-us/prices"},
+  {n:"白金漢宮",p:1400,note:"7-9月開放，含中文導覽",url:"https://www.rct.uk/visit/the-state-rooms-buckingham-palace"},
+  {n:"倫敦塔",p:1500,note:"必看皇冠珠寶",url:"https://www.hrp.org.uk/tower-of-london/"},
+  {n:"倫敦塔橋（入內）",p:690,note:"含玻璃步道",url:"https://www.towerbridge.org.uk"},
+  {n:"倫敦之眼",p:638,note:"促銷價，官網購買最便宜",url:"https://www.londoneye.com"},
+  {n:"大英博物館語音導覽",p:343,note:"入場免費，導覽另計",url:"https://www.britishmuseum.org"},
+  {n:"聖保羅大教堂",p:1154,note:"可登頂俯瞰全倫敦",url:"https://www.stpauls.co.uk/visit"},
+  {n:"溫莎堡",p:1360,note:"含語音導覽",url:"https://www.rct.uk/visit/windsor-castle"},
+  {n:"格林威治一日通票",p:1445,note:"含天文台+航海博物館+卡帝薩克",url:"https://www.rmg.co.uk/tickets"},
+  {n:"牛津 Christ Church",p:600,note:"哈利波特取景地",url:"https://www.chch.ox.ac.uk/visit"},
+  {n:"劍橋 King's College",p:400,note:"",url:"https://www.kings.cam.ac.uk/visit"},
+  {n:"劍橋撐篙（共乘/人）",p:500,note:"旺季建議提前預訂",url:"https://scudamores.com"},
+  {n:"碎片塔（可選）",p:808,note:"可視預算決定",url:"https://www.theviewfromtheshard.com"},
+  {n:"福爾摩斯博物館",p:450,note:"",url:"https://www.sherlock-holmes.co.uk"},
+];
+
+const CUSTOMS_ROWS=[
+  {zh:"我們是來自台灣的觀光旅客，共 3 人同行。",en:"We are tourists from Taiwan. There are 3 of us traveling together."},
+  {zh:"入境日期：2026年7月29日　·　離境日期：2026年8月14日",en:"Arrival: July 29, 2026  ·  Departure: August 14, 2026"},
+  {zh:"在英國停留共 17 天。",en:"We will stay in the UK for 17 days."},
+  {zh:"住宿地址：Moxy London Stratford Hotel, 5 Celebration Avenue, London, E20 1DB",en:"We are staying at: Moxy London Stratford Hotel, 5 Celebration Avenue, London E20 1DB, United Kingdom"},
+  {zh:"我們是純觀光旅遊目的，不從事任何工作或商業活動，也不在英國讀書。",en:"We are here for tourism only. We are not working, studying, or conducting any business in the UK."},
+  {zh:"我們持有訂好的回程機票，將於2026年8月14日返回台灣。",en:"We have confirmed return flights booked back to Taiwan on August 14, 2026."},
+  {zh:"我們攜帶足夠的旅遊費用，主要以信用卡支付。",en:"We have sufficient funds for our stay, mainly via credit card."},
+  {zh:"謝謝您的協助，如有需要請繼續詢問。",en:"Thank you for your assistance. Please feel free to ask us any further questions."},
+];
+
+const CHECKLIST=[
+  "護照有效期限超過 2027年2月14日（離境後6個月以上）",
+  "回程機票截圖已存手機相簿",
+  "飯店訂房確認信已存手機相簿",
+  "購買英國SIM卡 或 確認國際漫遊方案",
+  "Wise多幣卡 或 免手續費信用卡已申請並開通",
+  "白金漢宮、倫敦塔、溫莎堡已在官網完成購票",
+  "Google Maps 倫敦/牛津/劍橋離線地圖已下載",
+  "旅遊保險已購買（含醫療 + 行李遺失）",
+  "隨身行李：液體≤100ml，放透明夾鏈袋",
+  "轉接頭：英國 Type G 三方插頭",
+  "Trainline App 已下載（火車訂票用）",
+  "台灣備用藥品：腸胃藥、感冒藥、止痛藥",
+  "信用卡已開通海外刷卡並告知銀行",
+  "重要文件截圖備份至雲端（Google Drive 或 iCloud）",
+  "行李秤（或確認飯店有借用）已準備好",
+];
+
+const QA=[
+  {q:"What's the purpose of your visit?（來英國目的？）",a:"Tourism. We are sightseeing."},
+  {q:"How long are you staying?（停留多久？）",a:"17 days. Until August 14th, 2026."},
+  {q:"Where are you staying?（住哪？）",a:"Moxy Hotel, Stratford, London.（出示訂房確認信）"},
+  {q:"Do you have a return ticket?（有回程票嗎？）",a:"Yes, I have a return flight to Taiwan.（出示截圖）"},
+  {q:"How much money do you have?（帶多少錢？）",a:"I have credit cards and some cash."},
+  {q:"Are you traveling alone?（一個人旅行嗎？）",a:"No, there are 3 of us.（指同行友人）"},
+  {q:"What do you do for work?（職業？）",a:"I am an office worker / engineer."},
+];
+
+const FOOD_DATA=[
+  {t:"🍜 平價連鎖（友善推薦）",items:[
+    "<strong>Wagamama</strong> — 日式拉麵炒麵，圖文菜單超方便，全倫敦多分店",
+    "<strong>Nando's</strong> — 葡式烤雞，辣度可選，圖片點餐容易",
+    "<strong>Côte Brasserie</strong> — 法式菜，全倫敦多分店，菜色豐富安全",
+    "<strong>Greggs</strong> — 英式平民烘焙，可頌/香腸捲，每樣約NT$60-100，早餐神選",
+    "<strong>Pret A Manger</strong> — 健康三明治沙拉，每樣約NT$150-250",
+  ]},
+  {t:"⭐ 排隊名店",items:[
+    "<strong>Dishoom（Covent Garden）</strong> — 印度料理，環境絕美，需排隊等位",
+    "<strong>Padella（Borough Market 旁）</strong> — 義大利手工麵超好吃，常排1小時",
+    "<strong>Flat Iron</strong> — 平價牛排約NT$400-600，Covent Garden & Shoreditch 有分店",
+    "<strong>Bun House</strong> — 廣式點心，Chinatown 附近，排隊快速",
+  ]},
+  {t:"🀄 中文菜單推薦（英文不好安心去）",items:[
+    "<strong>Chinatown 中國城</strong> — Leicester Square 旁，Gerrard Street，大量中文菜單",
+    "<strong>四川菜 / 廣東菜</strong> — Chinatown 內多家，完全不需要英文溝通",
+    "<strong>Wagamama</strong> — 圖片菜單，指著點即可",
+    "小提醒：進餐廳先等服務生帶位，不要自己找位子",
+  ]},
+  {t:"🍵 英式下午茶（體驗推薦）",items:[
+    "<strong>Fortnum & Mason（Piccadilly）</strong> — 皇家御用茶葉，需提前訂位，人均NT$2,000",
+    "<strong>Sketch（Mayfair）</strong> — 夢幻粉紅裝潢，IG打卡必去，人均NT$2,500，需提前訂",
+    "小提醒：下午茶通常 14:00-17:00，需提前電話或官網訂位",
+  ]},
+  {t:"🛒 超市省錢早餐",items:[
+    "<strong>M&S Food Hall</strong> — 高品質熟食三明治，Westfield Stratford 內有分店",
+    "<strong>Sainsbury's / Tesco</strong> — 三明治約NT$120，咖啡約NT$60，飯店附近有",
+    "<strong>Borough Market（週四-六）</strong> — 各國街頭小吃，邊走邊吃最划算",
+  ]},
+  {t:"🚫 羊肉辨識",items:[
+    "菜單上看到 <strong>lamb</strong>、<strong>mutton</strong> 都是羊肉，跳過",
+    "點餐時說：<strong>\"No lamb, please\"</strong>",
+    "咖哩類（curry）通常有lamb選項，確認選chicken或beef",
+    "Google Translate App 拍照翻譯整份菜單即可",
+  ]},
+];
+
+/* ======== OFFICIAL LINKS ======== */
+const OFFICIALS=[
+  {icon:"👑",name:"白金漢宮",url:"https://www.rct.uk/visit/the-state-rooms-buckingham-palace",domain:"rct.uk",badge:"⭐ 強烈建議提前購票"},
+  {icon:"🏰",name:"倫敦塔",url:"https://www.hrp.org.uk/tower-of-london/",domain:"hrp.org.uk",badge:"⭐ 強烈建議提前購票"},
+  {icon:"🏰",name:"溫莎堡",url:"https://www.rct.uk/visit/windsor-castle",domain:"rct.uk",badge:"⭐ 強烈建議提前購票"},
+  {icon:"⛪",name:"西敏寺",url:"https://www.westminster-abbey.org/visit-us/prices",domain:"westminster-abbey.org",badge:"建議提前"},
+  {icon:"👁️",name:"倫敦之眼",url:"https://www.londoneye.com",domain:"londoneye.com",badge:"官網最便宜"},
+  {icon:"⛪",name:"聖保羅大教堂",url:"https://www.stpauls.co.uk/visit",domain:"stpauls.co.uk",badge:""},
+  {icon:"🔭",name:"格林威治通票",url:"https://www.rmg.co.uk/tickets",domain:"rmg.co.uk",badge:""},
+  {icon:"🚣",name:"劍橋撐篙",url:"https://scudamores.com",domain:"scudamores.com",badge:"旺季預訂"},
+];
+
+/* ======== STATE ======== */
+let currentQ="";let activeDay=null;
+
+/* ======== RENDER ======== */
+function renderPills(filter=""){
+  const c=document.getElementById("pill-list");c.innerHTML="";
+  DAYS.forEach(day=>{
+    if(filter&&!day.title.includes(filter)&&!day.sub.includes(filter)&&!day.spots.some(s=>s.n.includes(filter)))return;
+    const d=document.createElement("div");
+    d.className="day-pill"+(activeDay===day.id?" active":"");
+    d.id="pill-"+day.id;
+    const spotsHtml=day.spots.map((s,i)=>`
+      <div class="ps-item" id="psi-${day.id}-${i}" onclick="focusSpot(${day.id},${i},'${s.q.replace(/'/g,"\\'")}','${s.n.replace(/'/g,"\\'")}')">
+        <span class="ps-icon">${s.e}</span>
+        <span class="ps-name">${s.n}</span>
+        <button class="ps-map" onclick="event.stopPropagation();openGMaps('${s.q.replace(/'/g,"\\'")}')">地圖</button>
+      </div>`).join("");
+    d.innerHTML=`
+      <div class="pill-head" onclick="togglePill(${day.id})">
+        <span class="pill-badge nb-${day.badge}">${day.date} ${day.day}</span>
+        <div><div class="pill-title">${day.title}</div><div class="pill-sub">${day.sub}</div></div>
+        <span class="pill-chevron">▼</span>
+      </div>
+      <div class="pill-spots">${spotsHtml}</div>`;
+    c.appendChild(d);
+  });
+}
+
+function togglePill(id){
+  const wasActive=activeDay===id;
+  activeDay=wasActive?null:id;
+  document.querySelectorAll(".day-pill").forEach(p=>p.classList.remove("active"));
+  if(!wasActive){
+    const pill=document.getElementById("pill-"+id);
+    if(pill){pill.classList.add("active");pill.scrollIntoView({behavior:"smooth",block:"nearest"});}
+    const day=DAYS.find(d=>d.id===id);
+    renderDetailCards(day);
+    if(day.spots.length)setMap(day.spots[0].q,day.spots[0].n);
+  } else {
+    document.getElementById("detail-grid").innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:32px 16px;background:var(--card);border:2px dashed var(--border);border-radius:10px;"><div style="font-size:28px;margin-bottom:8px;">👈</div><div style="font-size:13px;color:var(--muted);">點選左側日期展開景點詳細資訊</div></div>`;
+  }
+  // Auto-close sidebar on mobile
+  if(window.innerWidth<=640&&document.getElementById("sidebar").classList.contains("open"))toggleSidebar();
+}
+
+function focusSpot(dayId,idx,q,name){
+  document.querySelectorAll(".ps-item").forEach(el=>el.classList.remove("focused"));
+  const el=document.getElementById(`psi-${dayId}-${idx}`);
+  if(el)el.classList.add("focused");
+  setMap(q,name);
+  if(window.innerWidth<=640&&document.getElementById("sidebar").classList.contains("open"))toggleSidebar();
+}
+
+function renderDetailCards(day){
+  const g=document.getElementById("detail-grid");
+  g.innerHTML=day.spots.map(s=>`
+    <div class="detail-card" onclick="setMap('${s.q.replace(/'/g,"\\'")}','${s.n.replace(/'/g,"\\'")}')">
+      <div class="dc-head">
+        <span class="dc-icon">${s.e}</span>
+        <div><div class="dc-title">${s.n}</div><div class="dc-sub">${s.d.split("\n")[0]}</div></div>
+      </div>
+      <div class="dc-body">${s.d.replace(/\n/g,"<br>")}</div>
+      <div class="dc-tags">
+        ${s.p?`<span class="tag-price">💰 ${s.p}</span>`:""}
+        <span class="tag-map" onclick="event.stopPropagation();openGMaps('${s.q.replace(/'/g,"\\'")}')">📍 開啟地圖</span>
+      </div>
+    </div>`).join("");
+}
+
+function setMap(q,name){
+  currentQ=q;
+  const frame=document.getElementById("map-frame");
+  const ph=document.getElementById("map-ph");
+  const title=document.getElementById("map-title");
+  frame.src=`https://maps.google.com/maps?q=${encodeURIComponent(q.replace(/\+/g," "))}&output=embed&hl=zh-TW`;
+  frame.style.display="block";ph.style.display="none";
+  title.textContent="📍 "+name;
+}
+
+function openCurrentMap(){
+  const q=currentQ||"London+UK";
+  openGMaps(q);
+}
+function openGMaps(q){
+  window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q.replace(/\+/g," "))}`,"_blank");
+}
+
+function renderTips(){
+  document.getElementById("tips-grid").innerHTML=TIPS.map(t=>`
+    <div class="tip-card">
+      <h3>${t.t}</h3>
+      <ul>${t.ls.map(l=>`<li>${l}</li>`).join("")}</ul>
+    </div>`).join("");
+}
+
+function renderBudget(){
+  let total=0;
+  document.getElementById("budget-tbody").innerHTML=BUDGET_DATA.map(b=>{
+    const t3=b.p*3;if(b.n!=="碎片塔（可選）")total+=t3;
+    return`<tr>
+      <td>${b.n}${b.note?`<br><span style="font-size:11px;color:var(--muted)">${b.note}</span>`:""}</td>
+      <td class="nt" style="text-align:right">NT$${b.p.toLocaleString()}</td>
+      <td class="nt" style="text-align:right">NT$${t3.toLocaleString()}</td>
+      <td><a class="buy-btn" href="${b.url}" target="_blank">官網</a></td>
+    </tr>`;
+  }).join("")+`<tr>
+    <td colspan="2" style="text-align:right"><strong>景點票合計（不含碎片塔）</strong></td>
+    <td style="text-align:right"><strong>≈ NT$${total.toLocaleString()}</strong></td><td></td>
+  </tr>`;
+  document.getElementById("official-grid").innerHTML=OFFICIALS.map(o=>`
+    <a href="${o.url}" target="_blank" class="oc">
+      <span class="oc-icon">${o.icon}</span>
+      <div><div class="oc-name">${o.name}</div><div class="oc-url">${o.domain}</div>${o.badge?`<div class="oc-badge">${o.badge}</div>`:""}</div>
+    </a>`).join("");
+}
+
+function renderCustoms(){
+  document.getElementById("customs-rows").innerHTML=CUSTOMS_ROWS.map(r=>`
+    <div class="cr"><div class="cr-zh">🇹🇼 ${r.zh}</div><div class="cr-en">🇬🇧 ${r.en}</div></div>`).join("");
+  document.getElementById("checklist-wrap").innerHTML=CHECKLIST.map((item,i)=>`
+    <div class="checklist-item">
+      <div class="ckbox" id="ck-${i}" onclick="toggleCk(${i})"></div>
+      <span>${item}</span>
+    </div>`).join("");
+  document.getElementById("qa-wrap").innerHTML=QA.map(q=>`
+    <div class="qa-item">
+      <div class="qa-q">Q: ${q.q}</div>
+      <div class="qa-a">A: ${q.a}</div>
+    </div>`).join("");
+}
+
+function renderFood(){
+  document.getElementById("food-grid").innerHTML=FOOD_DATA.map(f=>`
+    <div class="tip-card">
+      <h3>${f.t}</h3>
+      <ul>${f.items.map(i=>`<li>${i}</li>`).join("")}</ul>
+    </div>`).join("");
+}
+
+function toggleCk(i){
+  const el=document.getElementById("ck-"+i);
+  if(el.classList.contains("chk")){el.classList.remove("chk");el.textContent="";}
+  else{el.classList.add("chk");el.textContent="✓";}
+}
+
+/* ======== PANEL / SIDEBAR ======== */
+function showPanel(name,btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+  document.getElementById("panel-"+name).classList.add("active");
+  btn.classList.add("active");
+}
+
+function toggleSidebar(){
+  const sb=document.getElementById("sidebar");
+  const ov=document.getElementById("mob-overlay");
+  sb.classList.toggle("open");
+  ov.classList.toggle("show");
+}
+
+function filterPills(v){renderPills(v);}
+
+/* ======== INIT ======== */
+renderPills();renderTips();renderBudget();renderCustoms();renderFood();
+</script>
+</body>
+</html>
