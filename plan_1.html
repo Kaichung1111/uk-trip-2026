@@ -415,23 +415,23 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--t
 /* ======== DATA ======== */
 const DAYS=[
   {id:1,date:"7/29",badge:"arrive",day:"Day 1",title:"抵達倫敦",sub:"✈️ 入境日",spots:[
-    {e:"✈️",n:"機場 → Stratford",d:"搭 Elizabeth Line 直達（希斯路約50分鐘）",p:"含在Oyster",q:"Heathrow+Airport+London"},
+    {e:"✈️",n:"機場 → Stratford",d:"搭 Elizabeth Line 直達。找尋紫色 (Purple) 標示，車頭會顯示 Stratford 或 Shenfield，車廂現代且有冷氣。",p:"含在Oyster",q:"Heathrow+Airport+London"},
     {e:"🏨",n:"Moxy London Stratford",d:"5 Celebration Ave, London E20 1DB\nCheck-in：15:00",p:"已預訂",q:"Moxy+London+Stratford+Hotel"},
     {e:"🛍️",n:"Westfield Stratford City",d:"飯店旁步行3分鐘，熟悉環境、購買SIM卡及Oyster Card",p:"免費入場",q:"Westfield+Stratford+City+London"},
     {e:"🍜",n:"晚餐：Wagamama / Nando's",d:"圖文菜單，英文不好完全沒問題",p:"人均NT$400-600",q:"Wagamama+Stratford+London"},
   ]},
   {id:2,date:"7/30",badge:"",day:"Day 2",title:"西敏寺區",sub:"👑 皇家核心",spots:[
     {e:"⛪",n:"西敏寺",d:"開放時間：週一-六 9:30-15:30\n必看：亨利七世禮拜堂、石棺走廊，需1.5-2小時",p:"NT$1,320（含語音導覽）",q:"Westminster+Abbey+London"},
-    {e:"🕰️",n:"大笨鐘 & 國會大廈",d:"Westminster 橋上最佳拍照角度，外觀免費",p:"免費",q:"Big+Ben+London"},
+    {e:"🕰️",n:"大笨鐘 & 國會大廈",d:"走到 Westminster Bridge 橋中間的南側（對向路邊），才能拍到大笨鐘與紅巴士同框的經典角度！",p:"免費",q:"Big+Ben+London"},
     {e:"🏰",n:"白金漢宮",d:"7-9月開放內部 State Rooms，含免費中文語音導覽\n衛兵交接：週二/四/日 10:45",p:"NT$1,400",q:"Buckingham+Palace+London"},
     {e:"🌳",n:"聖詹姆斯公園",d:"白金漢宮旁，可見粉紅鵜鶘（下午3點常出現）",p:"免費",q:"St+James+Park+London"},
     {e:"🍛",n:"晚餐：Dishoom",d:"Covent Garden 分店，印度料理名店，需現場等位",p:"人均NT$600-900",q:"Dishoom+Covent+Garden+London"},
   ]},
   {id:3,date:"7/31",badge:"",day:"Day 3",title:"倫敦塔橋 + 南岸",sub:"🌉 泰晤士河畔",spots:[
     {e:"🏰",n:"倫敦塔",d:"開放時間：週二-六 9:00-17:30\n必看：皇冠珠寶室（Jewel House），需2-2.5小時",p:"NT$1,500",q:"Tower+of+London"},
-    {e:"🌉",n:"倫敦塔橋",d:"外部過橋免費；入內玻璃步道需購票\n南岸角度拍照最美",p:"外觀免費｜入內NT$690",q:"Tower+Bridge+London"},
+    {e:"🌉",n:"倫敦塔橋",d:"只有購買門票進入「上方走廊」才能看到玻璃地板，橋面上看不到喔！",p:"外觀免費｜入內NT$690",q:"Tower+Bridge+London"},
+    {e:"🌿",n:"聖鄧斯坦東教堂花園",d:"廢墟中長滿植物的絕美秘境，非常適合放空拍照（從塔橋步行可達）",p:"免費",q:"St+Dunstan+in+the+East+Church+Garden"},
     {e:"🛒",n:"Borough Market",d:"倫敦最古老市場，週四最熱鬧\nLondon Bridge 站步行3分鐘",p:"免費入場",q:"Borough+Market+London"},
-    {e:"👁️",n:"倫敦之眼",d:"建議黃昏17:00搭乘，光線最美\n提前官網購票有折扣",p:"NT$638（促銷）",q:"London+Eye"},
   ]},
   {id:4,date:"8/1",badge:"",day:"Day 4",title:"大英博物館 + 蘇活",sub:"🏺 文化 + 購物",spots:[
     {e:"🏛️",n:"大英博物館",d:"開放時間：10:00-17:00（週五至20:30）\n必看：羅塞塔石碑、埃及木乃伊、帕德嫩廳\n建議停留3-4小時",p:"NT$343（語音導覽）",q:"British+Museum+London"},
@@ -441,9 +441,9 @@ const DAYS=[
   ]},
   {id:5,date:"8/2",badge:"",day:"Day 5",title:"聖保羅 + 西堤區",sub:"⛪ 金融城古蹟",spots:[
     {e:"⛪",n:"聖保羅大教堂",d:"開放時間：週一-六 8:30-16:00\n可登頂Golden Gallery（528階）俯瞰全倫敦",p:"NT$1,154",q:"St+Pauls+Cathedral+London"},
+    {e:"🏛️",n:"利德賀市場 Leadenhall",d:"《哈利波特》斜角巷取景地，維多利亞式建築非常精美，適合午餐或拍照",p:"免費",q:"Leadenhall+Market+London"},
     {e:"🚶",n:"千禧橋 Millennium Bridge",d:"步行至南岸，橋上是拍攝聖保羅最佳角度\n完全免費",p:"免費",q:"Millennium+Bridge+London"},
-    {e:"🏙️",n:"碎片塔 The Shard",d:"倫敦最高建築，69-72樓觀景台\nLondon Bridge 站步行2分鐘",p:"NT$808（可選）",q:"The+Shard+London"},
-    {e:"🍽️",n:"晚餐：Borough 一帶餐廳",d:"Padella（義大利麵名店）或 Côte Brasserie（法式）",p:"人均NT$500-900",q:"Borough+Market+area+London"},
+    {e:"👁️",n:"倫敦之眼",d:"建議黃昏17:00搭乘，光線最美\n提前官網購票有折扣",p:"NT$638（促銷）",q:"London+Eye"},
   ]},
   {id:6,date:"8/3",badge:"special",day:"Day 6",title:"格林威治一日",sub:"🌐 子午線零度",spots:[
     {e:"🚤",n:"交通：DLR 至 Cutty Sark",d:"Stratford → Jubilee Line → Canary Wharf → DLR → Cutty Sark\n或搭泰晤士河快船（Thames Clipper，更有氣氛）",p:"含在Oyster",q:"Cutty+Sark+DLR+Greenwich"},
@@ -464,10 +464,10 @@ const DAYS=[
     {e:"🍺",n:"午餐：Two Brewers",d:"傳統英式Pub，炸魚薯條、各種Pie\nPark St, Windsor",p:"人均NT$500-700",q:"Two+Brewers+Windsor"},
   ]},
   {id:9,date:"8/6",badge:"special",day:"Day 9",title:"牛津 + Bicester Village",sub:"🎓 學術城 + 購物村",spots:[
-    {e:"🚂",n:"搭火車：Paddington → Oxford",d:"Stratford → Paddington → Oxford（Chiltern Railways，約1小時）\n建議8:00前出發",p:"來回約NT$700-900/人",q:"Oxford+Railway+Station"},
+    {e:"🚂",n:"搭火車：Paddington → Oxford",d:"Stratford → Paddington → Oxford（Chiltern Railways，約1小時）\n記得買 Off-Peak 車票並選擇 GroupSave 享三人同行 33% 優惠！",p:"來回約NT$700-900/人",q:"Oxford+Railway+Station"},
     {e:"🎓",n:"牛津大學 Christ Church",d:"哈利波特取景地，Great Hall 為霍格華滋食堂原型\n開放時間：10:00-17:00",p:"NT$600",q:"Christ+Church+College+Oxford"},
     {e:"📚",n:"博德利圖書館 & Radcliffe Camera",d:"Bodleian Library 外觀免費；Radcliffe Camera 是牛津地標圓形圖書館\n拍照打卡必去",p:"外觀免費",q:"Radcliffe+Camera+Oxford"},
-    {e:"🛍️",n:"Bicester Village Outlet",d:"從牛津搭 S5 巴士直達（約30分鐘，約NT$150）\n品牌折扣30-70%，帶護照退VAT最高20%\n回程搭火車至London Marylebone",p:"免費入場",q:"Bicester+Village+Outlet"},
+    {e:"🛍️",n:"Bicester Village Outlet",d:"牛津學院約16:00關門，建議傍晚再去 Bicester\n搭 S5 巴士直達（約30分），回程搭火車回倫敦",p:"免費入場",q:"Bicester+Village+Outlet"},
   ]},
   {id:10,date:"8/7",badge:"special",day:"Day 10",title:"劍橋一日",sub:"🚣 撐篙之旅",spots:[
     {e:"🚂",n:"搭火車：Liverpool St → Cambridge",d:"Stratford → Liverpool St（5分鐘）\n→ Cambridge（Greater Anglia，約1小時10分）",p:"來回約NT$800-1,000/人",q:"Cambridge+Railway+Station"},
@@ -506,7 +506,8 @@ const DAYS=[
 ];
 
 const TIPS=[
-  {t:"🚇 交通 — Oyster Card",ls:["入境第一件事：購買 <strong>Oyster Card</strong> 或用台灣信用卡 Contactless 感應（兩者皆可）","住 Stratford（Zone 2-3），日常 Zone 1-2 搭乘每日上限約 £8.10（約NT$330）","Elizabeth Line 從 Stratford 直達 Heathrow，無需換車","近郊火車（Windsor / Oxford / Cambridge）要在 <strong>nationalrail.co.uk</strong> 另行購票","必裝App：<strong>TfL Go</strong>（地鐵）、<strong>Trainline</strong>（火車）、<strong>Google Maps</strong>（導航）"]},
+  {t:"🛂 重要：ETA 旅遊許可 (2026新規)",ls:["英國政府規定，自 2026 年 2 月 25 日起，台灣旅客皆須事先申請 <strong>ETA (電子旅遊許可)</strong> 才能入境。","每人費用約 £10-20，建議出發前 3 天完成申請。"]},
+  {t:"🚇 交通與地鐵辨識",ls:["找月台看「終點站」而不是「往哪一站」。例如搭紅線進市區，找往 Westbound 方向的月台。","強烈推薦安裝 <strong>Citymapper</strong>，比 Google Maps 精準，還會教你上哪個車廂。","上車前務必抬頭看月台跑馬燈，確認下一班車的終點站。","買往近郊的火車票時（溫莎、牛津），買離峰 (Off-Peak) 票並選 <strong>GroupSave</strong>，3人同行可享 33% 優惠！"]},
   {t:"🌦️ 天氣 & 穿著",ls:["7-8月氣溫約 18-25°C，是倫敦最佳旅遊季節","即使晴天也可能突然下雨 → 每天出門必帶：<strong>輕薄防水外套 + 折疊傘</strong>","夏日日照強，準備 <strong>防曬乳 SPF50+</strong>、帽子、太陽眼鏡","穿舒適走路鞋：倫敦石板路多，長時間行走避免高跟鞋"]},
   {t:"📱 通訊與網路",ls:["建議出發前購買 <strong>英國SIM卡</strong>（EE/Three/Vodafone，蝦皮/淘寶有售，約NT$500-800，30天無限）","或開台灣電信國際漫遊（每日約NT$300-400）","出發前下載 <strong>Google Maps 離線地圖</strong>（倫敦、牛津、劍橋，在WiFi下先下載好）","<strong>Google Translate</strong> 拍照翻譯菜單，出入境表格皆可用","緊急電話：英國 <strong>999</strong>（警察/救護/消防）"]},
   {t:"💰 金錢 & 消費",ls:["英國用 <strong>英鎊 £ GBP</strong>，不用歐元！","現金在倫敦幾乎不需要，信用卡 Contactless 到處可用（含小市集攤位）","推薦：<strong>Wise 多幣卡</strong> 或 <strong>台新 Richart</strong> 等零手續費海外信用卡","餐廳通常已含 10% Service Charge，Optional 小費給可不給","日常餐食預估：每人每天 NT$800-1,500（含輕食早餐）"]},
@@ -545,6 +546,7 @@ const CUSTOMS_ROWS=[
 ];
 
 const CHECKLIST=[
+  "出發前3天完成申請英國 ETA (電子旅遊許可)",
   "護照有效期限超過 2027年2月14日（離境後6個月以上）",
   "回程機票截圖已存手機相簿",
   "飯店訂房確認信已存手機相簿",
