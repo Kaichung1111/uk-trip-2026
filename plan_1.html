@@ -306,7 +306,10 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--t
   <button class="mob-menu-btn" onclick="toggleSidebar()" aria-label="開啟選單">☰</button>
   <div>
     <div class="site-logo">🇬🇧 英國之旅 2026</div>
-    <div class="site-meta">JUL 29 – AUG 14 &nbsp;·&nbsp; 3人 &nbsp;·&nbsp; 17天</div>
+    <div class="site-meta" style="line-height:1.4;margin-top:2px;">
+      JUL 29 – AUG 14 &nbsp;·&nbsp; 3人 &nbsp;·&nbsp; 17天<br>
+      <span style="font-size:11px;opacity:0.8;">✈️ 去程：7/29 TPE 08:50 → LHR 16:30 &nbsp;|&nbsp; 回程：8/14 LHR 21:10 → TPE 08:05 (+1)</span>
+    </div>
   </div>
   <nav class="header-nav">
     <button class="tab-btn active" onclick="showPanel('itinerary',this)">📅 行程</button>
@@ -415,10 +418,10 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--t
 /* ======== DATA ======== */
 const DAYS=[
   {id:1,date:"7/29",badge:"arrive",day:"Day 1",title:"抵達倫敦",sub:"✈️ 入境日",spots:[
-    {e:"✈️",n:"機場 → Stratford",d:"搭 Elizabeth Line 直達。找尋紫色 (Purple) 標示，車頭會顯示 Stratford 或 Shenfield，車廂現代且有冷氣。",p:"含在Oyster",q:"Heathrow+Airport+London"},
-    {e:"🏨",n:"Moxy London Stratford",d:"5 Celebration Ave, London E20 1DB\nCheck-in：15:00",p:"已預訂",q:"Moxy+London+Stratford+Hotel"},
-    {e:"🛍️",n:"Westfield Stratford City",d:"飯店旁步行3分鐘，熟悉環境、購買SIM卡及Oyster Card",p:"免費入場",q:"Westfield+Stratford+City+London"},
-    {e:"🍜",n:"晚餐：Wagamama / Nando's",d:"圖文菜單，英文不好完全沒問題",p:"人均NT$400-600",q:"Wagamama+Stratford+London"},
+    {e:"🛬",n:"16:30 抵達 Heathrow",d:"通關（夏季通常較久）、領行李，大約需抓 1.5 到 2 小時。",p:"航班：TPE 8:50 → LHR 16:30",q:"Heathrow+Airport+London"},
+    {e:"🚇",n:"18:30 前往 Stratford",d:"搭 Elizabeth Line 直達。找尋紫色標示，若看到往 Abbey Wood 方向的車也可以搭乘，同樣會經過 Stratford。",p:"含在Oyster",q:"Stratford+Station+London"},
+    {e:"🏨",n:"19:30 Moxy Stratford Check-in",d:"5 Celebration Ave, London E20 1DB\n放好行李，稍作休息。",p:"已預訂",q:"Moxy+London+Stratford+Hotel"},
+    {e:"🍜",n:"晚餐與熟悉環境",d:"Westfield 平日營業至 21:00。去吃 Wagamama，順便在超市 (M&S/Waitrose) 買水與早餐。",p:"人均NT$400-600",q:"Westfield+Stratford+City+London"},
   ]},
   {id:2,date:"7/30",badge:"",day:"Day 2",title:"西敏寺區",sub:"👑 皇家核心",spots:[
     {e:"⛪",n:"西敏寺",d:"開放時間：週一-六 9:30-15:30\n必看：亨利七世禮拜堂、石棺走廊，需1.5-2小時",p:"NT$1,320（含語音導覽）",q:"Westminster+Abbey+London"},
@@ -427,11 +430,12 @@ const DAYS=[
     {e:"🌳",n:"聖詹姆斯公園",d:"白金漢宮旁，可見粉紅鵜鶘（下午3點常出現）",p:"免費",q:"St+James+Park+London"},
     {e:"🍛",n:"晚餐：Dishoom",d:"Covent Garden 分店，印度料理名店，需現場等位",p:"人均NT$600-900",q:"Dishoom+Covent+Garden+London"},
   ]},
-  {id:3,date:"7/31",badge:"",day:"Day 3",title:"倫敦塔橋 + 南岸",sub:"🌉 泰晤士河畔",spots:[
-    {e:"🏰",n:"倫敦塔",d:"開放時間：週二-六 9:00-17:30\n必看：皇冠珠寶室（Jewel House），需2-2.5小時",p:"NT$1,500",q:"Tower+of+London"},
+  {id:3,date:"7/31",badge:"",day:"Day 3",title:"秘境與塔橋",sub:"🌉 泰晤士河畔",spots:[
+    {e:"🌿",n:"聖鄧斯坦東教堂花園",d:"早晨先來絕美秘境放空拍照，感受倫敦市中心的寧靜綠洲。",p:"免費",q:"St+Dunstan+in+the+East+Church+Garden"},
+    {e:"🏰",n:"倫敦塔",d:"開放時間：9:00-17:30\n必看：皇冠珠寶室（Jewel House），需2-2.5小時",p:"NT$1,500",q:"Tower+of+London"},
     {e:"🌉",n:"倫敦塔橋",d:"只有購買門票進入「上方走廊」才能看到玻璃地板，橋面上看不到喔！",p:"外觀免費｜入內NT$690",q:"Tower+Bridge+London"},
-    {e:"🌿",n:"聖鄧斯坦東教堂花園",d:"廢墟中長滿植物的絕美秘境，非常適合放空拍照（從塔橋步行可達）",p:"免費",q:"St+Dunstan+in+the+East+Church+Garden"},
-    {e:"🛒",n:"Borough Market",d:"倫敦最古老市場，週四最熱鬧\nLondon Bridge 站步行3分鐘",p:"免費入場",q:"Borough+Market+London"},
+    {e:"🛒",n:"Borough Market",d:"倫敦最古老市場，各國小吃\n若停留較久，後續行程可保持彈性",p:"免費入場",q:"Borough+Market+London"},
+    {e:"🖼️",n:"泰特現代美術館 (快閃)",d:"若時間不夠，可僅上 10 樓觀景台快閃拍照，或保留到第 12 天再看。",p:"免費",q:"Tate+Modern+London"},
   ]},
   {id:4,date:"8/1",badge:"",day:"Day 4",title:"大英博物館 + 蘇活",sub:"🏺 文化 + 購物",spots:[
     {e:"🏛️",n:"大英博物館",d:"開放時間：10:00-17:00（週五至20:30）\n必看：羅塞塔石碑、埃及木乃伊、帕德嫩廳\n建議停留3-4小時",p:"NT$343（語音導覽）",q:"British+Museum+London"},
@@ -465,9 +469,9 @@ const DAYS=[
   ]},
   {id:9,date:"8/6",badge:"special",day:"Day 9",title:"牛津 + Bicester Village",sub:"🎓 學術城 + 購物村",spots:[
     {e:"🚂",n:"搭火車：Paddington → Oxford",d:"Stratford → Paddington → Oxford（Chiltern Railways，約1小時）\n記得買 Off-Peak 車票並選擇 GroupSave 享三人同行 33% 優惠！",p:"來回約NT$700-900/人",q:"Oxford+Railway+Station"},
-    {e:"🎓",n:"牛津大學 Christ Church",d:"哈利波特取景地，Great Hall 為霍格華滋食堂原型\n開放時間：10:00-17:00",p:"NT$600",q:"Christ+Church+College+Oxford"},
+    {e:"🎓",n:"牛津大學 Christ Church",d:"哈利波特取景地，Great Hall 為霍格華滋食堂原型\n保留完整精華時段參觀學院。",p:"NT$600",q:"Christ+Church+College+Oxford"},
     {e:"📚",n:"博德利圖書館 & Radcliffe Camera",d:"Bodleian Library 外觀免費；Radcliffe Camera 是牛津地標圓形圖書館\n拍照打卡必去",p:"外觀免費",q:"Radcliffe+Camera+Oxford"},
-    {e:"🛍️",n:"Bicester Village Outlet",d:"牛津學院約16:00關門，建議傍晚再去 Bicester\n搭 S5 巴士直達（約30分），回程搭火車回倫敦",p:"免費入場",q:"Bicester+Village+Outlet"},
+    {e:"🛍️",n:"16:00 Bicester Village",d:"牛津學院16:00關門後，傍晚搭 S5 巴士前往 Outlet，營業時間晚，採買體感更佳！",p:"免費入場",q:"Bicester+Village+Outlet"},
   ]},
   {id:10,date:"8/7",badge:"special",day:"Day 10",title:"劍橋一日",sub:"🚣 撐篙之旅",spots:[
     {e:"🚂",n:"搭火車：Liverpool St → Cambridge",d:"Stratford → Liverpool St（5分鐘）\n→ Cambridge（Greater Anglia，約1小時10分）",p:"來回約NT$800-1,000/人",q:"Cambridge+Railway+Station"},
@@ -487,21 +491,22 @@ const DAYS=[
     {e:"🖼️",n:"泰特現代美術館",d:"Southwark 站步行5分鐘，免費入場\n週五六夜間開放至22:00",p:"免費（特展另計）",q:"Tate+Modern+London"},
     {e:"🍝",n:"晚餐：Shoreditch",d:"Padella（義大利麵名店，需排隊）\nBricklane 咖哩街也在附近",p:"人均NT$400-700",q:"Shoreditch+High+Street+London"},
   ]},
-  {id:13,date:"8/10-11",badge:"",day:"Day 13-14",title:"彈性備用日",sub:"🔄 自由調配",spots:[
-    {e:"🎭",n:"西區音樂劇",d:"TKTS Booth（Leicester Square）當天折扣票\n下午12:00開賣，The Lion King、Hamilton等",p:"NT$800-2,000（折扣票）",q:"TKTS+Booth+Leicester+Square+London"},
+  {id:13,date:"8/10-12",badge:"",day:"Day 13-15",title:"彈性備用日",sub:"🔄 自由調配",spots:[
+    {e:"🎭",n:"西區音樂劇",d:"TKTS Booth（Leicester Square）當天折扣票\n下午12:00開賣，The Lion King、Hamilton等",p:"NT$800-2,000",q:"TKTS+Booth+Leicester+Square+London"},
     {e:"🌳",n:"海德公園",d:"倫敦最大皇家公園，週末有免費音樂會\n可免費進入蛇形湖游泳區（夏季開放）",p:"免費",q:"Hyde+Park+London"},
-    {e:"🍵",n:"英式下午茶",d:"推薦：Fortnum & Mason（Piccadilly）或 Sketch（粉紅網美）\n需提前訂位！",p:"人均NT$1,500-3,000",q:"Fortnum+and+Mason+Piccadilly+London"},
-    {e:"🛍️",n:"最後補貨 Westfield",d:"飯店旁，M&S食品、Boots藥妝最後採購",p:"自由消費",q:"Westfield+Stratford+City"},
+    {e:"🍵",n:"英式下午茶",d:"推薦：Fortnum & Mason 或 Sketch\n需提前訂位！",p:"人均NT$1,500-3,000",q:"Fortnum+and+Mason+Piccadilly+London"},
   ]},
-  {id:14,date:"8/12-13",badge:"",day:"Day 15-16",title:"行李整理 + 採購",sub:"🎁 收尾",spots:[
-    {e:"💊",n:"Boots 藥妝必買",d:"Bio-Oil護膚油、Nurofen止痛藥\nVitamin C泡騰片、Strepsils喉糖、No7護膚品",p:"自由消費",q:"Boots+Pharmacy+Stratford+London"},
-    {e:"🎁",n:"伴手禮採購",d:"Harrods茶包禮盒、McVitie's消化餅乾\nCadbury巧克力、Fortnum & Mason果醬",p:"自由消費",q:"Harrods+London"},
-    {e:"🧳",n:"行李秤重！",d:"歐洲航班通常限制20-23kg\n超重費用昂貴，提前在飯店用行李秤確認",p:"注意！",q:"Moxy+London+Stratford+Hotel"},
+  {id:14,date:"8/13",badge:"",day:"Day 16",title:"起飛前一天",sub:"🚶 深度探索",spots:[
+    {e:"🧙",n:"白天：國王十字車站",d:"白天安排完整行程。前往 King's Cross 拍哈利波特 9¾ 月台。",p:"免費",q:"Kings+Cross+Station+London"},
+    {e:"🛶",n:"甘登市場 Camden Market",d:"沿著攝政運河散步到甘登市場，感受龐克與街頭文化；或改去 V&A 博物館。",p:"免費",q:"Camden+Market+London"},
+    {e:"🧳",n:"19:00 行李打包與秤重",d:"回到 Stratford 進行初步打包與秤重。若超重，還有一晚時間將重物移至手提行李。",p:"重要",q:"Moxy+London+Stratford+Hotel"},
   ]},
   {id:15,date:"8/14",badge:"depart",day:"Day 17",title:"離境回台",sub:"✈️ 返程",spots:[
-    {e:"⏰",n:"提前3小時到達 Heathrow",d:"Stratford → Elizabeth Line → Heathrow（約50-60分鐘）\nHeathrow 安檢常排長龍，務必留足時間",p:"Elizabeth Line含在Oyster",q:"London+Heathrow+Airport+Terminal"},
-    {e:"💰",n:"退稅 VAT Refund",d:"重要順序：先找 Customs 蓋章 → 再辦出關\n需保留所有購物收據 + 護照，最高退20%",p:"最高退回20%",q:"Heathrow+Airport+VAT+Refund"},
-    {e:"🧳",n:"行李規定提醒",d:"隨身液體：每件≤100ml，放透明夾鏈袋\n手提行李尺寸：通常56×45×25cm\n筆電、相機可帶上機",p:"",q:"Heathrow+Airport+London"},
+    {e:"🏨",n:"09:00 悠閒退房",d:"睡到自然醒，辦理 Check-out，將大件行李寄放在 Moxy 飯店櫃檯。",p:"",q:"Moxy+London+Stratford+Hotel"},
+    {e:"🌳",n:"11:00 最後漫步與掃貨",d:"前往伊莉莎白女王奧林匹克公園散步；或把最重的伴手禮留在這天早上於 Westfield 內的 Boots 與超市購買，買完直接塞進行李箱。",p:"",q:"Queen+Elizabeth+Olympic+Park"},
+    {e:"🍽️",n:"14:30 離開前的午餐",d:"在 Stratford 選一家好吃的餐廳（如 Nando's）吃頓豐盛午晚餐，準備迎接長途飛行。",p:"",q:"Westfield+Stratford+City"},
+    {e:"🚇",n:"16:00 出發前往機場",d:"領取行李，搭乘 Elizabeth Line（紫色線）一車到底直達 Heathrow T2/T3，不用轉車，車程約 50-55 分鐘。",p:"含在Oyster",q:"Heathrow+Airport+London"},
+    {e:"💰",n:"17:00 抵達 Heathrow 退稅",d:"第一站先去辦理退稅手續（切記：過安檢前就要先蓋章）。辦理託運與安檢，準備搭乘 21:10 班機。",p:"航班：LHR 21:10 → TPE 8:05",q:"Heathrow+Airport+VAT+Refund"},
   ]},
 ];
 
