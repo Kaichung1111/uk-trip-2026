@@ -198,6 +198,60 @@ nav::-webkit-scrollbar{display:none;}
 .small-note{font-size:0.76rem;color:var(--muted);line-height:1.55;margin-top:0.45rem;}
 @media(min-width:650px){.tool-grid{grid-template-columns:1fr 1fr}.emergency-grid{grid-template-columns:1fr 1fr}.daily-tools{grid-template-columns:1fr}.ticket-manager table{font-size:0.82rem}}
 @media(max-width:520px){.ticket-manager th:nth-child(4),.ticket-manager td:nth-child(4){display:none}.route-btn,.mini-btn{font-size:0.68rem;padding:4px 9px}.daily-tools{margin:.75rem .75rem}}
+
+
+/* ===== Daily map overview tab ===== */
+.map-overview{max-width:1120px;margin:0 auto;}
+.map-intro{background:#eef6ff;border-left:4px solid var(--blue);border-radius:0 10px 10px 0;padding:0.75rem 1rem;margin-bottom:1rem;font-size:0.84rem;line-height:1.7;color:#173b5f;}
+.map-layout{display:grid;grid-template-columns:330px 1fr;gap:1rem;align-items:stretch;}
+.map-panel{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.04);overflow:hidden;}
+.map-sidebar{padding:1rem;display:flex;flex-direction:column;gap:0.85rem;}
+.map-date-scroll{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;}
+.map-date-scroll::-webkit-scrollbar{display:none;}
+.map-date-btn{border:1px solid var(--border);background:#fff;border-radius:999px;padding:5px 11px;font-size:.72rem;white-space:nowrap;cursor:pointer;font-family:'Noto Sans TC',sans-serif;color:var(--muted);}
+.map-date-btn.active{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:800;}
+.map-title{font-size:1rem;font-weight:800;color:var(--navy);line-height:1.4;}
+.map-subtitle{font-size:.78rem;color:var(--muted);line-height:1.5;margin-top:2px;}
+.map-chip-row{display:flex;flex-wrap:wrap;gap:6px;}
+.map-chip{display:inline-flex;align-items:center;gap:4px;background:#f7f4ee;border:1px solid var(--border);border-radius:999px;padding:3px 9px;font-size:.72rem;color:#4b4b4b;font-weight:700;}
+.map-list-title{font-size:.8rem;font-weight:800;color:var(--navy);margin-bottom:.35rem;}
+.map-stop-list,.map-route-list{display:grid;gap:0.45rem;}
+.map-stop{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;font-size:.8rem;line-height:1.45;}
+.map-pin-num{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--red);color:#fff;font-weight:800;font-size:.72rem;box-shadow:0 2px 5px rgba(0,0,0,.16);}
+.map-stop:nth-child(2n) .map-pin-num{background:var(--blue);}
+.map-stop-name{font-weight:800;color:var(--navy);}
+.map-stop-meta{font-size:.73rem;color:var(--muted);}
+.map-route-step{display:flex;gap:8px;font-size:.79rem;line-height:1.5;color:#333;align-items:flex-start;}
+.map-route-step .icon{width:20px;text-align:center;flex:0 0 20px;}
+.map-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:.2rem;}
+.map-action-btn{display:inline-flex;align-items:center;gap:5px;background:var(--navy);color:#fff!important;border:0;border-radius:999px;padding:6px 12px;text-decoration:none;font-size:.73rem;font-weight:800;cursor:pointer;font-family:'Noto Sans TC',sans-serif;}
+.map-action-btn.secondary{background:#fff;color:var(--navy)!important;border:1px solid var(--border);}
+.map-action-btn:hover{background:#2d3f6b;color:#fff!important;}
+.map-canvas-panel{position:relative;min-height:620px;background:#f7fbff;}
+#dailyMap{height:620px;width:100%;z-index:1;}
+.map-bottom-card{position:absolute;left:14px;right:14px;bottom:14px;z-index:450;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border:1px solid rgba(224,216,200,.85);border-radius:14px;padding:.85rem 1rem;box-shadow:0 6px 22px rgba(0,0,0,.12);display:grid;grid-template-columns:1fr auto;gap:.75rem;align-items:center;}
+.map-bottom-title{font-size:.82rem;font-weight:800;color:var(--navy);margin-bottom:.25rem;}
+.map-bottom-text{font-size:.76rem;color:#444;line-height:1.6;}
+.map-legend{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;}
+.legend-pill{font-size:.68rem;border:1px solid #d7e7fb;background:#eef6ff;color:var(--blue);border-radius:999px;padding:2px 8px;font-weight:800;}
+.google-map-frame{width:100%;height:100%;min-height:620px;border:0;display:block;background:#eef6ff;}
+.map-point-overlay{position:absolute;top:14px;left:14px;z-index:5;display:flex;flex-direction:column;gap:6px;max-width:min(330px,calc(100% - 28px));}
+.map-point-chip{display:flex;align-items:flex-start;gap:8px;background:rgba(255,255,255,.94);border:1px solid rgba(224,216,200,.9);border-radius:12px;padding:7px 9px;box-shadow:0 4px 12px rgba(0,0,0,.10);backdrop-filter:blur(8px);font-size:.76rem;line-height:1.35;}
+.map-point-num{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#b5282d;color:white;font-weight:900;flex:0 0 22px;font-size:.68rem;}
+.map-point-chip.home .map-point-num{background:#1a2744;}
+.map-point-chip.food .map-point-num{background:#2d6a4f;}
+.map-point-chip.transit .map-point-num{background:#1a5f9e;}
+.map-point-name{font-weight:800;color:var(--navy);}
+.map-point-meta{font-size:.68rem;color:var(--muted);}
+.map-map-note{position:absolute;top:14px;right:14px;z-index:5;background:rgba(255,255,255,.94);border:1px solid rgba(224,216,200,.9);border-radius:999px;padding:6px 10px;font-size:.7rem;font-weight:800;color:var(--navy);box-shadow:0 4px 12px rgba(0,0,0,.10);}
+@media(max-width:520px){.map-point-overlay{position:static;max-width:none;margin:0;padding:.65rem;background:#fff;border-bottom:1px solid var(--border)}.map-map-note{display:none}.google-map-frame{min-height:390px}}
+.map-fallback{display:none;padding:1rem;}
+.map-fallback.active{display:block;}
+.map-fallback-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;margin-top:.7rem;}
+.map-fallback-card{border:1px solid var(--border);background:#fff;border-radius:10px;padding:.65rem;font-size:.78rem;}
+@media(max-width:900px){.map-layout{grid-template-columns:1fr}.map-canvas-panel{min-height:520px}#dailyMap{height:520px}.map-bottom-card{position:static;margin:0;border-radius:0;border-left:0;border-right:0;border-bottom:0;box-shadow:none;grid-template-columns:1fr}.map-legend{justify-content:flex-start}}
+@media(max-width:520px){.map-overview{padding:0 .2rem}.map-sidebar{padding:.85rem}.map-canvas-panel{min-height:460px}#dailyMap{height:460px}.map-date-btn{font-size:.68rem;padding:5px 9px}.map-chip{font-size:.68rem}.map-action-btn{font-size:.69rem;padding:6px 10px}}
+
 </style>
 </head>
 <body>
@@ -212,6 +266,7 @@ nav::-webkit-scrollbar{display:none;}
 </header>
 <nav>
 <button class="tab-btn active" onclick="showTab('itinerary',this)">📅 每日行程</button>
+<button class="tab-btn" onclick="showTab('mapview',this)">🗺️ 地圖總覽</button>
 <button class="tab-btn" onclick="showTab('transport',this)">🚇 交通指南</button>
 <button class="tab-btn" onclick="showTab('tips',this)">💡 旅行提醒</button>
 <button class="tab-btn" onclick="showTab('tickets',this)">🎟 票價購票</button>
@@ -1481,6 +1536,60 @@ nav::-webkit-scrollbar{display:none;}
 </div>
 </div></div>
 </section>
+
+
+<section class="section" id="mapview">
+  <div class="map-overview">
+    <div class="map-intro"><strong>🗺️ 每日地圖總覽：</strong>這個分頁用來快速判斷「今天主要會在哪些區域活動」。可切換日期查看景點分布、移動順序、交通概覽與 Google Maps 一鍵路線。地圖預覽改用 Google Maps，不再載入 OpenStreetMap/Leaflet；實際步行與搭車請以 Google Maps / Citymapper 當下導航為準。</div>
+    <div class="map-layout">
+      <aside class="map-panel map-sidebar">
+        <div class="map-date-scroll" id="mapDateButtons"></div>
+        <div>
+          <div class="map-title" id="mapDayTitle">每日地圖總覽</div>
+          <div class="map-subtitle" id="mapDaySubtitle">選擇日期後會顯示當天活動範圍。</div>
+        </div>
+        <div class="map-chip-row" id="mapChips"></div>
+        <div>
+          <div class="map-list-title">今日主要地點</div>
+          <div class="map-stop-list" id="mapStopList"></div>
+        </div>
+        <div>
+          <div class="map-list-title">今日路線順序</div>
+          <div class="map-route-list" id="mapRouteList"></div>
+        </div>
+        <div>
+          <div class="map-list-title">交通概覽</div>
+          <div class="map-route-list" id="mapTransportList"></div>
+        </div>
+        <div class="map-actions">
+          <a class="map-action-btn" id="mapGoogleRoute" href="#" target="_blank" rel="noopener">📍 開啟 Google Maps 路線</a>
+          <button class="map-action-btn secondary" type="button" onclick="copyMapDaySummary()">📋 複製今日地圖摘要</button>
+        </div>
+      </aside>
+      <div class="map-panel map-canvas-panel">
+        <div id="dailyMap"></div>
+        <div class="map-fallback" id="mapFallback">
+          <div class="map-title">無法載入 Google Maps 預覽</div>
+          <div class="map-subtitle">可能是目前離線、網路較慢，或瀏覽器阻擋 Google Maps iframe。下方仍可查看今日地點清單，也可用「開啟 Google Maps 路線」直接跳轉。</div>
+          <div class="map-fallback-grid" id="mapFallbackGrid"></div>
+        </div>
+        <div class="map-bottom-card">
+          <div>
+            <div class="map-bottom-title" id="mapAreaTitle">今日重點區域</div>
+            <div class="map-bottom-text" id="mapAreaText">選擇日期後顯示。</div>
+          </div>
+          <div class="map-legend">
+            <span class="legend-pill">🏨 飯店 / 出發</span>
+            <span class="legend-pill">📍 景點</span>
+            <span class="legend-pill">🍽 餐廳 / 市集</span>
+            <span class="legend-pill">🚇 交通點</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="transport">
 <div class="notice"><strong>💡 重點：</strong>倫敦市區用 Contactless 信用卡搭地鐵。近郊（Windsor、Oxford、Cambridge）要另外買火車票。</div><div class="info-card"><h3>🧯 交通救援速查</h3><ul><li><strong>地鐵坐錯方向：</strong>下一站下車，不要出站，換到對面月台搭回來。</li><li><strong>坐過站：</strong>保持冷靜，直接反方向搭回；若已出站再進站可能重新計費。</li><li><strong>火車月台找不到：</strong>英國大站常在出發前 10–15 分鐘才顯示月台，先看大螢幕，不要只靠 Google Maps。</li><li><strong>公車搭錯：</strong>下一站下車，用 Citymapper 重新規劃；倫敦巴士下車不用刷卡。</li><li><strong>DLR 沒有司機：</strong>這是正常的自動輕軌，不用緊張。</li></ul></div><div class="info-card"><h3>💷 2026 交通費用更新</h3><ul><li><strong>倫敦市區 Zone 1-2：</strong>Contactless / Oyster 單程多落在約 £3.10–£3.60，當日上限 £8.90。</li><li><strong>倫敦巴士：</strong>單程 £1.75，1 小時內可免費轉乘其他巴士/電車（Hopper Fare）；只需上車刷卡，下車不用刷。</li><li><strong>Heathrow Elizabeth Line：</strong>Heathrow 進出倫敦為特殊票價，約 £13.90 起；出發前建議用 TfL Single Fare Finder 再查一次。</li><li><strong>近郊火車：</strong>Windsor / Oxford / Cambridge 需另外購票，建議提前 8–12 週查 Advance / Off-Peak / GroupSave。</li></ul></div>
 <div class="info-card">
@@ -1699,7 +1808,177 @@ const DAY_INFO = {
   d15:{date:'2026-08-12', label:'8/12 碎片塔 + 補位半日', place:'London Bridge, London', lat:51.5045, lon:-0.0865},
   d16:{date:'2026-08-13', label:'8/13 King’s Cross + Camden', place:'King’s Cross / Camden, London', lat:51.5413, lon:-0.1464},
   d17:{date:'2026-08-14', label:'8/14 離境回台', place:'Stratford / Heathrow', lat:51.5413, lon:-0.0033}
+
 };
+
+const MAP_DAY_DATA = {
+  d1:{label:'7/29（三）抵達倫敦', area:'Heathrow → Stratford', mood:'入境、入住、補給', center:[51.5078,-0.1840], zoom:10, chips:['機場進城','飯店周邊','低步行量'],
+    stops:[['home','Heathrow Airport','16:30 抵達，通關與領行李','51.4700','-0.4543'],['transit','Moxy London Stratford','19:30 Check-in，放行李','51.5461','-0.0086'],['food','Westfield Stratford City','晚餐與超市補給','51.5431','-0.0065']],
+    route:['Heathrow 抵達','Elizabeth Line 直達 Stratford','Moxy Check-in','Westfield 晚餐與買水/早餐'],
+    transport:[['🚇','Elizabeth Line：Heathrow → Stratford，約 50–55 分鐘'],['💷','估 £13.90 起；Heathrow Express 可作備案但較貴'],['🧭','今日只熟悉飯店周邊，不再進市區']],
+    note:'今日活動範圍橫跨 Heathrow 與 Stratford；抵達後以入住、晚餐與超市補給為主。'},
+  d2:{label:'7/30（四）白金漢宮 + Big Ben', area:'Westminster / St James’s', mood:'皇家核心區', center:[51.5007,-0.1337], zoom:14, chips:['Zone 1','步行串聯','拍照日'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['main','Buckingham Palace','上午入內參觀','51.5014','-0.1419'],['main','St James’s Park','中午公園散步與輕午餐','51.5025','-0.1348'],['main','Big Ben / Parliament','下午外觀拍照','51.5007','-0.1246'],['food','Flat Iron / Chinatown 備案','晚餐區域','51.5115','-0.1281']],
+    route:['Moxy Stratford','Jubilee Line 到 Westminster/Green Park','白金漢宮','聖詹姆斯公園','Big Ben','晚餐後回 Stratford'],
+    transport:[['🚇','Stratford → Westminster / Green Park，約 25–30 分鐘'],['🚶','景點間以步行為主，公園到 Big Ben 約 15–20 分鐘'],['💷','市區地鐵計入每日上限；Zone 1–2 日上限約 £8.90']],
+    note:'今日集中在 Westminster 與 St James’s 一帶，景點彼此很近，適合步行拍照。'},
+  d3:{label:'7/31（五）西敏寺 + 倫敦之眼', area:'Westminster / South Bank', mood:'教堂與河岸景觀', center:[51.5020,-0.1198], zoom:14, chips:['泰晤士河','門票日','黃昏景觀'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['main','Westminster Abbey','上午參觀','51.4993','-0.1273'],['main','London Eye','下午或黃昏搭乘','51.5033','-0.1195'],['food','South Bank 晚餐區','主選 + 備案','51.5063','-0.1163']],
+    route:['Moxy Stratford','Westminster Abbey','步行過 Westminster Bridge','London Eye / South Bank','Waterloo 回 Stratford'],
+    transport:[['🚇','Stratford → Westminster，Jubilee Line 約 25 分鐘'],['🚶','西敏寺到 London Eye 步行約 12–15 分鐘'],['💷','地鐵計入每日上限；倫敦之眼需另購門票']],
+    note:'今日在 Westminster 與 South Bank 兩岸活動，移動距離短，適合慢慢拍照。'},
+  d4:{label:'8/1（六）倫敦塔 + 倫敦塔橋', area:'Tower Hill / Tower Bridge', mood:'城堡與塔橋', center:[51.5065,-0.0765], zoom:15, chips:['倫敦東側','歷史重點','門票日'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['main','Tower of London','上午參觀皇冠珠寶','51.5081','-0.0759'],['main','Tower Bridge','過橋或入內玻璃地板','51.5055','-0.0754'],['main','St Dunstan in the East','時間足夠再去','51.5096','-0.0823'],['food','London Bridge / Westfield 晚餐','排隊備案完整','51.5050','-0.0865']],
+    route:['Moxy Stratford','Tower Hill','倫敦塔','倫敦塔橋','St Dunstan 可選','London Bridge 或回 Stratford 晚餐'],
+    transport:[['🚇','Stratford → Tower Hill，約 22–30 分鐘'],['🚶','倫敦塔到塔橋步行約 5 分鐘'],['💷','市區交通計入每日上限；倫敦塔/塔橋入內需門票']],
+    note:'今日集中在 Tower Hill 與 Tower Bridge 附近，地點密集，不需要橫跨市區。'},
+  d5:{label:'8/2（日）聖保羅 + Borough Market', area:'City of London / Bankside', mood:'教堂、橋與市場', center:[51.5100,-0.0985], zoom:14, chips:['City','市場午餐','週日注意營業'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['main','St Paul’s Cathedral','上午參觀/可登頂','51.5138','-0.0984'],['transit','Millennium Bridge','移動途中拍照','51.5107','-0.0984'],['food','Borough Market','午餐與市集','51.5055','-0.0910']],
+    route:['Moxy Stratford','St Paul’s Cathedral','Millennium Bridge','Borough Market','London Bridge 回程'],
+    transport:[['🚇','Stratford → St Paul’s，Central Line 約 18–22 分鐘'],['🚶','聖保羅經千禧橋到 Borough Market 約 20–25 分鐘'],['💷','地鐵計入每日上限；Borough Market 餐費另計']],
+    note:'今日從 City of London 走到南岸市場，路線順、拍照點多。'},
+  d6:{label:'8/3（一）大英博物館 + 蘇活', area:'Bloomsbury / Soho / Covent Garden', mood:'博物館與購物', center:[51.5158,-0.1295], zoom:14, chips:['Zone 1','室內景點','購物餐廳'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['main','British Museum','上午重點參觀','51.5194','-0.1270'],['main','Oxford Circus / Soho','下午購物散步','51.5152','-0.1419'],['main','Covent Garden','街頭藝人與晚餐區','51.5117','-0.1235'],['food','Flat Iron / Chinatown','晚餐主選與備案','51.5115','-0.1281']],
+    route:['Moxy Stratford','Tottenham Court Road','British Museum','Oxford Circus / Soho','Covent Garden','Leicester Square 回程'],
+    transport:[['🚇','Stratford → Tottenham Court Road，Central/Elizabeth Line 約 20 分鐘'],['🚶','大英博物館到 Soho / Covent Garden 約 15–25 分鐘'],['💷','地鐵計入每日上限；Flat Iron 可事先排隊/預約系統']],
+    note:'今日在倫敦西區活動，主要區域是 Bloomsbury、Soho、Covent Garden。'},
+  d7:{label:'8/4（二）福爾摩斯 + 馬里波恩', area:'Baker Street / Marylebone', mood:'輕鬆文學日', center:[51.5238,-0.1555], zoom:15, chips:['輕鬆日','書店咖啡','公園'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['main','Sherlock Holmes Museum','221B Baker Street','51.5238','-0.1586'],['main','Marylebone High Street','Daunt Books / 咖啡館','51.5207','-0.1517'],['main','Regent’s Park','玫瑰花園可選','51.5313','-0.1569']],
+    route:['Moxy Stratford','Baker Street','福爾摩斯博物館','馬里波恩高街','Regent’s Park 可選','Baker Street 回程'],
+    transport:[['🚇','Stratford → Baker Street，Jubilee Line 約 28 分鐘'],['🚶','景點間步行 10–15 分鐘'],['💷','地鐵計入每日上限；博物館門票另計']],
+    note:'今日集中在 Baker Street、Marylebone 與 Regent’s Park，步調最輕鬆。'},
+  d8:{label:'8/5（三）格林威治', area:'Greenwich', mood:'子午線與河岸小鎮', center:[51.4810,-0.0065], zoom:14, chips:['近郊感','DLR','有爬坡'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['transit','Cutty Sark DLR','抵達格林威治','51.4810','-0.0107'],['main','National Maritime Museum','航海博物館','51.4810','-0.0054'],['main','Royal Observatory Greenwich','本初子午線 / 山頂景觀','51.4769','-0.0005'],['food','Greenwich Market','午餐小吃','51.4816','-0.0096']],
+    route:['Moxy Stratford','DLR 到 Cutty Sark','Greenwich Market','航海博物館','Royal Observatory','DLR 回程'],
+    transport:[['🚇','Stratford → Cutty Sark，DLR 約 22–30 分鐘'],['🚶','市集到天文台需上坡約 15 分鐘'],['💷','DLR 計入每日上限；皇家博物館通票另計']],
+    note:'今日離開市中心，主要在 Greenwich 小鎮與公園山頂活動。'},
+  d9:{label:'8/6（四）溫莎堡', area:'Windsor / Eton', mood:'皇家近郊', center:[51.4842,-0.6060], zoom:15, chips:['近郊火車','皇家城堡','護照/票券'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['transit','Windsor & Eton Central','抵達車站','51.4830','-0.6104'],['main','Windsor Castle','上午參觀','51.4839','-0.6044'],['main','Eton / Windsor Bridge','下午散步','51.4880','-0.6098'],['food','Two Brewers Windsor','午餐/晚餐備案','51.4831','-0.6030']],
+    route:['Moxy Stratford','Paddington 換 GWR','Windsor Castle','Windsor / Eton 散步','火車回倫敦'],
+    transport:[['🚇','Stratford → Paddington，再搭 GWR 到 Windsor'],['🚂','火車段約 30–40 分鐘；Paddington 預留找月台時間'],['💷','近郊火車另購，約 NT$800–1,000/人估算']],
+    note:'今日離開倫敦市區，活動集中在 Windsor Castle 與 Eton 河畔。'},
+  d10:{label:'8/7（五）牛津大學', area:'Oxford', mood:'學院城市', center:[51.7534,-1.2564], zoom:15, chips:['近郊火車','學院參觀','石板路'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['transit','Oxford Station','抵達牛津','51.7534','-1.2701'],['main','Christ Church College','哈利波特取景重點','51.7500','-1.2550'],['main','Radcliffe Camera','外觀拍照','51.7535','-1.2540'],['food','Covered Market','午餐與休息','51.7529','-1.2571']],
+    route:['Moxy Stratford','Paddington / Marylebone 搭火車','Oxford Station','Christ Church','Radcliffe Camera / Covered Market','回倫敦'],
+    transport:[['🚂','London Paddington 或 Marylebone → Oxford，約 55–75 分鐘'],['🚌','Oxford Station 到市中心可步行 20–25 分鐘或搭公車'],['💷','火車另購；3 人可查 GroupSave / Off-Peak']],
+    note:'今日活動集中在 Oxford 市中心，兩個重點是學院與經典建築外觀。'},
+  d11:{label:'8/8（六）Bicester Village', area:'Bicester', mood:'購物村', center:[51.8916,-1.1536], zoom:15, chips:['購物日','護照退稅','低景點數'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['transit','Bicester Village Station','抵達車站','51.8930','-1.1488'],['main','Bicester Village Outlet','購物村主區域','51.8916','-1.1536'],['food','Bicester Village 餐飲區','午餐/休息','51.8911','-1.1539']],
+    route:['Moxy Stratford','London Marylebone 搭火車','Bicester Village Station','Outlet 購物','火車回倫敦'],
+    transport:[['🚂','Marylebone → Bicester Village，約 45–60 分鐘'],['🚶','車站到購物村步行約 5 分鐘'],['💷','火車另購；購物記得帶護照與信用卡']],
+    note:'今日只有購物村一個主要區域，適合把購物、退稅文件整理一起完成。'},
+  d12:{label:'8/9（日）劍橋', area:'Cambridge', mood:'學院與撐篙', center:[52.2045,0.1168], zoom:14, chips:['近郊火車','撐篙','河岸'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['transit','Cambridge Station','抵達劍橋','52.1940','0.1370'],['main','King’s College','學院與禮拜堂','52.2043','0.1166'],['main','Scudamore’s Punting','撐篙出發點','52.2026','0.1146'],['food','The Anchor / 市中心','午餐區域','52.2025','0.1138']],
+    route:['Moxy Stratford','Tottenham Hale / Liverpool Street 搭火車','Cambridge Station','King’s College','Punting','火車回倫敦'],
+    transport:[['🚂','Greater Anglia / Thameslink 到 Cambridge，約 60–75 分鐘'],['🚌','車站到市中心可搭公車 1/3/7 或步行約 25 分鐘'],['💷','火車另購；撐篙共乘另計']],
+    note:'今日活動區在 Cambridge 市中心與 River Cam 旁，火車站離中心稍遠。'},
+  d13:{label:'8/10（一）South Kensington + Harrods', area:'South Kensington / Knightsbridge', mood:'博物館與百貨', center:[51.4960,-0.1715], zoom:15, chips:['室內備案','免費博物館','伴手禮'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['main','Natural History Museum','自然史博物館','51.4967','-0.1764'],['main','V&A Museum','若改看設計精品','51.4966','-0.1722'],['main','Harrods','Food Hall / 伴手禮','51.4994','-0.1632']],
+    route:['Moxy Stratford','South Kensington','自然史博物館或 V&A','Harrods','Knightsbridge 回程'],
+    transport:[['🚇','Stratford → South Kensington，約 35–40 分鐘'],['🚌','South Kensington 到 Harrods 可步行 15 分鐘或搭短程公車'],['💷','博物館免費；交通計入每日上限']],
+    note:'今日在 South Kensington 博物館區與 Knightsbridge 百貨區，適合雨天或休息日。'},
+  d14:{label:'8/11（二）Notting Hill + Tate Modern', area:'Notting Hill / Bankside', mood:'彩色街區與現代美術', center:[51.5090,-0.1530], zoom:12, chips:['跨區移動','市集街拍','免費美術館'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['main','Portobello Road Market','Notting Hill 彩色街區','51.5154','-0.2051'],['main','Tate Modern','下午美術館/觀景台','51.5076','-0.0994'],['food','Shoreditch / Westfield 晚餐','晚餐備案','51.5232','-0.0758']],
+    route:['Moxy Stratford','Notting Hill Gate','Portobello Road','Tate Modern','Shoreditch 或 Stratford 晚餐'],
+    transport:[['🚇','Stratford → Notting Hill Gate，Central Line 約 30 分鐘'],['🚇','Notting Hill → Blackfriars / St Paul’s，再步行到 Tate'],['💷','市區交通計入每日上限']],
+    note:'今日會橫跨西倫敦 Notting Hill 與南岸 Tate Modern，移動距離比其他市區日長。'},
+  d15:{label:'8/12（三）碎片塔 + 補位半日', area:'London Bridge', mood:'高空景觀與補位', center:[51.5047,-0.0865], zoom:15, chips:['天氣決策','高空景觀','補位日'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['main','The Shard','天氣好再上觀景台','51.5045','-0.0865'],['food','London Bridge / Borough','午餐與補位','51.5055','-0.0910']],
+    route:['Moxy Stratford','London Bridge','The Shard','Borough / 補位景點','回 Stratford'],
+    transport:[['🚇','Stratford → London Bridge，Jubilee Line 約 20 分鐘'],['🚶','London Bridge 站到 The Shard 幾乎出站即到'],['💷','交通計入每日上限；碎片塔門票視天氣決定']],
+    note:'今日活動範圍很集中，保留彈性補前面沒完成的景點。'},
+  d16:{label:'8/13（四）King’s Cross + Camden', area:'King’s Cross / Camden', mood:'哈利波特與市集', center:[51.5370,-0.1330], zoom:14, chips:['最後完整日','市集','晚上打包'],
+    stops:[['home','Moxy London Stratford','出發/回程','51.5461','-0.0086'],['main','King’s Cross 9¾ Platform','哈利波特拍照點','51.5321','-0.1233'],['main','Regent’s Canal Walk','可步行到 Camden','51.5385','-0.1326'],['food','Camden Market','午餐/街頭文化','51.5413','-0.1464']],
+    route:['Moxy Stratford','King’s Cross','9¾ 月台','攝政運河或公車','Camden Market','回 Stratford 打包'],
+    transport:[['🚇','Stratford → King’s Cross St Pancras，約 25–35 分鐘'],['🚌','King’s Cross 到 Camden 可搭公車或 Northern Line；也可沿運河步行約 35–45 分鐘'],['💷','市區交通計入每日上限；晚上回飯店整理行李']],
+    note:'今日集中在北倫敦，白天完整玩，晚上回 Stratford 打包與秤重。'},
+  d17:{label:'8/14（五）離境回台', area:'Stratford → Heathrow', mood:'最後補給與機場', center:[51.5075,-0.2250], zoom:10, chips:['離境日','寄放行李','退稅'],
+    stops:[['home','Moxy London Stratford','退房與寄放行李','51.5461','-0.0086'],['main','Queen Elizabeth Olympic Park','輕鬆散步可選','51.5433','-0.0166'],['food','Westfield Stratford City','最後午餐/伴手禮','51.5431','-0.0065'],['transit','Heathrow Airport','17:00 抵達，退稅/托運/安檢','51.4700','-0.4543']],
+    route:['Moxy 退房寄行李','Olympic Park 或 Westfield','取行李','Elizabeth Line 到 Heathrow','21:10 起飛'],
+    transport:[['🚇','16:00 Stratford 搭 Elizabeth Line → Heathrow，約 50–55 分鐘'],['💷','Heathrow 特殊票價約 £13.90 起；Heathrow Express 可作備案但較貴'],['🧾','到機場先處理退稅，再托運與安檢']],
+    note:'今日只在 Stratford 周邊短暫活動，下午直接前往 Heathrow，避免拖著行李跑市區。'}
+};
+let activeMapDayId = 'd1';
+function mapStopTypeClass(type){
+  if(type === 'home') return 'home';
+  if(type === 'food') return 'food';
+  if(type === 'transit') return 'transit';
+  return 'main';
+}
+function buildGoogleRouteUrl(dayId){
+  const d = MAP_DAY_DATA[dayId] || MAP_DAY_DATA.d1;
+  const stops = d.stops;
+  if(stops.length < 2) return 'https://maps.google.com';
+  const origin = `${stops[0][3]},${stops[0][4]}`;
+  const destination = `${stops[stops.length-1][3]},${stops[stops.length-1][4]}`;
+  const waypoints = stops.slice(1,-1).map(s=>`${s[3]},${s[4]}`).join('|');
+  return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}&travelmode=transit${waypoints?`&waypoints=${encodeURIComponent(waypoints)}`:''}`;
+}
+function buildGoogleEmbedUrl(dayId){
+  const d = MAP_DAY_DATA[dayId] || MAP_DAY_DATA.d1;
+  const stops = d.stops;
+  if(stops.length < 2){
+    return `https://www.google.com/maps?q=${encodeURIComponent(d.area)}&output=embed`;
+  }
+  const origin = `${stops[0][3]},${stops[0][4]}`;
+  const destination = `${stops[stops.length-1][3]},${stops[stops.length-1][4]}`;
+  const waypoints = stops.slice(1,-1).map(s=>`${s[3]},${s[4]}`).join('|');
+  return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}&travelmode=transit${waypoints?`&waypoints=${encodeURIComponent(waypoints)}`:''}&output=embed`;
+}
+function initMapDateButtons(){
+  const wrap = document.getElementById('mapDateButtons');
+  if(!wrap || wrap.dataset.ready) return;
+  Object.entries(MAP_DAY_DATA).forEach(([id,d])=>{
+    const b=document.createElement('button');
+    b.type='button'; b.className='map-date-btn'; b.dataset.mapDay=id;
+    b.textContent=d.label.split('（')[0];
+    b.addEventListener('click',()=>renderMapDay(id));
+    wrap.appendChild(b);
+  });
+  wrap.dataset.ready='1';
+}
+function initDailyMap(){
+  initMapDateButtons();
+  const fallback = document.getElementById('mapFallback');
+  if(fallback) fallback.classList.remove('active');
+  return true;
+}
+function renderFallbackCards(dayId){
+  const grid = document.getElementById('mapFallbackGrid');
+  const d = MAP_DAY_DATA[dayId] || MAP_DAY_DATA.d1;
+  if(!grid) return;
+  grid.innerHTML = d.stops.map((s,i)=>`<div class="map-fallback-card"><strong>${i+1}. ${s[1]}</strong><br><span>${s[2]}</span><br><a href="https://maps.google.com/?q=${encodeURIComponent(s[1])}" target="_blank" rel="noopener">Google Maps</a></div>`).join('');
+}
+function renderGoogleMapPreview(dayId){
+  const wrap = document.getElementById('dailyMap');
+  const d = MAP_DAY_DATA[dayId] || MAP_DAY_DATA.d1;
+  if(!wrap) return;
+  const chips = d.stops.map((s,i)=>`<div class="map-point-chip ${mapStopTypeClass(s[0])}"><span class="map-point-num">${i+1}</span><div><div class="map-point-name">${s[1]}</div><div class="map-point-meta">${s[2]}</div></div></div>`).join('');
+  wrap.innerHTML = `<iframe class="google-map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${buildGoogleEmbedUrl(dayId)}" onerror="document.getElementById('mapFallback')?.classList.add('active')"></iframe><div class="map-map-note">Google Maps 預覽</div><div class="map-point-overlay">${chips}</div>`;
+}
+function renderMapDay(dayId){
+  activeMapDayId = dayId || activeMapDayId || getActiveDayId();
+  const d = MAP_DAY_DATA[activeMapDayId] || MAP_DAY_DATA.d1;
+  initMapDateButtons();
+  document.querySelectorAll('.map-date-btn').forEach(b=>b.classList.toggle('active', b.dataset.mapDay===activeMapDayId));
+  document.getElementById('mapDayTitle').textContent = d.label;
+  document.getElementById('mapDaySubtitle').textContent = `${d.area}｜${d.mood}`;
+  document.getElementById('mapChips').innerHTML = d.chips.map(c=>`<span class="map-chip">${c}</span>`).join('');
+  document.getElementById('mapStopList').innerHTML = d.stops.map((s,i)=>`<div class="map-stop"><span class="map-pin-num">${i+1}</span><div><div class="map-stop-name">${s[1]}</div><div class="map-stop-meta">${s[2]}</div></div></div>`).join('');
+  document.getElementById('mapRouteList').innerHTML = d.route.map((r,i)=>`<div class="map-route-step"><span class="icon">${i===0?'🏁':'↓'}</span><span>${r}</span></div>`).join('');
+  document.getElementById('mapTransportList').innerHTML = d.transport.map(t=>`<div class="map-route-step"><span class="icon">${t[0]}</span><span>${t[1]}</span></div>`).join('');
+  document.getElementById('mapGoogleRoute').href = buildGoogleRouteUrl(activeMapDayId);
+  document.getElementById('mapAreaTitle').textContent = `今日重點區域：${d.area}`;
+  document.getElementById('mapAreaText').textContent = d.note;
+  renderFallbackCards(activeMapDayId);
+  initDailyMap();
+  renderGoogleMapPreview(activeMapDayId);
+}
+function copyMapDaySummary(){
+  const d = MAP_DAY_DATA[activeMapDayId] || MAP_DAY_DATA.d1;
+  const text = `${d.label}\n活動區域：${d.area}\n重點：${d.mood}\n地點：\n${d.stops.map((s,i)=>`${i+1}. ${s[1]} — ${s[2]}`).join('\n')}\n交通：\n${d.transport.map(t=>`${t[0]} ${t[1]}`).join('\n')}`;
+  navigator.clipboard?.writeText(text).then(()=>alert('已複製今日地圖摘要')).catch(()=>prompt('請手動複製今日地圖摘要', text));
+}
 const WEATHER_CODES = {0:'晴朗',1:'大致晴朗',2:'局部多雲',3:'陰天',45:'霧',48:'霧凇',51:'毛毛雨',53:'毛毛雨',55:'較強毛毛雨',61:'小雨',63:'中雨',65:'大雨',71:'小雪',73:'中雪',75:'大雪',80:'陣雨',81:'較強陣雨',82:'強陣雨',95:'雷雨',96:'雷雨伴冰雹',99:'強雷雨伴冰雹'};
 const weatherCache = {};
 function getActiveDayId(){
@@ -1814,28 +2093,47 @@ function copyDaySummary(dayId){
 function showTab(id, btn) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
+  const target = document.getElementById(id);
+  if (target) target.classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (id === 'mapview') {
+    initDailyMap();
+    renderMapDay(getActiveDayId());
+  }
   window.scrollTo(0, 0);
 }
 function switchDay(id, btn) {
+  const mapWasActive = document.getElementById('mapview')?.classList.contains('active');
+  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.day-nav-btn').forEach(b => b.classList.remove('active'));
+  const panel = document.getElementById(id);
+  if (panel) panel.classList.add('active');
+  if (btn) btn.classList.add('active');
+  updateWeather(id);
+  if (mapWasActive) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    const mapSection = document.getElementById('mapview');
+    if (mapSection) mapSection.classList.add('active');
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    const mapTab = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.textContent.includes('地圖總覽'));
+    if (mapTab) mapTab.classList.add('active');
+    renderMapDay(id);
+    window.scrollTo(0, 120);
+    return;
+  }
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   const itinerary = document.getElementById('itinerary');
   if (itinerary) itinerary.classList.add('active');
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   const firstTab = document.querySelector('.tab-btn');
   if (firstTab) firstTab.classList.add('active');
-  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.day-nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-  updateWeather(id);
   window.scrollTo(0, 120);
 }
 document.getElementById('d1').classList.add('active');
 initAskButtons();
 updateWeather('d1');
 persistTripInputs();
+initMapDateButtons();
 </script>
 </body>
 </html>
