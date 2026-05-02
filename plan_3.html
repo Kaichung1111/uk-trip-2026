@@ -93,6 +93,18 @@ nav::-webkit-scrollbar{display:none;}
 .buy-btn{display:inline-block;background:var(--gold);color:var(--navy);font-size:0.68rem;padding:2px 8px;border-radius:4px;text-decoration:none;font-weight:700;}
 @media(max-width:500px){header h1{font-size:1.45rem;}.section{padding:0.85rem;}.tl-time{min-width:56px;font-size:0.68rem;}.day-theme-tag{display:none;}}
 
+.flight-card{background:#f7fbff;border:1px solid #bfd7f5;border-radius:12px;padding:0.9rem 1rem;margin:0 0 1rem 0;}
+.flight-card h3{font-size:0.92rem;color:var(--navy);margin-bottom:0.5rem;}
+.flight-grid{display:grid;grid-template-columns:1fr;gap:0.55rem;}
+.flight-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid #e2ecf8;border-radius:8px;padding:0.65rem 0.75rem;font-size:0.82rem;}
+.flight-air{font-weight:700;color:var(--navy);}
+.flight-time{color:var(--blue);font-weight:700;}
+.flow-check{background:#eef8f1;border:1px solid #bfe5c9;border-radius:8px;padding:0.65rem 0.85rem;margin:0.7rem 1.1rem;font-size:0.8rem;color:#1b5e20;line-height:1.65;}
+.choice-grid{display:grid;grid-template-columns:1fr;gap:0.55rem;margin-top:0.55rem;}
+.choice-card{border:1px solid var(--border);border-radius:8px;padding:0.65rem 0.75rem;background:#fffdf8;font-size:0.82rem;line-height:1.6;}
+.choice-card strong{color:var(--navy);}
+
+
 /* ============ VERSION SWITCHER ============ */
 .version-switcher {
   background: #0d1117;
@@ -154,45 +166,80 @@ nav::-webkit-scrollbar{display:none;}
 
 <section id="itinerary" class="section active">
 <div class="notice"><strong>&#127968; 住宿：</strong>Moxy London Stratford &nbsp;·&nbsp; 5 Celebration Ave, London E20 1DB &nbsp;<a class="map-btn" href="https://maps.google.com/?q=Moxy+London+Stratford" target="_blank">&#128205; 飯店位置</a></div>
+<div class="flight-card">
+  <h3>✈️ 航班資訊</h3>
+  <div class="flight-grid">
+    <div class="flight-row"><span class="flight-air">去程｜台北 TPE → London Heathrow LHR</span><span class="flight-time">2026/7/29 08:50 → 16:30</span></div>
+    <div class="flight-row"><span class="flight-air">回程｜London Heathrow LHR → 台北 TPE</span><span class="flight-time">2026/8/14 21:10 → 2026/8/15 08:05</span></div>
+  </div>
+  <div class="tip-box">註：原始資料的回程抵台日期寫成 5Aug2026，與 8/14 倫敦起飛不一致；此版先按跨日航班修正為 2026/8/15 08:05 抵台。</div>
+</div>
 <div class="day-nav"><button class="day-nav-btn active" onclick="switchDay('d1',this)">7/29</button><button class="day-nav-btn" onclick="switchDay('d2',this)">7/30</button><button class="day-nav-btn" onclick="switchDay('d3',this)">7/31</button><button class="day-nav-btn" onclick="switchDay('d4',this)">8/1</button><button class="day-nav-btn" onclick="switchDay('d5',this)">8/2</button><button class="day-nav-btn" onclick="switchDay('d6',this)">8/3</button><button class="day-nav-btn" onclick="switchDay('d7',this)">8/4</button><button class="day-nav-btn" onclick="switchDay('d8',this)">8/5</button><button class="day-nav-btn" onclick="switchDay('d9',this)">8/6</button><button class="day-nav-btn" onclick="switchDay('d10',this)">8/7</button><button class="day-nav-btn" onclick="switchDay('d11',this)">8/8</button><button class="day-nav-btn" onclick="switchDay('d12',this)">8/9</button><button class="day-nav-btn" onclick="switchDay('d13',this)">8/10-11</button><button class="day-nav-btn" onclick="switchDay('d14',this)">8/12-13</button><button class="day-nav-btn" onclick="switchDay('d15',this)">8/14</button></div>
 <div id="dayPanels"><div class="day-panel" id="d1">
     <div class="day-header-bar">
       <span class="day-num-badge">7/29</span>
       <span class="day-main-title">抵達倫敦</span>
-      <span class="day-theme-tag">入境日</span>
+      <span class="day-theme-tag">入境日｜晚餐與熟悉環境</span>
     </div>
     <div class="day-body">
       <div class="day-summary">
         <div class="ds-row">
-          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">3 站</span></div>
-          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">免費</span></div>
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">2 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">交通 + 晚餐</span></div>
           <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">輕鬆</span></div>
         </div>
       </div>
+      <div class="flow-check">✅ 流程檢查：原本「下午逛 Westfield」不符合 16:30 抵達航班；已改成晚間 Check-in、吃晚餐、買水與早餐、早休息調時差。</div>
       <div class="timeline"><div class="tl-item">
-      <div class="tl-time">機場</div>
+      <div class="tl-time">08:50</div>
       <div class="tl-content">
-        <div class="tl-title">✈️ 機場 → 飯店交通  </div>
-        <div class="tl-desc">搭 Elizabeth Line 直達。找尋紫色 (Purple) 標示，車廂現代且有冷氣。</div><div class="transport-card">
+        <div class="tl-title">✈️ 去程航班：台北 → London Heathrow</div>
+        <div class="tl-desc">TAIPEI 08:50 29Jul2026 → LONDON HEATHROW 16:30 29Jul2026。</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">16:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🛬 抵達 Heathrow：通關、領行李</div>
+        <div class="tl-desc">夏季 Heathrow 入境與行李時間建議抓 1.5–2 小時；先不要安排市區景點。</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">下機後跟著 <strong>Arrivals / Passport Control</strong> 指標走</span></div><div class="step"><span class="step-num">2</span><span class="step-text">通關後到行李轉盤領行李，確認 3 人行李都到齊</span></div><div class="step"><span class="step-num">3</span><span class="step-text">出關後先上洗手間、整理外套與交通卡，不急著衝車站</span></div></div>
+        <div class="tip-box">若排隊超過預期，直接刪掉 Westfield 逛街，只保留晚餐與買水。</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">18:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🚇 Heathrow → Moxy Stratford 飯店</div>
+        <div class="tl-desc">搭 Elizabeth Line 直達 Stratford，車程約 50–55 分鐘；不需要轉車，最適合剛抵達帶行李。</div><div class="transport-card">
     <div class="tc-title">🚇 Heathrow → Stratford（Elizabeth Line）</div>
     <div class="transport-route"><span class="tr-station">Heathrow T2/3</span><span class="tr-arrow">→</span><span class="tr-line">Elizabeth Line（紫色）</span><span class="tr-arrow">→</span><span class="tr-station">Stratford</span></div>
     <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
-      <span class="tr-duration">⏱ 約 50 分鐘</span>
-      <span class="tr-cost">💰 約 £5.50（Contactless）</span>
+      <span class="tr-duration">⏱ 約 50–55 分鐘</span>
+      <span class="tr-cost">💰 Contactless / Oyster</span>
     </div>
-  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">下飛機後跟著 <strong>Underground / Tube</strong> 指標走，不要跟 Taxi 指標</span></div><div class="step"><span class="step-num">2</span><span class="step-text">找到地鐵閘門，<strong>第一次</strong>感應信用卡或 Oyster Card 進站</span></div><div class="step"><span class="step-num">3</span><span class="step-text">找 <strong>Elizabeth Line（紫色）</strong> 月台，搭往 <strong>Shenfield / Reading</strong> 方向的班車，車頭會顯示終點站</span></div><div class="step"><span class="step-num">4</span><span class="step-text">在 <strong>Stratford</strong> 站下車，感應卡出站</span></div><div class="step"><span class="step-num">5</span><span class="step-text">出站後往 <strong>Westfield Stratford City</strong> 方向，Moxy Hotel 步行約 5 分鐘</span></div><div class="step"><span class="step-num">6</span><span class="step-text">抵達飯店 Check-in，放行李</span></div></div><div class="tip-box">行李重先 Check-in 放行李再出門</div><div class="tip-box">坐錯方向車：下一站出來換對面月台就好</div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">找 <strong>Elizabeth Line（紫色）</strong> 指標，不要走 Taxi 指標</span></div><div class="step"><span class="step-num">2</span><span class="step-text">感應信用卡或 Oyster Card 進站</span></div><div class="step"><span class="step-num">3</span><span class="step-text">確認班車可到 <strong>Stratford</strong>，上車後保留行李在身邊</span></div><div class="step"><span class="step-num">4</span><span class="step-text">Stratford 出站後往 <strong>Westfield Stratford City / Moxy Hotel</strong> 方向，步行約 5 分鐘</span></div></div>
       </div>
     </div><div class="tl-item">
-      <div class="tl-time">下午</div>
+      <div class="tl-time">19:30</div>
       <div class="tl-content">
-        <div class="tl-title">🛒 Westfield Stratford City 熟悉環境  <a class="map-btn" href="https://maps.google.com/?q=Westfield+Stratford+City" target="_blank">📍 Maps</a></div>
-        <div class="tl-desc">飯店旁大型購物中心，辦好各種事</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">找 <strong>Three 或 EE</strong> 電信門市買英國 SIM 卡（如台灣沒買），約 £10-15</span></div><div class="step"><span class="step-num">2</span><span class="step-text">找地鐵站買 Oyster Card（不用信用卡 Contactless 的話）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">逛 Marks & Spencer Food Hall，買隔天早餐</span></div><div class="step"><span class="step-num">4</span><span class="step-text">熟悉環境，走路到飯店練習路線</span></div></div><div class="tip-box">Westfield 每天開到晚上 9 點</div><div class="tip-box">SIM 卡裝上先確認能上網才離開</div>
+        <div class="tl-title">🏨 Moxy Stratford Check-in</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">出示護照與訂房確認信，辦理入住</span></div><div class="step"><span class="step-num">2</span><span class="step-text">先放行李、簡單盥洗，確認 Wi‑Fi、充電與隔天出門物品</span></div></div>
       </div>
     </div><div class="tl-item">
-      <div class="tl-time">晚餐</div>
+      <div class="tl-time">20:00</div>
       <div class="tl-content">
-        <div class="tl-title">🍜 晚餐：Wagamama（Westfield 內）  <a class="map-btn" href="https://maps.google.com/?q=Wagamama+Stratford+Westfield" target="_blank">📍 Maps</a></div>
-        <div class="tl-desc">日式拉麵，圖文菜單，英文不好完全沒問題</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">進門站入口等，服務生過來說 <strong>"Table for 3, please"</strong></span></div><div class="step"><span class="step-num">2</span><span class="step-text">菜單有圖片，指圖片點餐</span></div><div class="step"><span class="step-num">3</span><span class="step-text">結帳說 <strong>"Can I get the bill, please?"</strong></span></div><div class="step"><span class="step-num">4</span><span class="step-text">信用卡 Contactless 付款</span></div></div>
+        <div class="tl-title">🍜 晚餐：Wagamama（Westfield 內） <a class="map-btn" href="https://maps.google.com/?q=Wagamama+Stratford+Westfield" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">抵達日只排飯店旁晚餐，降低迷路與體力消耗。</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">進門說 <strong>“Table for 3, please.”</strong></span></div><div class="step"><span class="step-num">2</span><span class="step-text">用圖文菜單點餐，想保守就點拉麵、飯類或雞肉料理</span></div><div class="step"><span class="step-num">3</span><span class="step-text">結帳說 <strong>“Can I get the bill, please?”</strong></span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">20:45</div>
+      <div class="tl-content">
+        <div class="tl-title">🛒 Westfield 熟悉環境 + 超市補給 <a class="map-btn" href="https://maps.google.com/?q=Westfield+Stratford+City" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">不安排正式購物，只買隔天早餐、水、簡單零食。</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">到 <strong>M&amp;S Food Hall / Waitrose</strong> 買早餐、飲用水、優格或水果</span></div><div class="step"><span class="step-num">2</span><span class="step-text">若台灣沒先買 SIM，才去 Three / EE 詢問；太累就改隔天再處理</span></div><div class="step"><span class="step-num">3</span><span class="step-text">走回飯店，熟悉 Westfield ↔ Moxy 的步行路線</span></div></div><div class="tip-box">Westfield 多數店鋪平日約 21:00 關門；抵達日不要硬逛，補給完就回飯店。</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">21:30</div>
+      <div class="tl-content">
+        <div class="tl-title">😴 回房休息、調時差</div>
+        <div class="tl-desc">整理隔天票券、行動電源、雨具與交通卡；早睡比多跑一個景點更重要。</div>
       </div>
     </div></div>
     </div>
@@ -921,43 +968,85 @@ nav::-webkit-scrollbar{display:none;}
     <div class="day-header-bar">
       <span class="day-num-badge">8/10-11</span>
       <span class="day-main-title">彈性備用日×2</span>
-      <span class="day-theme-tag">自由安排</span>
+      <span class="day-theme-tag">確認行程 + 雨天備案</span>
     </div>
     <div class="day-body">
       <div class="day-summary">
         <div class="ds-row">
-          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">依選擇 站</span></div>
-          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">依選擇</span></div>
-          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">依選擇</span></div>
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">每日 3–4 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">多數免費，可加音樂劇</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">可高可低</span></div>
         </div>
       </div>
+      <div class="flow-check">✅ 流程檢查：原本兩天太空，遇到延誤會不知道怎麼排；已改成「一個市區補完日 + 一個表演/購物/休息日」，並保留可替換彈性。</div>
       <div class="timeline"><div class="tl-item">
-      <div class="tl-time">兩天</div>
+      <div class="tl-time">8/10</div>
       <div class="tl-content">
-        <div class="tl-title">💡 彈性日建議選項  </div>
-        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">補跑前幾天沒去完的景點，或天氣不好時改到的景點</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>西區音樂劇</strong>：Leicester Square 的 TKTS Booth 排隊買當天折扣票（The Lion King、Mamma Mia 等）</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>Victoria & Albert Museum（V&A）</strong>：設計和藝術，免費，South Kensington</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>肯辛頓宮 Kensington Palace</strong>：Diana 王妃紀念展</span></div><div class="step"><span class="step-num">5</span><span class="step-text"><strong>Hampstead Heath</strong>：北倫敦爬山，免費，俯瞰整個倫敦，搭 Northern Line</span></div><div class="step"><span class="step-num">6</span><span class="step-text">在 Westfield Stratford 消磨一天，最後採購</span></div><div class="step"><span class="step-num">7</span><span class="step-text">完全休息充電</span></div></div>
+        <div class="tl-title">🧭 彈性日 A：市區補完與輕量景點</div>
+        <div class="tl-desc">優先補前幾天沒完成的景點；若都順利，建議排 V&amp;A 博物館 + Kensington Gardens。</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>10:00 V&amp;A 博物館</strong>：設計、時尚、工藝收藏，免費，和自然史博物館同區但主題不同</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>12:30 South Kensington 午餐</strong>：咖啡館或 Pret，避免太重口味</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>14:00 Kensington Gardens / Kensington Palace 外觀</strong>：散步、拍照、降低疲勞</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>16:30 回 Stratford 或改去 Covent Garden</strong>：視體力決定</span></div></div>
+        <div class="choice-grid"><div class="choice-card"><strong>雨天版：</strong>V&amp;A → Science Museum → Harrods Food Hall，全程室內為主。</div><div class="choice-card"><strong>體力好版：</strong>V&amp;A 後加 Hyde Park、Kensington Palace 入內參觀。</div><div class="choice-card"><strong>延誤補跑版：</strong>把白金漢宮、西敏寺、倫敦塔、溫莎堡等未完成項目移到這天。</div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">8/11</div>
+      <div class="tl-content">
+        <div class="tl-title">🎭 彈性日 B：西區音樂劇 / 市集 / 休息</div>
+        <div class="tl-desc">這天適合安排晚間活動；白天不要排太滿，避免連續多日疲勞。</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>10:30 慢起床 + 洗衣/整理票券</strong>：檢查退稅收據與近郊火車票</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>12:00 King's Cross / St Pancras 外觀</strong>：可先拍 9¾ 月台，若排隊太長就只逛商店</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>14:00 Camden Market</strong>：沿 Regent’s Canal 或搭地鐵前往，吃街頭小吃、看街頭文化</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>19:30 西區音樂劇</strong>：可提前訂票，或下午去 Leicester Square TKTS 買當日折扣票</span></div></div>
+        <div class="choice-grid"><div class="choice-card"><strong>不看音樂劇：</strong>Camden Market 後回 Stratford，晚上 Westfield 採買。</div><div class="choice-card"><strong>親子/輕鬆版：</strong>King's Cross → Coal Drops Yard → Regent’s Canal 散步，不進太多店。</div><div class="choice-card"><strong>疲勞版：</strong>上午完全休息，下午只去 Westfield + 晚餐。</div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">決策規則</div>
+      <div class="tl-content">
+        <div class="tl-title">✅ 彈性日使用順序</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">若前面有付費票景點沒去成，<strong>優先補付費票</strong></span></div><div class="step"><span class="step-num">2</span><span class="step-text">若天氣差，選 V&amp;A / Science Museum / Harrods / Westfield 等室內點</span></div><div class="step"><span class="step-num">3</span><span class="step-text">若大家體力下降，保留半天休息，不要再塞近郊</span></div><div class="step"><span class="step-num">4</span><span class="step-text">若全部順利，再加 King's Cross、Camden Market、Hampstead Heath 或音樂劇</span></div></div>
       </div>
     </div></div>
     </div>
   </div><div class="day-panel" id="d14">
     <div class="day-header-bar">
       <span class="day-num-badge">8/12-13</span>
-      <span class="day-main-title">最後採購 + 整理</span>
-      <span class="day-theme-tag">收尾</span>
+      <span class="day-main-title">收尾兩日：最後採購 + 起飛前一天完整行程</span>
+      <span class="day-theme-tag">收尾不浪費</span>
     </div>
     <div class="day-body">
       <div class="day-summary">
         <div class="ds-row">
-          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">-- 站</span></div>
-          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">購物預算</span></div>
-          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">輕鬆</span></div>
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">3–5 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">購物預算 + 可選景點</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">8/12 輕鬆｜8/13 中等</span></div>
         </div>
       </div>
+      <div class="flow-check">✅ 流程檢查：原本 8/13 整天只打包太浪費；已改成白天可完整出門、晚上 19:00 後再回 Stratford 打包秤重。</div>
       <div class="timeline"><div class="tl-item">
-      <div class="tl-time">最後兩天</div>
+      <div class="tl-time">8/12</div>
       <div class="tl-content">
-        <div class="tl-title">🛍️ 最後採購重點  </div>
-        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>Westfield Stratford</strong>（飯店旁）：Boots 藥妝（Bio-Oil、Nurofen、Lemsip）、M&S 食品</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>伴手禮清單</strong>：Harrods 鐵盒茶包、Cadbury 巧克力、McVitie's 餅乾、Fortnum & Mason 果醬</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>行李重量</strong>：超重費很貴（每公斤 £20-50），先秤重再打包</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>退稅準備</strong>：整理 Bicester Village 和其他超過 £50 的購物收據</span></div></div><div class="tip-box">最後一晚把行李秤重，超重把重的東西分到隨身行李（固體可以，不超過 100ml 液體）</div>
+        <div class="tl-title">🛍️ 最後採購與收據整理日</div>
+        <div class="tl-desc">把重物和必買伴手禮集中在 Stratford 解決，避免提著跑市區。</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>上午：</strong>Westfield Stratford 的 Boots、M&amp;S、Waitrose 採買藥妝、茶、巧克力、餅乾</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>下午：</strong>回飯店先分裝、初步秤重，液體與易碎品先集中</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>晚上：</strong>整理 Bicester Village 與大型購物收據，退稅文件放同一個資料夾</span></div></div>
+        <div class="tip-box">8/12 先做第一次秤重，8/13 晚上還有時間微調，不要拖到出發日才整理。</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">8/13 上午</div>
+      <div class="tl-content">
+        <div class="tl-title">🚉 完整行程選項 A：King's Cross → Camden Market</div>
+        <div class="tl-desc">適合哈利波特拍照、街頭文化、市集小吃；動線順，不需走回頭路。</div>
+        <div class="transport-card"><div class="tc-title">🚇 Stratford → King's Cross → Camden</div><div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">Central / Elizabeth + 轉乘</span><span class="tr-arrow">→</span><span class="tr-station">King's Cross</span><span class="tr-arrow">→</span><span class="tr-line">Northern Line / Regent’s Canal</span><span class="tr-arrow">→</span><span class="tr-station">Camden Town</span></div><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px"><span class="tr-duration">⏱ 約 35–45 分鐘</span><span class="tr-cost">💰 計入每日上限</span></div></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>10:00 King's Cross 9¾ 月台</strong>：先拍照，排隊太長就只逛商店</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>11:30 Coal Drops Yard</strong>：設計商店、咖啡、拍照</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>12:30 Regent’s Canal → Camden</strong>：體力好就沿運河散步；不想走就搭 Northern Line</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>13:30 Camden Market 午餐</strong>：街頭小吃選擇多，適合分食</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">8/13 備選</div>
+      <div class="tl-content">
+        <div class="tl-title">🏛️ 完整行程選項 B：V&amp;A 博物館 / 室內舒適版</div>
+        <div class="tl-desc">若天氣差、大家想冷氣室內、或前面沒去 V&amp;A，改走這版。</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">10:00 抵達 South Kensington，參觀 <strong>V&amp;A Museum</strong></span></div><div class="step"><span class="step-num">2</span><span class="step-text">12:30 South Kensington 午餐</span></div><div class="step"><span class="step-num">3</span><span class="step-text">14:00 Harrods Food Hall 補買高級伴手禮或茶葉</span></div><div class="step"><span class="step-num">4</span><span class="step-text">16:00 回 Stratford，避免太晚提購物袋搭地鐵</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">8/13 晚上</div>
+      <div class="tl-content">
+        <div class="tl-title">🧳 19:00 後：回飯店打包與秤重</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">回 Stratford 後吃晚餐，再回 Moxy 整理行李</span></div><div class="step"><span class="step-num">2</span><span class="step-text">把重物分到托運與手提；液體超過 100ml 必須托運</span></div><div class="step"><span class="step-num">3</span><span class="step-text">退稅文件、護照、機票、信用卡放隨身包最外層</span></div><div class="step"><span class="step-num">4</span><span class="step-text">確認隔天退房、寄放行李、前往 Heathrow 的路線</span></div></div>
+        <div class="tip-box">若發現超重，還有一晚可調整；比 8/14 下午在機場才處理安全很多。</div>
       </div>
     </div></div>
     </div>
@@ -965,28 +1054,67 @@ nav::-webkit-scrollbar{display:none;}
     <div class="day-header-bar">
       <span class="day-num-badge">8/14</span>
       <span class="day-main-title">離境回台</span>
-      <span class="day-theme-tag">回家</span>
+      <span class="day-theme-tag">從容最後半天｜21:10 起飛</span>
     </div>
     <div class="day-body">
       <div class="day-summary">
         <div class="ds-row">
-          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">-- 站</span></div>
-          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">交通</span></div>
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">1–2 站輕量</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">交通 + 午餐</span></div>
           <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">輕鬆</span></div>
         </div>
       </div>
+      <div class="flow-check">✅ 流程檢查：21:10 起飛，建議 17:00 抵達 Heathrow；若要退稅，抓起飛前 4 小時到機場較穩。最後半天只排 Stratford 周邊，不再進市中心。</div>
       <div class="timeline"><div class="tl-item">
-      <div class="tl-time">起飛前3小時出門</div>
+      <div class="tl-time">09:00-11:00</div>
       <div class="tl-content">
-        <div class="tl-title">✈️ 飯店 → Heathrow 機場  </div>
+        <div class="tl-title">🌤️ 悠閒起床、退房、寄放行李</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">睡到自然醒，確認護照、機票、退稅文件、信用卡在隨身包</span></div><div class="step"><span class="step-num">2</span><span class="step-text">辦理 Check-out，將大件行李寄放在 Moxy 飯店櫃檯</span></div><div class="step"><span class="step-num">3</span><span class="step-text">行李牌拍照存手機，避免領取時找不到</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">11:00-14:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🚶 最後半天：兩個低風險選項</div>
+        <div class="choice-grid"><div class="choice-card"><strong>選項 A｜自然放鬆：</strong>步行前往 <strong>Queen Elizabeth Olympic Park</strong> 散步，天氣好時很漂亮，且不會像市區那麼擁擠。</div><div class="choice-card"><strong>選項 B｜伴手禮衝刺：</strong>在 Westfield 的 <strong>Boots / M&amp;S / Waitrose</strong> 補買茶葉、巧克力、保養品；買完直接回飯店塞進行李箱。</div></div>
+        <div class="tip-box">這天不要再去大英博物館、Camden、Harrods 這類市中心點，避免交通延誤影響班機。</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">14:30-15:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🍗 離開前午晚餐：Stratford 周邊</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>Nando’s</strong>：葡式烤雞，點餐簡單、份量穩</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>Flat Iron / 平價牛排類餐廳</strong>：若 Westfield 當天有合適分店或鄰近選項</span></div><div class="step"><span class="step-num">3</span><span class="step-text">避免吃太油或太辣，準備長途飛行</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">15:30-16:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🧳 提取行李，步行至 Stratford 車站</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">回 Moxy 領行李，確認護照與退稅文件不要放托運箱</span></div><div class="step"><span class="step-num">2</span><span class="step-text">步行至 Stratford 車站，預留電梯排隊與找月台時間</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">16:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🚇 搭 Elizabeth Line 前往 Heathrow</div>
         <div class="transport-card">
     <div class="tc-title">🚇 Stratford → Heathrow（Elizabeth Line）</div>
-    <div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">Elizabeth Line（紫色）直達</span><span class="tr-arrow">→</span><span class="tr-station">Heathrow T2/3/4/5</span></div>
+    <div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">Elizabeth Line（紫色）直達</span><span class="tr-arrow">→</span><span class="tr-station">Heathrow T2/T3/T4/T5</span></div>
     <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
-      <span class="tr-duration">⏱ 約 50 分鐘</span>
-      <span class="tr-cost">💰 約 £5.50</span>
+      <span class="tr-duration">⏱ 約 50–55 分鐘</span>
+      <span class="tr-cost">💰 Contactless / Oyster</span>
     </div>
-  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">飛機起飛前 <strong>3 小時</strong> 出門（Heathrow 安檢常排 60-90 分鐘）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">確認機票上的 Terminal 號碼（T2 / T3 / T4 / T5）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">搭 Elizabeth Line 往 <strong>Heathrow</strong> 方向（確認是往 Reading/Heathrow 的班次）</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>退 Oyster Card 押金（£7）</strong>：機場地鐵站自動售票機 → Oyster → Get Refund</span></div><div class="step"><span class="step-num">5</span><span class="step-text"><strong>退稅（重要！）</strong>：過安檢前先找 Tax Refund 服務台蓋章，蓋完才 check-in 和過安檢。過了關就沒機會退稅！</span></div><div class="step"><span class="step-num">6</span><span class="step-text">出境大廳有退稅機器，刷卡電子退稅</span></div></div><div class="tip-box">退稅一定要在過安檢『前』蓋章！</div><div class="tip-box">Elizabeth Line 比 Heathrow Express 便宜且一樣直達</div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">確認搭乘的是往 <strong>Heathrow</strong> 的 Elizabeth Line，不是往 Reading 的班次</span></div><div class="step"><span class="step-num">2</span><span class="step-text">依機票確認航廈（T2/T3/T4/T5），不要在錯誤航廈下車</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">17:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🛫 抵達 Heathrow：退稅、托運、安檢</div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>第一站先處理退稅</strong>：需要檢查商品時，必須在托運與安檢前完成</span></div><div class="step"><span class="step-num">2</span><span class="step-text">辦理航空公司 Check-in 與行李託運</span></div><div class="step"><span class="step-num">3</span><span class="step-text">通過安檢後再吃點心、買水，等待登機</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>21:10</strong> 搭乘回程航班離開 London Heathrow</span></div></div>
+        <div class="warn-box">退稅文件、護照、信用卡、購買商品可能都會被要求核對；不要把退稅商品太早托運。</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">8/15 08:05</div>
+      <div class="tl-content">
+        <div class="tl-title">🇹🇼 抵達台北</div>
+        <div class="tl-desc">回程航班：London Heathrow 21:10 14Aug2026 → Taipei 08:05 15Aug2026。</div>
       </div>
     </div></div>
     </div>
@@ -1026,7 +1154,7 @@ nav::-webkit-scrollbar{display:none;}
 <div class="info-card">
   <h3>&#128652; 機場到飯店交通</h3>
   <ul>
-    <li><strong>Heathrow → Stratford：</strong>Elizabeth Line（紫色）直達，約50分鐘，£5.50</li>
+    <li><strong>Heathrow → Stratford：</strong>Elizabeth Line（紫色）直達，約50–55分鐘，Contactless / Oyster 付款</li>
     <li><strong>Gatwick → Stratford：</strong>Gatwick Express → Victoria → 地鐵，約70-80分鐘</li>
     <li><strong>Stansted → Stratford：</strong>Stansted Express → Liverpool Street → Central Line，約60-70分鐘</li>
   </ul>
@@ -1135,7 +1263,7 @@ nav::-webkit-scrollbar{display:none;}
   <div class="customs-row"><div class="zh">入境：2026年7月29日 &nbsp;·&nbsp; 離境：2026年8月14日</div><div class="en">Arrival: July 29, 2026 &nbsp;·&nbsp; Departure: August 14, 2026</div></div>
   <div class="customs-row"><div class="zh">住宿地址：</div><div class="en"><strong>Moxy London Stratford Hotel</strong><br>5 Celebration Avenue, London, E20 1DB, United Kingdom</div></div>
   <div class="customs-row"><div class="zh">我們是純觀光，不工作也不讀書。</div><div class="en">We are here for tourism only. We are not working or studying in the UK.</div></div>
-  <div class="customs-row"><div class="zh">我們有訂好的回程機票（返回台灣）。</div><div class="en">We have return flights booked back to Taiwan.</div></div>
+  <div class="customs-row"><div class="zh">我們有訂好的回程機票：2026年8月14日 21:10 從 London Heathrow 返回台灣。</div><div class="en">We have return flights booked back to Taiwan: departing London Heathrow at 21:10 on August 14, 2026.</div></div>
   <div class="customs-row"><div class="zh">我們攜帶信用卡及足夠旅遊費用。</div><div class="en">We have credit cards and sufficient funds for our stay.</div></div>
 </div>
 <div class="info-card">
