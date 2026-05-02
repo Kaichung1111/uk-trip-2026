@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英國旅行 2026 — Jul 29 ~ Aug 14</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --dark: #1A1A1A;
+    --navy: #1B2A4A;
+    --gold: #C9A84C;
+    --gold-light: #E8D5A3;
+    --red: #B5383A;
+    --green: #2D5A3D;
+    --muted: #6B6560;
+    --card-bg: #FDFAF5;
+    --border: #E2D9C8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--navy);
+    color: white;
+    padding: 2rem 1.5rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    letter-spacing: 0.02em;
+  }
+  .header-sub {
+    font-size: 0.75rem;
+    color: var(--gold-light);
+    font-weight: 300;
+    margin-top: 2px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .header-info {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .info-pill {
+    background: rgba(201,168,76,0.2);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold-light);
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  /* WEEK TABS */
+  .week-nav {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 0 1.5rem;
+    background: var(--navy);
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+  }
+  .week-nav::-webkit-scrollbar { display: none; }
+  .week-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.7);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.72rem;
+    padding: 5px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .week-btn.active, .week-btn:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  /* SECTION TABS */
+  .section-tabs {
+    display: flex;
+    gap: 0;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .section-tabs::-webkit-scrollbar { display: none; }
+  .sec-btn {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.8rem;
+    padding: 0.75rem 1.2rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .sec-btn.active {
+    color: var(--navy);
+    border-bottom-color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* MAIN CONTENT */
+  main { padding: 1.25rem 1.25rem 4rem; max-width: 680px; margin: 0 auto; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* DAY CARDS */
+  .day-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    animation: fadeUp 0.3s ease forwards;
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(8px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.9rem 1.1rem;
+    background: linear-gradient(135deg, var(--navy) 0%, #243559 100%);
+    cursor: pointer;
+  }
+  .day-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    min-width: 2.2rem;
+    line-height: 1;
+  }
+  .day-info { flex: 1; }
+  .day-date { font-size: 0.68rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; }
+  .day-title { font-size: 0.95rem; color: white; font-weight: 500; margin-top: 1px; }
+  .day-theme-tag {
+    font-size: 0.65rem;
+    background: rgba(201,168,76,0.25);
+    color: var(--gold-light);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 3px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+  .chevron {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    transition: transform 0.25s;
+  }
+  .day-card.open .chevron { transform: rotate(180deg); }
+
+  .day-body { display: none; padding: 0.9rem 1.1rem; }
+  .day-card.open .day-body { display: block; }
+
+  /* ITEMS */
+  .item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .item:last-child { border-bottom: none; }
+  .item-icon { font-size: 1rem; min-width: 22px; margin-top: 1px; }
+  .item-content { flex: 1; }
+  .item-name { font-size: 0.88rem; font-weight: 500; color: var(--navy); }
+  .item-detail { font-size: 0.78rem; color: var(--muted); margin-top: 2px; line-height: 1.5; }
+  .item-price { display: inline-block; font-size: 0.72rem; color: var(--green); font-weight: 500; margin-top: 3px; }
+  .item-tip {
+    display: inline-block; font-size: 0.7rem;
+    background: #FFF8E8; color: #7A5C10;
+    border: 1px solid #E8D5A3;
+    padding: 2px 8px; border-radius: 6px; margin-top: 4px;
+  }
+  .map-btn {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.68rem; color: var(--navy);
+    background: #EEF2FF;
+    border: 1px solid #C7D2FE;
+    padding: 3px 9px; border-radius: 6px;
+    text-decoration: none; margin-top: 5px;
+    transition: background 0.15s;
+  }
+  .map-btn:hover { background: #C7D2FE; }
+
+  /* NOTICE BOX */
+  .notice {
+    background: #EEF2FF;
+    border-left: 4px solid var(--navy);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  /* INFO CARDS */
+  .info-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 0.9rem;
+  }
+  .info-card h3 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .info-card p, .info-card li {
+    font-size: 0.8rem;
+    color: #444;
+    line-height: 1.75;
+  }
+  .info-card ul { padding-left: 1.1rem; }
+
+  /* CUSTOMS CARD */
+  .customs-card {
+    background: white;
+    border: 2px solid var(--navy);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .customs-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--gold);
+  }
+  .customs-line {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .customs-line:last-child { border-bottom: none; }
+  .zh { font-size: 0.88rem; color: var(--dark); font-weight: 500; }
+  .en { font-size: 0.82rem; color: var(--navy); font-style: italic; }
+
+  .qa-row { display: flex; flex-direction: column; gap: 3px; padding: 7px 0; border-bottom: 1px solid var(--border); }
+  .qa-row:last-child { border-bottom: none; }
+  .qa-q { font-size: 0.75rem; color: var(--muted); }
+  .qa-a { font-size: 0.85rem; font-weight: 500; color: var(--navy); }
+
+  /* BUDGET */
+  .budget-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 0.8rem; }
+  .budget-row:last-child { border-bottom: none; font-weight: 500; font-size: 0.85rem; color: var(--navy); }
+  .budget-price { color: var(--green); font-weight: 500; }
+  .total-row { background: #F0F7F3; border-radius: 8px; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+  .total-label { font-size: 0.85rem; font-weight: 500; }
+  .total-amount { font-size: 1.1rem; font-weight: 700; color: var(--green); }
+
+  /* BOOKING LINKS */
+  .book-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .book-info h4 { font-size: 0.9rem; font-weight: 500; color: var(--navy); }
+  .book-info p { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+  .book-btn {
+    display: inline-block;
+    background: var(--navy);
+    color: white;
+    font-size: 0.72rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .book-btn:hover { background: var(--gold); color: var(--navy); }
+
+  .print-btn {
+    display: block;
+    width: 100%;
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.85rem;
+    padding: 12px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background 0.2s;
+  }
+  .print-btn:hover { background: var(--gold); color: var(--navy); }
+
+  @media print {
+    header, .week-nav, .section-tabs, .sec-btn, .week-btn { display: none !important; }
+    .section { display: block !important; }
+    .day-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div>
+      <div class="header-title">🇬🇧 英國之旅 2026</div>
+      <div class="header-sub">Jul 29 — Aug 14 · London & Beyond</div>
+    </div>
+    <div class="header-info">
+      <span class="info-pill">👥 3人同行</span>
+      <span class="info-pill">🏨 Moxy Stratford</span>
+      <span class="info-pill">17天</span>
+    </div>
+  </div>
+  <div class="week-nav">
+    <button class="week-btn active" onclick="filterWeek('all',this)">全部行程</button>
+    <button class="week-btn" onclick="filterWeek('w1',this)">第1週 7/29-8/4</button>
+    <button class="week-btn" onclick="filterWeek('w2',this)">第2週 8/5-8/11</button>
+    <button class="week-btn" onclick="filterWeek('w3',this)">第3週 8/12-8/14</button>
+  </div>
+</header>
+
+<div class="section-tabs">
+  <button class="sec-btn active" onclick="showSection('itinerary',this)">📅 行程</button>
+  <button class="sec-btn" onclick="showSection('tips',this)">💡 旅行提醒</button>
+  <button class="sec-btn" onclick="showSection('budget',this)">💰 票價試算</button>
+  <button class="sec-btn" onclick="showSection('booking',this)">🎟️ 訂票連結</button>
+  <button class="sec-btn" onclick="showSection('customs',this)">🛂 海關文件</button>
+</div>
+
+<main>
+
+<!-- ===== ITINERARY ===== -->
+<div id="itinerary" class="section active">
+  <div class="notice">住宿：<strong>Moxy London Stratford</strong> — 地鐵 Jubilee / Central Line，往市中心約15-20分鐘。搭 Elizabeth Line 可直達 Heathrow 機場，不需換車。</div>
+
+  <!-- DAY 1 -->
+  <div class="day-card" data-week="w1">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">1</div>
+      <div class="day-info">
+        <div class="day-date">July 29, Wed</div>
+        <div class="day-title">抵達倫敦 · 入住日</div>
+      </div>
+      <span class="day-theme-tag">✈️ 到達</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">✈️</span>
+        <div class="item-content">
+          <div class="item-name">機場抵達 → Moxy Stratford</div>
+          <div class="item-detail">搭 Elizabeth Line 直達 Paddington 或 Liverpool Street → 轉 Central Line 至 Stratford</div>
+          <span class="item-tip">行李重先 check-in 寄放，再出門逛</span>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🛍️</span>
+        <div class="item-content">
+          <div class="item-name">Westfield Stratford City</div>
+          <div class="item-detail">飯店旁大型購物中心，熟悉環境、換錢、買 SIM 卡</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Westfield+Stratford+City+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🚇</span>
+        <div class="item-content">
+          <div class="item-name">購買 Oyster Card</div>
+          <div class="item-detail">地鐵站自動售票機購買，或直接用信用卡 Contactless 感應</div>
+          <span class="item-tip">不需買 Travelcard，系統有每日扣款上限</span>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🍜</span>
+        <div class="item-content">
+          <div class="item-name">晚餐：Wagamama（Westfield內）</div>
+          <div class="item-detail">日式拉麵，有圖片菜單，點餐容易，價格合理</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card" data-week="w1">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">2</div>
+      <div class="day-info">
+        <div class="day-date">July 30, Thu</div>
+        <div class="day-title">西敏寺區 · 皇家核心</div>
+      </div>
+      <span class="day-theme-tag">👑 皇家</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">⛪</span>
+        <div class="item-content">
+          <div class="item-name">西敏寺 Westminster Abbey</div>
+          <div class="item-detail">建議早上9點開門即入，含語音導覽，需1.5小時</div>
+          <span class="item-price">NT$1,320／人</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=Westminster+Abbey+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🕐</span>
+        <div class="item-content">
+          <div class="item-name">大笨鐘 Big Ben + 國會大廈外觀</div>
+          <div class="item-detail">Westminster Bridge 上拍照最佳角度，免費</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Big+Ben+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🍽️</span>
+        <div class="item-content">
+          <div class="item-name">午餐：Flat Iron, Covent Garden</div>
+          <div class="item-detail">平價牛排名店，約NT$400-600，現場等位</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Flat+Iron+Covent+Garden+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🏰</span>
+        <div class="item-content">
+          <div class="item-name">白金漢宮 Buckingham Palace</div>
+          <div class="item-detail">7-9月開放內部，含免費中文語音導覽，需2-3小時</div>
+          <span class="item-price">NT$1,400／人</span>
+          <span class="item-tip">⚠️ 需提前官網購票，夏天常售罄</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=Buckingham+Palace+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🌳</span>
+        <div class="item-content">
+          <div class="item-name">聖詹姆斯公園 St. James's Park</div>
+          <div class="item-detail">白金漢宮旁，免費散步，可看粉紅鵜鶘</div>
+          <a class="map-btn" href="https://maps.google.com/?q=St+James+Park+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card" data-week="w1">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">3</div>
+      <div class="day-info">
+        <div class="day-date">July 31, Fri</div>
+        <div class="day-title">南岸 + 倫敦塔橋 · 泰晤士河畔</div>
+      </div>
+      <span class="day-theme-tag">🌉 河畔</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">🏰</span>
+        <div class="item-content">
+          <div class="item-name">倫敦塔 Tower of London</div>
+          <div class="item-detail">早上開門即入，可看皇冠珠寶與衛兵換崗，需2.5小時</div>
+          <span class="item-price">NT$1,500／人</span>
+          <span class="item-tip">⚠️ 提前官網購票</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=Tower+of+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🌉</span>
+        <div class="item-content">
+          <div class="item-name">倫敦塔橋 Tower Bridge</div>
+          <div class="item-detail">外觀過橋免費；入內登上玻璃步道 NT$690</div>
+          <span class="item-price">NT$690／人（入內）</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=Tower+Bridge+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🍽️</span>
+        <div class="item-content">
+          <div class="item-name">午餐：Borough Market</div>
+          <div class="item-detail">倫敦最古老市場，各國小吃，Southwark 站步行</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Borough+Market+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">👁️</span>
+        <div class="item-content">
+          <div class="item-name">倫敦之眼 London Eye</div>
+          <div class="item-detail">建議黃昏17:00-18:00搭乘，光線最美</div>
+          <span class="item-price">NT$638／人（促銷）</span>
+          <span class="item-tip">官網提前購票有折扣</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=London+Eye" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-card" data-week="w1">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">4</div>
+      <div class="day-info">
+        <div class="day-date">August 1, Sat</div>
+        <div class="day-title">大英博物館 + 蘇活區</div>
+      </div>
+      <span class="day-theme-tag">🏺 文化</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">🏛️</span>
+        <div class="item-content">
+          <div class="item-name">大英博物館 British Museum</div>
+          <div class="item-detail">早上10點開門即入，必看：羅塞塔石碑、埃及木乃伊，需3-4小時</div>
+          <span class="item-price">NT$343／人（含語音導覽）</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=British+Museum+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🛍️</span>
+        <div class="item-content">
+          <div class="item-name">牛津圓環 Oxford Circus + 柯芬園 Covent Garden</div>
+          <div class="item-detail">H&M、Zara、UNIQLO、Primark；柯芬園街頭藝人表演免費</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Covent+Garden+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🍽️</span>
+        <div class="item-content">
+          <div class="item-name">晚餐：Chinatown（Leicester Square 旁）</div>
+          <div class="item-detail">Bun House 廣式點心，有中文菜單，英文不好也沒問題</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Chinatown+London+Leicester+Square" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-card" data-week="w1">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">5</div>
+      <div class="day-info">
+        <div class="day-date">August 2, Sun</div>
+        <div class="day-title">聖保羅大教堂 + 西堤區</div>
+      </div>
+      <span class="day-theme-tag">⛪ 金融城</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">⛪</span>
+        <div class="item-content">
+          <div class="item-name">聖保羅大教堂 St. Paul's Cathedral</div>
+          <div class="item-detail">早上9點入場，可登頂俯瞰倫敦全景，需2小時</div>
+          <span class="item-price">NT$1,154／人</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=St+Paul+Cathedral+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🚶</span>
+        <div class="item-content">
+          <div class="item-name">千禧橋散步 Millennium Bridge</div>
+          <div class="item-detail">過橋到南岸，回望聖保羅最經典角度（免費）</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Millennium+Bridge+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🏙️</span>
+        <div class="item-content">
+          <div class="item-name">碎片塔 The Shard（可選）</div>
+          <div class="item-detail">觀景台 NT$808，或僅在外面拍照</div>
+          <a class="map-btn" href="https://maps.google.com/?q=The+Shard+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day-card" data-week="w1">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">6</div>
+      <div class="day-info">
+        <div class="day-date">August 3, Mon</div>
+        <div class="day-title">格林威治一日遊 · 子午線</div>
+      </div>
+      <span class="day-theme-tag">🌐 近郊</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">🚇</span>
+        <div class="item-content">
+          <div class="item-name">交通：Stratford → Canary Wharf → Cutty Sark</div>
+          <div class="item-detail">搭 Jubilee Line 至 Canary Wharf，轉 DLR 至 Cutty Sark 站，約30分鐘</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🔭</span>
+        <div class="item-content">
+          <div class="item-name">格林威治皇家博物館一日通票</div>
+          <div class="item-detail">含格林威治天文台、航海博物館、彩繪廳、卡帝薩克號</div>
+          <span class="item-price">NT$1,445／人</span>
+          <span class="item-tip">踩踩東西半球子午線拍照！</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=Royal+Observatory+Greenwich+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🌄</span>
+        <div class="item-content">
+          <div class="item-name">格林威治公園山丘</div>
+          <div class="item-detail">俯瞰 Canary Wharf 天際線，倫敦最美免費視角</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Greenwich+Park+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="day-card" data-week="w1">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">7</div>
+      <div class="day-info">
+        <div class="day-date">August 4, Tue</div>
+        <div class="day-title">福爾摩斯博物館 + 馬里波恩</div>
+      </div>
+      <span class="day-theme-tag">🔍 文學</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">🔍</span>
+        <div class="item-content">
+          <div class="item-name">福爾摩斯博物館 221B Baker St</div>
+          <div class="item-detail">建議平日早上去，排隊通常不長，約1小時</div>
+          <span class="item-price">NT$450／人</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=Sherlock+Holmes+Museum+221B+Baker+Street" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🛍️</span>
+        <div class="item-content">
+          <div class="item-name">馬里波恩高街 Marylebone High Street</div>
+          <div class="item-detail">倫敦最愜意的購物街，獨立小店、麵包店、咖啡館</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Marylebone+High+Street+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🌿</span>
+        <div class="item-content">
+          <div class="item-name">攝政公園 Regent's Park</div>
+          <div class="item-detail">免費散步，8月玫瑰花園盛開</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Regent+Park+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 8 -->
+  <div class="day-card" data-week="w2">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">8</div>
+      <div class="day-info">
+        <div class="day-date">August 5, Wed</div>
+        <div class="day-title">溫莎堡近郊一日</div>
+      </div>
+      <span class="day-theme-tag">🏰 近郊</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">🚂</span>
+        <div class="item-content">
+          <div class="item-name">交通：Stratford → Paddington → Windsor</div>
+          <div class="item-detail">地鐵至 Paddington，搭 GWR 火車至 Windsor & Eton Central，約1小時</div>
+          <span class="item-price">來回約 NT$800-1,000／人，nationalrail.co.uk 購票</span>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🏰</span>
+        <div class="item-content">
+          <div class="item-name">溫莎堡 Windsor Castle</div>
+          <div class="item-detail">9:30 開門入場，週末有衛兵換崗，含語音導覽，需2.5小時</div>
+          <span class="item-price">NT$1,360／人</span>
+          <span class="item-tip">⚠️ 提前官網購票</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=Windsor+Castle" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🍺</span>
+        <div class="item-content">
+          <div class="item-name">午餐：Two Brewers, Windsor</div>
+          <div class="item-detail">傳統英式 pub，炸魚薯條 Fish & Chips</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Two+Brewers+Windsor" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 9 -->
+  <div class="day-card" data-week="w2">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">9</div>
+      <div class="day-info">
+        <div class="day-date">August 6, Thu</div>
+        <div class="day-title">牛津大學 + Bicester Village</div>
+      </div>
+      <span class="day-theme-tag">🎓 近郊</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">🚂</span>
+        <div class="item-content">
+          <div class="item-name">交通：Stratford → Paddington → Oxford</div>
+          <div class="item-detail">搭 Chiltern Railways 約1小時，建議 8:00 前出發</div>
+          <span class="item-price">來回約 NT$700-900</span>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🎓</span>
+        <div class="item-content">
+          <div class="item-name">牛津大學 University of Oxford</div>
+          <div class="item-detail">Christ Church（哈利波特取景地 NT$600）、Bodleian Library 外觀、Radcliffe Camera</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Christ+Church+Oxford" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🍽️</span>
+        <div class="item-content">
+          <div class="item-name">午餐：Covered Market, Oxford</div>
+          <div class="item-detail">牛津室內市集，各種小吃</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Oxford+Covered+Market" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🛍️</span>
+        <div class="item-content">
+          <div class="item-name">Bicester Village 購物村</div>
+          <div class="item-detail">牛津市中心搭 S5 巴士約30分鐘。Burberry、Coach、Ralph Lauren 等折扣30-70%</div>
+          <span class="item-tip">帶護照！部分品牌可退 VAT</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=Bicester+Village+Outlet" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🚂</span>
+        <div class="item-content">
+          <div class="item-name">回程：Bicester → London Marylebone → Stratford</div>
+          <div class="item-detail">從 Bicester 直接搭火車回倫敦 Marylebone 站，轉地鐵回 Stratford</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 10 -->
+  <div class="day-card" data-week="w2">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">10</div>
+      <div class="day-info">
+        <div class="day-date">August 7, Fri</div>
+        <div class="day-title">劍橋一日遊 · 撐篙</div>
+      </div>
+      <span class="day-theme-tag">🚣 近郊</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">🚂</span>
+        <div class="item-content">
+          <div class="item-name">交通：Stratford → Tottenham Hale → Cambridge</div>
+          <div class="item-detail">Victoria Line 至 Tottenham Hale，搭 Greater Anglia 至 Cambridge，約1小時10分</div>
+          <span class="item-price">來回約 NT$800-1,000</span>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🎓</span>
+        <div class="item-content">
+          <div class="item-name">劍橋大學 University of Cambridge</div>
+          <div class="item-detail">King's College（NT$400，含禮拜堂）、Queen's College 數學橋、Trinity College 外觀</div>
+          <a class="map-btn" href="https://maps.google.com/?q=King+College+Cambridge" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🚣</span>
+        <div class="item-content">
+          <div class="item-name">撐篙 Punting on the Backs</div>
+          <div class="item-detail">劍橋必做！沿水道欣賞學院建築，旺季可提前預訂</div>
+          <span class="item-price">共乘 NT$500／人</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=Scudamore+Punting+Cambridge" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 11 -->
+  <div class="day-card" data-week="w2">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">11</div>
+      <div class="day-info">
+        <div class="day-date">August 8, Sat</div>
+        <div class="day-title">肯辛頓 · 博物館特區</div>
+      </div>
+      <span class="day-theme-tag">🦕 博物館</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">🦕</span>
+        <div class="item-content">
+          <div class="item-name">自然史博物館 Natural History Museum</div>
+          <div class="item-detail">恐龍館、藍鯨骨架，免費！9:30 開門即入</div>
+          <span class="item-price">免費入場</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=Natural+History+Museum+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🛍️</span>
+        <div class="item-content">
+          <div class="item-name">Harrods 百貨</div>
+          <div class="item-detail">Knightsbridge 站，不需消費也可逛；Food Hall 買伴手禮</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Harrods+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 12 -->
+  <div class="day-card" data-week="w2">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">12</div>
+      <div class="day-info">
+        <div class="day-date">August 9, Sun</div>
+        <div class="day-title">Notting Hill + 泰特現代美術館</div>
+      </div>
+      <span class="day-theme-tag">🎨 文青</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">🎨</span>
+        <div class="item-content">
+          <div class="item-name">波多貝羅市場 Portobello Road Market</div>
+          <div class="item-detail">古董、二手衣、各國小吃，Notting Hill Gate 站</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Portobello+Road+Market+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🏘️</span>
+        <div class="item-content">
+          <div class="item-name">Notting Hill 彩色房子</div>
+          <div class="item-detail">電影場景，拍照打卡</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Notting+Hill+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🖼️</span>
+        <div class="item-content">
+          <div class="item-name">泰特現代美術館 Tate Modern</div>
+          <div class="item-detail">南岸 Bankside，免費入場！</div>
+          <span class="item-price">免費入場</span><br>
+          <a class="map-btn" href="https://maps.google.com/?q=Tate+Modern+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 13-14 -->
+  <div class="day-card" data-week="w2">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">13-14</div>
+      <div class="day-info">
+        <div class="day-date">Aug 10-11, Mon-Tue</div>
+        <div class="day-title">彈性備用日</div>
+      </div>
+      <span class="day-theme-tag">🔄 自由</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">💡</span>
+        <div class="item-content">
+          <div class="item-name">彈性安排</div>
+          <div class="item-detail">補上前幾天時間不夠的景點，重遊最喜歡的地方，或完全休息充電</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🎭</span>
+        <div class="item-content">
+          <div class="item-name">西區音樂劇（可選）</div>
+          <div class="item-detail">TKTS Booth（Leicester Square）當天折扣票，現場排隊購買</div>
+          <a class="map-btn" href="https://maps.google.com/?q=TKTS+Leicester+Square+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 15-16 -->
+  <div class="day-card" data-week="w3">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">15-16</div>
+      <div class="day-info">
+        <div class="day-date">Aug 12-13, Wed-Thu</div>
+        <div class="day-title">最後採購 + 行李整理</div>
+      </div>
+      <span class="day-theme-tag">🛍️ 收尾</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">🛍️</span>
+        <div class="item-content">
+          <div class="item-name">Westfield Stratford + Boots 藥妝</div>
+          <div class="item-detail">Nurofen、Bio-Oil、Vitamin 系列；M&S 食品區買伴手禮</div>
+          <a class="map-btn" href="https://maps.google.com/?q=Westfield+Stratford+City+London" target="_blank">📍 Google Maps</a>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🎁</span>
+        <div class="item-content">
+          <div class="item-name">伴手禮清單</div>
+          <div class="item-detail">Harrods 茶包、McVitie's 餅乾、Cadbury 巧克力、Fortnum & Mason 果醬</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 17 -->
+  <div class="day-card" data-week="w3">
+    <div class="day-header" onclick="toggleCard(this.parentElement)">
+      <div class="day-num">17</div>
+      <div class="day-info">
+        <div class="day-date">August 14, Fri</div>
+        <div class="day-title">離境回台灣</div>
+      </div>
+      <span class="day-theme-tag">✈️ 離境</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="item">
+        <span class="item-icon">⏰</span>
+        <div class="item-content">
+          <div class="item-name">提早出發！</div>
+          <div class="item-detail">建議飛機起飛前 <strong>3小時</strong> 抵達機場，倫敦 Heathrow 安檢常大排長龍</div>
+          <span class="item-tip">Stratford → Heathrow 搭 Elizabeth Line 直達約50分鐘</span>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">💰</span>
+        <div class="item-content">
+          <div class="item-name">退稅 Tax Refund</div>
+          <div class="item-detail">出關前先到 Tax Refund 櫃台蓋章，再辦理退稅，需保留所有收據</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TIPS ===== -->
+<div id="tips" class="section">
+  <div class="info-card">
+    <h3>🚇 交通 — Oyster Card / Contactless</h3>
+    <ul>
+      <li>抵達機場第一件事：購買 <strong>Oyster Card</strong> 或用信用卡 Contactless 感應</li>
+      <li>TfL 有<strong>每日扣款上限（Daily Cap）</strong>，同一天搭多次不會無限扣款</li>
+      <li>Zone 1-2 每日上限約 £8.10（NT$330）</li>
+      <li>近郊火車（Windsor、Oxford、Cambridge）需在 <strong>nationalrail.co.uk</strong> 另外購票</li>
+      <li>Stratford 搭 Elizabeth Line 直達 Heathrow，約50分鐘，不需換車</li>
+    </ul>
+  </div>
+  <div class="info-card">
+    <h3>🌦️ 天氣準備</h3>
+    <ul>
+      <li>7-8月氣溫約 18-25°C，仍可能突然下雨</li>
+      <li>必備：<strong>輕薄防水外套、雨傘</strong>（每天都要帶）</li>
+      <li>穿舒適走路鞋，避免高跟鞋（石板路很多）</li>
+      <li>防曬乳：夏天日照強，記得帶</li>
+    </ul>
+  </div>
+  <div class="info-card">
+    <h3>📱 通訊與 App</h3>
+    <ul>
+      <li>建議在台灣先買<strong>英國 SIM 卡</strong>（EE / Three，淘寶/蝦皮有賣，約NT$500-800，30天無限上網）</li>
+      <li>下載 App：<strong>TfL Go</strong>（倫敦地鐵）、<strong>Trainline</strong>（火車）、<strong>Google Maps 離線</strong></li>
+      <li>Google Translate 可<strong>拍照翻譯</strong>英文菜單，非常實用</li>
+    </ul>
+  </div>
+  <div class="info-card">
+    <h3>💰 金錢</h3>
+    <ul>
+      <li>英國用<strong>英鎊（GBP £）</strong>，不用歐元</li>
+      <li>倫敦幾乎不需現金，信用卡 Contactless 到處通用（含市集小攤）</li>
+      <li>推薦：<strong>Wise 多幣卡</strong>或台新 Richart 等海外免手續費信用卡</li>
+      <li>小費：餐廳通常已含 10% Service Charge，Optional 可給可不給</li>
+    </ul>
+  </div>
+  <div class="info-card">
+    <h3>🍽️ 餐廳禮儀</h3>
+    <ul>
+      <li>進餐廳先<strong>等 Host 帶位</strong>，不要自己坐</li>
+      <li>結帳說：<strong>"Can I get the bill, please?"</strong></li>
+      <li>不吃羊肉：點餐說 <strong>"No lamb please"</strong>；菜單上 lamb / mutton 都是羊肉</li>
+      <li>看不懂菜單：用 Google Translate 拍照翻譯</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== BUDGET ===== -->
+<div id="budget" class="section">
+  <div class="notice">景點門票估算（3人合計），不含交通與餐食。以官網公告為準。</div>
+  <div class="info-card">
+    <table style="width:100%; border-collapse:collapse;">
+      <tr style="background:#F5F0E8;">
+        <td style="padding:6px 8px; font-size:0.78rem; font-weight:500; color:#1B2A4A;">景點</td>
+        <td style="padding:6px 8px; font-size:0.78rem; font-weight:500; color:#1B2A4A; text-align:right;">單人</td>
+        <td style="padding:6px 8px; font-size:0.78rem; font-weight:500; color:#1B2A4A; text-align:right;">3人合計</td>
+      </tr>
+      <tr class="budget-row"><td>西敏寺</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$1,320</td><td style="text-align:right;"><span class="budget-price">NT$3,960</span></td></tr>
+      <tr class="budget-row"><td>白金漢宮</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$1,400</td><td style="text-align:right;"><span class="budget-price">NT$4,200</span></td></tr>
+      <tr class="budget-row"><td>倫敦塔</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$1,500</td><td style="text-align:right;"><span class="budget-price">NT$4,500</span></td></tr>
+      <tr class="budget-row"><td>倫敦塔橋（入內）</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$690</td><td style="text-align:right;"><span class="budget-price">NT$2,070</span></td></tr>
+      <tr class="budget-row"><td>倫敦之眼</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$638</td><td style="text-align:right;"><span class="budget-price">NT$1,914</span></td></tr>
+      <tr class="budget-row"><td>大英博物館語音導覽</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$343</td><td style="text-align:right;"><span class="budget-price">NT$1,029</span></td></tr>
+      <tr class="budget-row"><td>聖保羅大教堂</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$1,154</td><td style="text-align:right;"><span class="budget-price">NT$3,462</span></td></tr>
+      <tr class="budget-row"><td>溫莎堡</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$1,360</td><td style="text-align:right;"><span class="budget-price">NT$4,080</span></td></tr>
+      <tr class="budget-row"><td>格林威治一日通票</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$1,445</td><td style="text-align:right;"><span class="budget-price">NT$4,335</span></td></tr>
+      <tr class="budget-row"><td>牛津 Christ Church</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$600</td><td style="text-align:right;"><span class="budget-price">NT$1,800</span></td></tr>
+      <tr class="budget-row"><td>劍橋 King's College</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$400</td><td style="text-align:right;"><span class="budget-price">NT$1,200</span></td></tr>
+      <tr class="budget-row"><td>劍橋撐篙（共乘）</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$500</td><td style="text-align:right;"><span class="budget-price">NT$1,500</span></td></tr>
+      <tr class="budget-row"><td>福爾摩斯博物館</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$450</td><td style="text-align:right;"><span class="budget-price">NT$1,350</span></td></tr>
+      <tr class="budget-row"><td>碎片塔（可選）</td><td style="text-align:right;color:#6B6560;font-size:0.78rem;">NT$808</td><td style="text-align:right;"><span class="budget-price">NT$2,424</span></td></tr>
+    </table>
+    <div class="total-row">
+      <span class="total-label">景點門票合計（含碎片塔）</span>
+      <span class="total-amount">≈ NT$37,824</span>
+    </div>
+    <div class="total-row" style="margin-top:6px; background:#EEF2FF;">
+      <span class="total-label">景點門票合計（不含碎片塔）</span>
+      <span class="total-amount" style="color:#1B2A4A;">≈ NT$35,400</span>
+    </div>
+  </div>
+  <div class="notice">近郊火車票（3次）估約 NT$7,000-9,000 共3人<br>每日餐食估 NT$800-1,500／人，17天3人合計約 NT$40,000-75,000</div>
+</div>
+
+<!-- ===== BOOKING ===== -->
+<div id="booking" class="section">
+  <div class="notice">⚠️ 以下三個景點建議<strong>現在就去官網買票</strong>，不建議用 Klook（價格相同但少一個中間環節）。7-8月旺季，常提前售罄。</div>
+
+  <div class="book-card" style="border-color:#C9A84C; border-width:2px;">
+    <div class="book-info">
+      <h4>🏰 白金漢宮 Buckingham Palace</h4>
+      <p>Royal Collection Trust 官網 · NT$1,400／人<br>7-9月開放，含中文語音導覽</p>
+    </div>
+    <a class="book-btn" href="https://www.rct.uk/visit/the-state-rooms-buckingham-palace" target="_blank">官網買票 →</a>
+  </div>
+
+  <div class="book-card" style="border-color:#C9A84C; border-width:2px;">
+    <div class="book-info">
+      <h4>🏰 倫敦塔 Tower of London</h4>
+      <p>Historic Royal Palaces 官網 · NT$1,500／人<br>建議提前至少1週購票</p>
+    </div>
+    <a class="book-btn" href="https://www.hrp.org.uk/tower-of-london/visit/tickets/" target="_blank">官網買票 →</a>
+  </div>
+
+  <div class="book-card" style="border-color:#C9A84C; border-width:2px;">
+    <div class="book-info">
+      <h4>🏰 溫莎堡 Windsor Castle</h4>
+      <p>Royal Collection Trust 官網 · NT$1,360／人<br>含語音導覽，週末有衛兵換崗</p>
+    </div>
+    <a class="book-btn" href="https://www.rct.uk/visit/windsor-castle" target="_blank">官網買票 →</a>
+  </div>
+
+  <div class="book-card">
+    <div class="book-info">
+      <h4>👁️ 倫敦之眼 London Eye</h4>
+      <p>官網促銷 NT$638／人 · 現場票較貴<br>建議指定時段購票，黃昏場最美</p>
+    </div>
+    <a class="book-btn" href="https://www.londoneye.com/tickets-and-prices/" target="_blank">官網買票 →</a>
+  </div>
+
+  <div class="book-card">
+    <div class="book-info">
+      <h4>🚂 近郊火車票</h4>
+      <p>National Rail 官網 · 溫莎/牛津/劍橋<br>提前購票較便宜，可選 Advance 票種</p>
+    </div>
+    <a class="book-btn" href="https://www.nationalrail.co.uk" target="_blank">nationalrail.co.uk →</a>
+  </div>
+
+  <div class="book-card">
+    <div class="book-info">
+      <h4>🚣 劍橋撐篙 Punting</h4>
+      <p>Scudamore's 劍橋最老牌船家<br>共乘或包船，旺季提前預訂</p>
+    </div>
+    <a class="book-btn" href="https://www.scudamores.com" target="_blank">Scudamore's →</a>
+  </div>
+</div>
+
+<!-- ===== CUSTOMS ===== -->
+<div id="customs" class="section">
+  <button class="print-btn" onclick="window.print()">🖨️ 列印此頁（海關文件）</button>
+
+  <div class="customs-card">
+    <div class="customs-header">🛂 入境英國聲明 / UK Border Declaration<br><small style="font-size:0.75rem; color:#6B6560; font-family:'Noto Sans TC';">請出示此頁給海關人員 · Please show this to the border officer</small></div>
+
+    <div class="customs-line">
+      <span class="zh">我們是來自台灣的觀光客，共 3 人同行。</span>
+      <span class="en">We are tourists from Taiwan. There are 3 of us traveling together.</span>
+    </div>
+    <div class="customs-line">
+      <span class="zh">停留日期：2026年7月29日 至 8月14日（共17天）</span>
+      <span class="en">We will stay from July 29 to August 14, 2026 — a total of 17 days.</span>
+    </div>
+    <div class="customs-line">
+      <span class="zh">住宿地址：Moxy London Stratford Hotel<br>5 Celebration Ave, London E20 1DB</span>
+      <span class="en">Accommodation: Moxy London Stratford Hotel, 5 Celebration Ave, London E20 1DB</span>
+    </div>
+    <div class="customs-line">
+      <span class="zh">目的：純觀光旅遊，不工作、不學習。</span>
+      <span class="en">Purpose: Tourism only. Not working, not studying.</span>
+    </div>
+    <div class="customs-line">
+      <span class="zh">我們已有回程機票，機票和酒店已預訂。</span>
+      <span class="en">We have return flights booked. Hotel is also pre-booked.</span>
+    </div>
+    <div class="customs-line">
+      <span class="zh">謝謝您的協助。</span>
+      <span class="en">Thank you for your assistance.</span>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h3>🗣️ 海關常見問題速查</h3>
+    <div class="qa-row"><div class="qa-q">Q: What's the purpose of your visit?</div><div class="qa-a">A: Tourism. Sightseeing.</div></div>
+    <div class="qa-row"><div class="qa-q">Q: How long are you staying?</div><div class="qa-a">A: 17 days. Until August 14th.</div></div>
+    <div class="qa-row"><div class="qa-q">Q: Where are you staying?</div><div class="qa-a">A: Moxy Hotel, Stratford, London.</div></div>
+    <div class="qa-row"><div class="qa-q">Q: Do you have a return ticket?</div><div class="qa-a">A: Yes.（出示手機機票）</div></div>
+    <div class="qa-row"><div class="qa-q">Q: Are you traveling alone?</div><div class="qa-a">A: No, 3 people together. We are family / friends.</div></div>
+    <div class="qa-row"><div class="qa-q">Q: How much money do you have?</div><div class="qa-a">A: I have credit cards and some cash.</div></div>
+  </div>
+
+  <div class="info-card">
+    <h3>✅ 入境前檢查清單</h3>
+    <ul>
+      <li>護照有效期限超過 2027年2月14日 以上</li>
+      <li>台灣護照免簽進入英國，上限6個月</li>
+      <li>隨身帶：酒店訂房確認信、回程機票（備查）</li>
+      <li>液體限制：手提行李 100ml 以下，需放透明袋</li>
+      <li>不可攜帶肉類、蔬果入境英國</li>
+      <li>超過 £390 商品需申報</li>
+    </ul>
+  </div>
+</div>
+
+</main>
+
+<script>
+function toggleCard(card) {
+  card.classList.toggle('open');
+}
+
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.sec-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function filterWeek(week, btn) {
+  document.querySelectorAll('.week-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.day-card').forEach(card => {
+    if (week === 'all' || card.dataset.week === week) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Open first card by default
+document.querySelector('.day-card').classList.add('open');
+</script>
+</body>
+</html>

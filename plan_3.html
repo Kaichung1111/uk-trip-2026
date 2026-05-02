@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英國旅遊行程 2026 | Step by Step 詳細版</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1a2744;--gold:#c9a84c;--gold-light:#f0d898;--cream:#faf8f3;--red:#b5282d;--green:#2d6a4f;--blue:#1a5f9e;--text:#2c2c2c;--muted:#6b6b6b;--border:#e0d8c8;--card-bg:#fff;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.7;}
+header{background:var(--navy);color:white;padding:2.5rem 1.5rem 2rem;text-align:center;position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(201,168,76,0.04) 40px,rgba(201,168,76,0.04) 80px);}
+header h1{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold-light);position:relative;}
+header .sub{font-size:0.82rem;color:rgba(255,255,255,0.55);margin-top:0.3rem;letter-spacing:0.08em;position:relative;}
+header .dates{display:inline-block;background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.35);color:var(--gold-light);font-size:0.8rem;padding:0.3rem 1.1rem;border-radius:20px;margin-top:0.7rem;position:relative;}
+nav{background:white;border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+nav::-webkit-scrollbar{display:none;}
+.tab-btn{flex-shrink:0;padding:0.85rem 1.2rem;border:none;background:none;cursor:pointer;font-size:0.8rem;font-family:'Noto Sans TC',sans-serif;color:var(--muted);border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;font-weight:500;}
+.tab-btn:hover{color:var(--navy);}
+.tab-btn.active{color:var(--navy);border-bottom-color:var(--gold);font-weight:700;}
+.section{display:none;padding:1.2rem;max-width:800px;margin:0 auto;}
+.section.active{display:block;}
+.day-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.2rem;}
+.day-nav-btn{padding:5px 12px;border:1px solid var(--border);background:white;border-radius:20px;font-size:0.75rem;cursor:pointer;font-family:'Noto Sans TC',sans-serif;color:var(--muted);transition:all 0.15s;white-space:nowrap;}
+.day-nav-btn:hover{border-color:var(--navy);color:var(--navy);}
+.day-nav-btn.active{background:var(--navy);color:white;border-color:var(--navy);}
+.day-panel{display:none;}
+.day-panel.active{display:block;}
+.day-header-bar{background:var(--navy);color:white;padding:1rem 1.2rem;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.day-num-badge{background:var(--gold);color:var(--navy);font-size:0.72rem;font-weight:700;padding:3px 12px;border-radius:20px;white-space:nowrap;}
+.day-main-title{font-size:1.05rem;font-weight:700;color:white;flex:1;}
+.day-theme-tag{color:rgba(255,255,255,0.6);font-size:0.8rem;}
+.day-body{background:white;border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;margin-bottom:1rem;padding:0;overflow:hidden;}
+.tl-item{display:flex;gap:0;border-bottom:1px solid #f0eee8;}
+.tl-item:last-child{border-bottom:none;}
+.tl-time{min-width:70px;padding:1rem 0.6rem 0.9rem 1rem;text-align:right;font-size:0.73rem;font-weight:700;color:var(--gold);border-right:2px solid #f0ede4;white-space:nowrap;line-height:1.4;}
+.tl-content{flex:1;padding:0.9rem 1.1rem;}
+.tl-title{font-weight:700;font-size:0.92rem;color:var(--navy);margin-bottom:0.3rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.tl-desc{font-size:0.84rem;color:var(--text);line-height:1.65;margin-bottom:0.4rem;}
+.steps{margin-top:0.5rem;}
+.step{display:flex;gap:10px;align-items:flex-start;margin-bottom:0.45rem;}
+.step-num{background:var(--navy);color:white;font-size:0.65rem;font-weight:700;min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.step-text{font-size:0.83rem;color:var(--text);line-height:1.6;flex:1;}
+.step-text strong{color:var(--navy);}
+.price-tag{display:inline-block;background:#eaf4ec;color:var(--green);font-size:0.72rem;padding:1px 8px;border-radius:4px;font-weight:500;margin-left:4px;white-space:nowrap;}
+.free-tag{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:0.72rem;padding:1px 8px;border-radius:4px;font-weight:700;margin-left:4px;}
+.tip-box{background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:0.5rem 0.75rem;margin-top:0.5rem;font-size:0.8rem;color:#78350f;line-height:1.6;}
+.warn-box{background:#fff0f0;border:1px solid #fca5a5;border-radius:6px;padding:0.5rem 0.75rem;margin-top:0.5rem;font-size:0.8rem;color:#7f1d1d;line-height:1.6;}
+.transport-card{background:#f8faff;border:1px solid #c7d8f0;border-radius:8px;padding:0.8rem 1rem;margin-top:0.6rem;}
+.tc-title{font-size:0.8rem;font-weight:700;color:var(--blue);margin-bottom:0.4rem;}
+.transport-route{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:0.3rem;}
+.tr-station{background:var(--blue);color:white;font-size:0.72rem;padding:2px 9px;border-radius:4px;font-weight:600;}
+.tr-arrow{color:var(--muted);font-size:0.75rem;}
+.tr-line{font-size:0.72rem;color:var(--muted);}
+.tr-duration{font-size:0.72rem;background:#e8f0fe;color:var(--blue);padding:1px 7px;border-radius:4px;font-weight:600;}
+.tr-cost{font-size:0.72rem;color:var(--green);font-weight:600;}
+.day-summary{background:var(--navy);color:white;border-radius:8px;padding:0.75rem 1rem;margin:0.8rem 1.1rem;font-size:0.8rem;line-height:1.7;}
+.ds-row{display:flex;gap:12px;flex-wrap:wrap;}
+.ds-item{display:flex;align-items:center;gap:5px;}
+.ds-label{color:rgba(255,255,255,0.55);}
+.ds-val{color:var(--gold-light);font-weight:600;}
+.map-btn{display:inline-flex;align-items:center;gap:4px;background:var(--navy);color:white;font-size:0.7rem;padding:3px 10px;border-radius:20px;text-decoration:none;font-weight:500;margin-top:5px;transition:background 0.15s;}
+.map-btn:hover{background:#2d3f6b;}
+.notice{background:#f0f4ff;border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:0.75rem 1rem;margin-bottom:1rem;font-size:0.84rem;line-height:1.7;}
+.notice strong{color:var(--navy);}
+.warning{background:#fff8e7;border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:0.75rem 1rem;margin-bottom:1rem;font-size:0.84rem;line-height:1.7;}
+.danger{background:#fff0f0;border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:0.75rem 1rem;margin-bottom:1rem;font-size:0.84rem;}
+.danger strong{color:var(--red);}
+.info-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1rem;}
+.info-card h3{font-size:0.92rem;font-weight:700;color:var(--navy);margin-bottom:0.6rem;}
+.info-card ul{padding-left:1.2rem;}
+.info-card li{font-size:0.84rem;line-height:1.8;margin-bottom:0.1rem;}
+.customs-box{background:var(--card-bg);border:2px solid var(--navy);border-radius:12px;padding:1.4rem;margin-bottom:1rem;}
+.customs-header{text-align:center;border-bottom:1px solid var(--border);padding-bottom:1rem;margin-bottom:1rem;}
+.customs-header h2{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--navy);}
+.customs-header p{font-size:0.78rem;color:var(--muted);margin-top:0.3rem;}
+.customs-row{margin-bottom:0.9rem;padding-bottom:0.9rem;border-bottom:1px dashed var(--border);}
+.customs-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.zh{font-weight:700;font-size:0.92rem;color:var(--navy);margin-bottom:0.25rem;}
+.en{font-size:0.92rem;color:#333;background:#f5f8ff;padding:0.45rem 0.75rem;border-radius:6px;font-family:Georgia,serif;border-left:3px solid var(--navy);}
+.qa-item{margin-bottom:0.8rem;}
+.qa-q{font-size:0.8rem;color:var(--muted);font-style:italic;margin-bottom:0.2rem;}
+.qa-a{font-size:0.86rem;background:#eef6ff;padding:0.4rem 0.75rem;border-radius:6px;color:var(--navy);font-weight:600;font-family:Georgia,serif;}
+.ticket-table{width:100%;border-collapse:collapse;font-size:0.81rem;}
+.ticket-table th{background:var(--navy);color:white;padding:0.5rem 0.65rem;text-align:left;font-weight:600;font-size:0.78rem;}
+.ticket-table td{padding:0.5rem 0.65rem;border-bottom:1px solid var(--border);}
+.ticket-table tr:last-child td{border-bottom:none;}
+.ticket-table tr:nth-child(even) td{background:#fafafa;}
+.ticket-table .total td{background:#f0f4ff;font-weight:700;color:var(--navy);}
+.nt{color:var(--green);font-weight:600;}
+.buy-btn{display:inline-block;background:var(--gold);color:var(--navy);font-size:0.68rem;padding:2px 8px;border-radius:4px;text-decoration:none;font-weight:700;}
+@media(max-width:500px){header h1{font-size:1.45rem;}.section{padding:0.85rem;}.tl-time{min-width:56px;font-size:0.68rem;}.day-theme-tag{display:none;}}
+</style>
+</head>
+<body>
+<header>
+  <h1>&#127468;&#127463; 英國旅遊行程 2026</h1>
+  <div class="sub">STEP BY STEP 詳細版 &nbsp;·&nbsp; 第一次自助旅行專用</div>
+  <div class="dates">&#128197; 7月29日 — 8月14日 &nbsp;｜&nbsp; 3人 &nbsp;｜&nbsp; 17天</div>
+</header>
+<nav>
+  <button class="tab-btn active" onclick="showTab('itinerary',this)">&#128197; 每日行程</button>
+  <button class="tab-btn" onclick="showTab('transport',this)">&#128647; 交通指南</button>
+  <button class="tab-btn" onclick="showTab('tips',this)">&#128161; 旅行提醒</button>
+  <button class="tab-btn" onclick="showTab('tickets',this)">&#127903; 票價購票</button>
+  <button class="tab-btn" onclick="showTab('customs',this)">&#9992; 海關清單</button>
+  <button class="tab-btn" onclick="showTab('food',this)">&#127869; 餐廳速查</button>
+</nav>
+
+<section id="itinerary" class="section active">
+<div class="notice"><strong>&#127968; 住宿：</strong>Moxy London Stratford &nbsp;·&nbsp; 5 Celebration Ave, London E20 1DB &nbsp;<a class="map-btn" href="https://maps.google.com/?q=Moxy+London+Stratford" target="_blank">&#128205; 飯店位置</a></div>
+<div class="day-nav"><button class="day-nav-btn active" onclick="switchDay('d1',this)">7/29</button><button class="day-nav-btn" onclick="switchDay('d2',this)">7/30</button><button class="day-nav-btn" onclick="switchDay('d3',this)">7/31</button><button class="day-nav-btn" onclick="switchDay('d4',this)">8/1</button><button class="day-nav-btn" onclick="switchDay('d5',this)">8/2</button><button class="day-nav-btn" onclick="switchDay('d6',this)">8/3</button><button class="day-nav-btn" onclick="switchDay('d7',this)">8/4</button><button class="day-nav-btn" onclick="switchDay('d8',this)">8/5</button><button class="day-nav-btn" onclick="switchDay('d9',this)">8/6</button><button class="day-nav-btn" onclick="switchDay('d10',this)">8/7</button><button class="day-nav-btn" onclick="switchDay('d11',this)">8/8</button><button class="day-nav-btn" onclick="switchDay('d12',this)">8/9</button><button class="day-nav-btn" onclick="switchDay('d13',this)">8/10-11</button><button class="day-nav-btn" onclick="switchDay('d14',this)">8/12-13</button><button class="day-nav-btn" onclick="switchDay('d15',this)">8/14</button></div>
+<div id="dayPanels"><div class="day-panel" id="d1">
+    <div class="day-header-bar">
+      <span class="day-num-badge">7/29</span>
+      <span class="day-main-title">抵達倫敦</span>
+      <span class="day-theme-tag">入境日</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">3 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">免費</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">輕鬆</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">機場</div>
+      <div class="tl-content">
+        <div class="tl-title">✈️ 機場 → 飯店交通  </div>
+        <div class="tl-desc">搭 Elizabeth Line 直達 Stratford，全程約 50 分鐘</div><div class="transport-card">
+    <div class="tc-title">🚇 Heathrow → Stratford（Elizabeth Line）</div>
+    <div class="transport-route"><span class="tr-station">Heathrow T2/3</span><span class="tr-arrow">→</span><span class="tr-line">Elizabeth Line（紫色）</span><span class="tr-arrow">→</span><span class="tr-station">Stratford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 50 分鐘</span>
+      <span class="tr-cost">💰 約 £5.50（Contactless）</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">下飛機後跟著 <strong>Underground / Tube</strong> 指標走，不要跟 Taxi 指標</span></div><div class="step"><span class="step-num">2</span><span class="step-text">找到地鐵閘門，<strong>第一次</strong>感應信用卡或 Oyster Card 進站</span></div><div class="step"><span class="step-num">3</span><span class="step-text">找 <strong>Elizabeth Line（紫色）</strong> 月台，搭往 <strong>Shenfield / Reading</strong> 方向的班車</span></div><div class="step"><span class="step-num">4</span><span class="step-text">在 <strong>Stratford</strong> 站下車，感應卡出站</span></div><div class="step"><span class="step-num">5</span><span class="step-text">出站後往 <strong>Westfield Stratford City</strong> 方向，Moxy Hotel 步行約 5 分鐘</span></div><div class="step"><span class="step-num">6</span><span class="step-text">抵達飯店 Check-in，放行李</span></div></div><div class="tip-box">行李重先 Check-in 放行李再出門</div><div class="tip-box">坐錯方向車：下一站出來換對面月台就好</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">下午</div>
+      <div class="tl-content">
+        <div class="tl-title">🛒 Westfield Stratford City 熟悉環境  <a class="map-btn" href="https://maps.google.com/?q=Westfield+Stratford+City" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">飯店旁大型購物中心，辦好各種事</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">找 <strong>Three 或 EE</strong> 電信門市買英國 SIM 卡（如台灣沒買），約 £10-15</span></div><div class="step"><span class="step-num">2</span><span class="step-text">找地鐵站買 Oyster Card（不用信用卡 Contactless 的話）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">逛 Marks & Spencer Food Hall，買隔天早餐</span></div><div class="step"><span class="step-num">4</span><span class="step-text">熟悉環境，走路到飯店練習路線</span></div></div><div class="tip-box">Westfield 每天開到晚上 9 點</div><div class="tip-box">SIM 卡裝上先確認能上網才離開</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">晚餐</div>
+      <div class="tl-content">
+        <div class="tl-title">🍜 晚餐：Wagamama（Westfield 內）  <a class="map-btn" href="https://maps.google.com/?q=Wagamama+Stratford+Westfield" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">日式拉麵，圖文菜單，英文不好完全沒問題</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">進門站入口等，服務生過來說 <strong>"Table for 3, please"</strong></span></div><div class="step"><span class="step-num">2</span><span class="step-text">菜單有圖片，指圖片點餐</span></div><div class="step"><span class="step-num">3</span><span class="step-text">結帳說 <strong>"Can I get the bill, please?"</strong></span></div><div class="step"><span class="step-num">4</span><span class="step-text">信用卡 Contactless 付款</span></div></div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d2">
+    <div class="day-header-bar">
+      <span class="day-num-badge">7/30</span>
+      <span class="day-main-title">西敏寺區</span>
+      <span class="day-theme-tag">皇家核心</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">5 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">約 NT$2,720/人</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">中等（約12,000步）</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">出發</div>
+      <div class="tl-content">
+        <div class="tl-title">🚇 交通：Stratford → Westminster  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → Westminster</div>
+    <div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">Jubilee Line（銀色）</span><span class="tr-arrow">→</span><span class="tr-station">Westminster</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 25 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從 Stratford 站進站感應卡</span></div><div class="step"><span class="step-num">2</span><span class="step-text">搭 <strong>Jubilee Line（銀色）</strong>，往 <strong>Stanmore / Waterloo</strong> 方向</span></div><div class="step"><span class="step-num">3</span><span class="step-text">在 <strong>Westminster</strong> 站下車感應出站</span></div><div class="step"><span class="step-num">4</span><span class="step-text">出站後跟著 <strong>Westminster Bridge / Big Ben</strong> 指標走，出來就看到大笨鐘</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">09:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🏛️ 西敏寺 Westminster Abbey <span class="price-tag">NT$1,320/人</span> <a class="map-btn" href="https://maps.google.com/?q=Westminster+Abbey+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">英國皇室加冕、婚禮、葬禮場所，歷史超過 1000 年</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從 Westminster 站步行約 5 分鐘到西敏寺入口（正門在 Broad Sanctuary 側）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">買票時換取<strong>語音導覽器</strong>，有中文選項！</span></div><div class="step"><span class="step-num">3</span><span class="step-text">跟著語音導覽路線走，建議花 1.5-2 小時</span></div><div class="step"><span class="step-num">4</span><span class="step-text">必看：高壇（Quire）、王室紀念碑、詩人角（Poets' Corner）</span></div></div><div class="tip-box">官網預購省排隊，旺季現場可能等 20-30 分鐘</div><div class="tip-box">內部禁止攝影（部分區域可以）</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">11:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🕐 大笨鐘 & 國會大廈外觀 <span class="free-tag">免費</span> <a class="map-btn" href="https://maps.google.com/?q=Big+Ben+Westminster+Bridge+London" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">西敏寺出來步行到 <strong>Westminster Bridge</strong>（約2分鐘）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">站橋上往北拍大笨鐘，往南可拍倫敦眼</span></div><div class="step"><span class="step-num">3</span><span class="step-text">走橋對面往上游走一點，拍大笨鐘 + 泰晤士河全景</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">12:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🍽️ 午餐：St. James's Park 附近  </div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">推薦步行到 <strong>Victoria 站</strong>附近找餐廳（約15分鐘）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">或在公園旁 M&S 買點心，到聖詹姆斯公園野餐</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>Pret A Manger</strong> 或 <strong>Itsu</strong>（Victoria 站旁，日式外帶）</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">14:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🏰 白金漢宮 Buckingham Palace <span class="price-tag">NT$1,400/人</span> <a class="map-btn" href="https://maps.google.com/?q=Buckingham+Palace+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">7-9月開放 State Rooms 內部參觀，含免費中文語音導覽</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從 Victoria 站步行約 10 分鐘，或地鐵一站到 <strong>St. James's Park</strong></span></div><div class="step"><span class="step-num">2</span><span class="step-text">入口在 Buckingham Palace Road 側（不是正面廣場）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">出示預購 QR Code，換取<strong>中文語音導覽器</strong>（免費，一定要拿）</span></div><div class="step"><span class="step-num">4</span><span class="step-text">按路線參觀 State Rooms，約 2-2.5 小時</span></div><div class="step"><span class="step-num">5</span><span class="step-text">必看：Throne Room（寶座廳）、Ball Room（舞廳）</span></div></div><div class="tip-box">旺季現場常售罄，一定要提前在 rct.uk 購票</div><div class="tip-box">最後會出來到皇家花園，可以繞走</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">17:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🌳 聖詹姆斯公園 <span class="free-tag">免費</span> <a class="map-btn" href="https://maps.google.com/?q=St+James+Park+London" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">白金漢宮出來後步行直接進公園</span></div><div class="step"><span class="step-num">2</span><span class="step-text">走到中間的湖，找找看有沒有鵜鶘（通常下午在湖邊）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">往 Horse Guards Parade 方向走可以看衛兵</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">晚餐</div>
+      <div class="tl-content">
+        <div class="tl-title">🍛 晚餐：Dishoom（Covent Garden）  <a class="map-btn" href="https://maps.google.com/?q=Dishoom+Covent+Garden+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">印度料理排隊名店，菜色豐富</div><div class="transport-card">
+    <div class="tc-title">🚇 回程：Covent Garden → Stratford</div>
+    <div class="transport-route"><span class="tr-station">Covent Garden</span><span class="tr-arrow">→</span><span class="tr-line">Piccadilly Line → Green Park</span><span class="tr-arrow">→</span><span class="tr-station">Jubilee Line → Stratford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 35 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">搭地鐵到 <strong>Covent Garden</strong> 站</span></div><div class="step"><span class="step-num">2</span><span class="step-text">到 Dishoom 門口<strong>現場排隊</strong>（不接受訂位，通常等 30-45 分鐘）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">點 Black Dal（黑扁豆）、Chicken Ruby Curry</span></div><div class="step"><span class="step-num">4</span><span class="step-text">結帳後搭地鐵回 Stratford</span></div></div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d3">
+    <div class="day-header-bar">
+      <span class="day-num-badge">7/31</span>
+      <span class="day-main-title">倫敦塔橋 + 南岸</span>
+      <span class="day-theme-tag">泰晤士河畔</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">5 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">約 NT$2,828/人</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">中等（約15,000步）</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">出發</div>
+      <div class="tl-content">
+        <div class="tl-title">🚇 交通：Stratford → Tower Hill  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → Tower Hill</div>
+    <div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">District Line（綠）或 H&C Line（粉）</span><span class="tr-arrow">→</span><span class="tr-station">Tower Hill</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 22 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">搭 <strong>District Line（綠色）</strong>，往 <strong>Richmond / Wimbledon</strong> 方向</span></div><div class="step"><span class="step-num">2</span><span class="step-text">在 <strong>Tower Hill</strong> 站下車</span></div><div class="step"><span class="step-num">3</span><span class="step-text">出站後直接看到倫敦塔，就在眼前</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">09:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🏰 倫敦塔 Tower of London <span class="price-tag">NT$1,500/人</span> <a class="map-btn" href="https://maps.google.com/?q=Tower+of+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">900年歷史的皇家城堡，關過王后、藏著皇冠珠寶</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">出示預購 QR Code 入場</span></div><div class="step"><span class="step-num">2</span><span class="step-text">入口處加入 <strong>Beefeater 衛兵導覽</strong>（每天固定時間，免費含在票內）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">必看 ①：<strong>Crown Jewels（皇冠珠寶）</strong>— 全程最精華，排隊約20分鐘</span></div><div class="step"><span class="step-num">4</span><span class="step-text">必看 ②：White Tower（白塔）內部，中世紀盔甲展</span></div><div class="step"><span class="step-num">5</span><span class="step-text">沿城牆走一圈，可以看到倫敦塔橋的好角度</span></div></div><div class="tip-box">Crown Jewels 早去排隊最短，下午人超多</div><div class="tip-box">衛兵換崗時間：查官網當天時間表</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">12:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🌉 倫敦塔橋 Tower Bridge <span class="free-tag">登橋 NT$690/人；過橋免費</span> <a class="map-btn" href="https://maps.google.com/?q=Tower+Bridge+London" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從倫敦塔步行約5分鐘到橋頭</span></div><div class="step"><span class="step-num">2</span><span class="step-text">先在橋頭廣場免費拍照</span></div><div class="step"><span class="step-num">3</span><span class="step-text">若要登橋：入口在北岸橋頭，出示票入場</span></div><div class="step"><span class="step-num">4</span><span class="step-text">走到橋中間的<strong>玻璃地板</strong>往下看，車子從腳下通過</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">13:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🥘 午餐：Borough Market  <a class="map-btn" href="https://maps.google.com/?q=Borough+Market+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">倫敦最古老市場，各國小吃，用手指點就好</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從塔橋步行過橋到南岸，沿 Tooley Street 走約10分鐘</span></div><div class="step"><span class="step-num">2</span><span class="step-text">推薦：Raclette Brothers（起司薯條）、Kappacasein（起司三明治）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">不清楚是什麼就用 Google Translate 拍照翻譯</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">15:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🚶 南岸步行 + 泰特現代美術館 <span class="free-tag">美術館免費</span> <a class="map-btn" href="https://maps.google.com/?q=Tate+Modern+London" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從 Borough Market 沿河岸往西走（往倫敦眼方向）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">途中經過 <strong>Tate Modern 美術館</strong>（免費，可進去逛），去 10 樓觀景台拍倫敦全景</span></div><div class="step"><span class="step-num">3</span><span class="step-text">繼續走過 Millennium Bridge，橋上拍聖保羅大教堂</span></div><div class="step"><span class="step-num">4</span><span class="step-text">繼續走到 London Eye，距離約 1.5 公里，步行約 20 分鐘</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">17:00</div>
+      <div class="tl-content">
+        <div class="tl-title">👁️ 倫敦之眼 London Eye <span class="price-tag">NT$638/人（促銷）</span> <a class="map-btn" href="https://maps.google.com/?q=London+Eye" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">黃昏時搭乘光線最美，7-8月約20:00才日落，不用擔心太暗</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">到達後出示預購 QR Code，走 Fast Track 通道（預購才有）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">進入膠囊艙（每艙約20-25人），緩慢旋轉一圈約 30 分鐘</span></div><div class="step"><span class="step-num">3</span><span class="step-text">往北看大笨鐘，往東看聖保羅大教堂</span></div></div><div class="tip-box">不能攜帶大型行李入場</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">晚餐</div>
+      <div class="tl-content">
+        <div class="tl-title">🍽️ 晚餐：South Bank 附近  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 回程：Waterloo → Stratford</div>
+    <div class="transport-route"><span class="tr-station">Waterloo</span><span class="tr-arrow">→</span><span class="tr-line">Jubilee Line（銀色）</span><span class="tr-arrow">→</span><span class="tr-station">Stratford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 25 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>Côte Brasserie</strong>（South Bank，法式，有圖菜單）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">或搭地鐵回 Stratford，在 Westfield 吃晚餐</span></div></div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d4">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/1</span>
+      <span class="day-main-title">大英博物館 + 蘇活區</span>
+      <span class="day-theme-tag">文化購物</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">4 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">約 NT$343/人（博物館）</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">中等（約14,000步）</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">出發</div>
+      <div class="tl-content">
+        <div class="tl-title">🚇 交通：Stratford → Tottenham Court Road  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → Tottenham Court Road</div>
+    <div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">Central Line（紅色）直達</span><span class="tr-arrow">→</span><span class="tr-station">Tottenham Court Road</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 20 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">搭 <strong>Central Line（紅色）</strong>，往 <strong>West Ruislip / Ealing Broadway</strong> 方向</span></div><div class="step"><span class="step-num">2</span><span class="step-text">在 <strong>Tottenham Court Road</strong> 站下車</span></div><div class="step"><span class="step-num">3</span><span class="step-text">出站後沿 Museum Street 直走約 7 分鐘到大英博物館</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">10:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🏛️ 大英博物館 British Museum <span class="price-tag">NT$343/人（含語音導覽）</span> <a class="map-btn" href="https://maps.google.com/?q=British+Museum+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">世界最大博物館之一，館藏800萬件</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">入口在 Great Russell Street，排隊安檢進場</span></div><div class="step"><span class="step-num">2</span><span class="step-text">入口大廳服務台租語音導覽器（選中文）</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>必看路線（約3小時）：</strong></span></div><div class="step"><span class="step-num">4</span><span class="step-text">① 1F Room 4：羅塞塔石碑（Rosetta Stone）</span></div><div class="step"><span class="step-num">5</span><span class="step-text">② 1F Room 61-66：埃及木乃伊</span></div><div class="step"><span class="step-num">6</span><span class="step-text">③ 2F Room 40：帕德嫩神廟大廳</span></div><div class="step"><span class="step-num">7</span><span class="step-text">④ 3F Room 33：中國文物廳</span></div><div class="step"><span class="step-num">8</span><span class="step-text">腳痠了在中庭咖啡廳休息</span></div></div><div class="tip-box">館藏太大，選 2-3 主題深入就好，不要想全部看完</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">14:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🛍️ 牛津圓環 + 柯芬園  </div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">搭地鐵（Central Line 1站）或步行到 <strong>Oxford Circus</strong></span></div><div class="step"><span class="step-num">2</span><span class="step-text">逛 Oxford Street：Primark（超便宜）、H&M、UNIQLO、Selfridges</span></div><div class="step"><span class="step-num">3</span><span class="step-text">走路約 15-20 分鐘到 <strong>Covent Garden</strong>，或搭 Piccadilly Line 一站</span></div><div class="step"><span class="step-num">4</span><span class="step-text">廣場中間有街頭藝人表演，圍觀欣賞（表演後可自願給小費）</span></div><div class="step"><span class="step-num">5</span><span class="step-text">地下室有特色手工藝品店和咖啡館</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">晚餐</div>
+      <div class="tl-content">
+        <div class="tl-title">🥢 晚餐：Chinatown 中國城  <a class="map-btn" href="https://maps.google.com/?q=London+Chinatown+Gerrard+Street" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">Leicester Square 站旁，有中文菜單，語言完全無障礙</div><div class="transport-card">
+    <div class="tc-title">🚇 回程：Leicester Square → Stratford</div>
+    <div class="transport-route"><span class="tr-station">Leicester Square</span><span class="tr-arrow">→</span><span class="tr-line">Piccadilly Line → Holborn</span><span class="tr-arrow">→</span><span class="tr-station">Central Line → Stratford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 30 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">搭地鐵到 <strong>Leicester Square</strong></span></div><div class="step"><span class="step-num">2</span><span class="step-text">進 Gerrard Street（主要的中國城街道）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">推薦：Leong's Legends（台灣料理！）、Gold Mine（燒臘飯）</span></div><div class="step"><span class="step-num">4</span><span class="step-text">直接用中文點餐沒問題</span></div></div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d5">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/2</span>
+      <span class="day-main-title">聖保羅 + 西堤區</span>
+      <span class="day-theme-tag">金融城古蹟</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">4 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">約 NT$1,154/人</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">中等（約13,000步）</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">出發</div>
+      <div class="tl-content">
+        <div class="tl-title">🚇 交通：Stratford → St. Paul's  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → St. Paul's</div>
+    <div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">Central Line（紅色）直達</span><span class="tr-arrow">→</span><span class="tr-station">St. Paul's</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 18 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">09:30</div>
+      <div class="tl-content">
+        <div class="tl-title">⛪ 聖保羅大教堂 St. Paul's Cathedral <span class="price-tag">NT$1,154/人</span> <a class="map-btn" href="https://maps.google.com/?q=St+Paul+Cathedral+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">英國最壯觀圓頂大教堂，可登頂俯瞰倫敦</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">出示票入場，領語音導覽</span></div><div class="step"><span class="step-num">2</span><span class="step-text">先在地面層欣賞大廳，抬頭看壯觀圓頂彩繪</span></div><div class="step"><span class="step-num">3</span><span class="step-text">爬上 <strong>Whispering Gallery（耳語廊）</strong>：257 級台階，圓形廊道兩側可傳音</span></div><div class="step"><span class="step-num">4</span><span class="step-text">繼續爬到 <strong>Stone Gallery</strong>（室外）：倫敦全景一覽</span></div><div class="step"><span class="step-num">5</span><span class="step-text">體力夠可爬到頂 <strong>Golden Gallery</strong>（再 152 階）：360度景觀</span></div></div><div class="tip-box">登頂有電梯到一半，上半段還是要爬樓梯</div><div class="tip-box">不方便爬樓梯只看地面層也很值得</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">11:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🚶 Millennium Bridge 千禧橋 <span class="free-tag">免費</span> <a class="map-btn" href="https://maps.google.com/?q=Millennium+Bridge+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">哈利波特裡被食死人破壞的那座橋！</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從聖保羅步行約5分鐘到橋頭</span></div><div class="step"><span class="step-num">2</span><span class="step-text">走到橋中間：往北拍聖保羅大教堂，往南看 Tate Modern</span></div><div class="step"><span class="step-num">3</span><span class="step-text">過橋到南岸，右手邊就是 Tate Modern（免費入內）</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">13:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🥘 午餐：Borough Market  <a class="map-btn" href="https://maps.google.com/?q=Borough+Market+London" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從 Tate Modern 步行約 10 分鐘</span></div><div class="step"><span class="step-num">2</span><span class="step-text">各國小吃，指著想吃的就好</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">15:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🏙️ 碎片塔（可選）+ London Bridge 區 <span class="price-tag">碎片塔 NT$808/人（可選）</span> <a class="map-btn" href="https://maps.google.com/?q=The+Shard+London" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從 Borough Market 步行約 5 分鐘到碎片塔</span></div><div class="step"><span class="step-num">2</span><span class="step-text">若買票：天氣好的話景觀超棒；多霧天可省下</span></div><div class="step"><span class="step-num">3</span><span class="step-text">不上頂的話在下面仰拍也壯觀</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">晚餐</div>
+      <div class="tl-content">
+        <div class="tl-title">🍽️ 晚餐：London Bridge 區  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 回程：London Bridge → Stratford</div>
+    <div class="transport-route"><span class="tr-station">London Bridge</span><span class="tr-arrow">→</span><span class="tr-line">Jubilee Line（銀色）</span><span class="tr-arrow">→</span><span class="tr-station">Stratford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 20 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>Padella</strong>（Borough Market 旁，義大利麵，需排隊）</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>Flat Iron</strong>（London Bridge 附近，平價牛排）</span></div></div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d6">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/3</span>
+      <span class="day-main-title">格林威治一日</span>
+      <span class="day-theme-tag">子午線</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">5 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">約 NT$1,445/人</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">中等（含爬坡）</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">出發</div>
+      <div class="tl-content">
+        <div class="tl-title">🚇 交通：Stratford → Cutty Sark（DLR）  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → Cutty Sark（DLR 輕軌）</div>
+    <div class="transport-route"><span class="tr-station">Stratford（DLR）</span><span class="tr-arrow">→</span><span class="tr-line">DLR 往 Lewisham 方向</span><span class="tr-arrow">→</span><span class="tr-station">Cutty Sark for Maritime Greenwich</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 22 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">Stratford 站找 <strong>DLR（輕軌）</strong>月台（不是地鐵，是地面小火車）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">搭往 <strong>Lewisham</strong> 方向</span></div><div class="step"><span class="step-num">3</span><span class="step-text">在 <strong>Cutty Sark for Maritime Greenwich</strong> 站下車</span></div><div class="step"><span class="step-num">4</span><span class="step-text">出站後就看到卡帝薩克號帆船</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">10:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🛳️ 卡帝薩克號 Cutty Sark <span class="price-tag">含在一日通票</span> <a class="map-btn" href="https://maps.google.com/?q=Cutty+Sark+Greenwich" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">出示通票 QR Code 入場</span></div><div class="step"><span class="step-num">2</span><span class="step-text">走到船底看船體結構，爬上甲板</span></div><div class="step"><span class="step-num">3</span><span class="step-text">建議花 45 分鐘</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">11:00</div>
+      <div class="tl-content">
+        <div class="tl-title">⚓ 航海博物館 National Maritime Museum <span class="price-tag">含在一日通票</span> <a class="map-btn" href="https://maps.google.com/?q=National+Maritime+Museum+Greenwich" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從 Cutty Sark 步行約 5 分鐘</span></div><div class="step"><span class="step-num">2</span><span class="step-text">推薦：Nelson 廳（特拉法加海戰外套，有彈孔）</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">12:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🥘 午餐：格林威治市集  <a class="map-btn" href="https://maps.google.com/?q=Greenwich+Market+London" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從航海博物館走路約 5 分鐘</span></div><div class="step"><span class="step-num">2</span><span class="step-text">各種現做小吃，泰式、印度、英式全都有</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">14:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🔭 格林威治天文台 Royal Observatory <span class="price-tag">含在一日通票</span> <a class="map-btn" href="https://maps.google.com/?q=Royal+Observatory+Greenwich" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">踩在東西半球交界線拍照！</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從市集往<strong>上坡</strong>走（格林威治公園），約 15 分鐘到天文台</span></div><div class="step"><span class="step-num">2</span><span class="step-text">進入前先找門口 <strong>Prime Meridian Line（本初子午線）</strong>地面標誌</span></div><div class="step"><span class="step-num">3</span><span class="step-text">踩上去，一腳東半球一腳西半球拍照！</span></div><div class="step"><span class="step-num">4</span><span class="step-text">進入天文台參觀 Harrison 航海鐘</span></div></div><div class="tip-box">爬坡有點喘，但到頂後俯瞰 Canary Wharf 天際線超值得</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">16:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🌄 格林威治公園山頂觀景 <span class="free-tag">免費</span> <a class="map-btn" href="https://maps.google.com/?q=Greenwich+Park+hill+viewpoint" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">天文台門口往下看就是最美景觀點</span></div><div class="step"><span class="step-num">2</span><span class="step-text">往右邊草坡走找最佳拍照位置，正對著 Canary Wharf 摩天樓群</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">晚餐</div>
+      <div class="tl-content">
+        <div class="tl-title">🍽️ 晚餐：格林威治小鎮  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 回程：Cutty Sark → Stratford</div>
+    <div class="transport-route"><span class="tr-station">Cutty Sark（DLR）</span><span class="tr-arrow">→</span><span class="tr-line">DLR 往 Stratford</span><span class="tr-arrow">→</span><span class="tr-station">Stratford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 22 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>Goddards at Greenwich</strong>：傳統英式派餅（Pie & Mash）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">或搭 DLR 回 Canary Wharf，有很多現代餐廳</span></div></div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d7">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/4</span>
+      <span class="day-main-title">福爾摩斯 + 馬里波恩</span>
+      <span class="day-theme-tag">文學探案</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">4 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">約 NT$450/人</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">輕鬆（約10,000步）</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">出發</div>
+      <div class="tl-content">
+        <div class="tl-title">🚇 交通：Stratford → Baker Street  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → Baker Street</div>
+    <div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">Jubilee Line（銀色）</span><span class="tr-arrow">→</span><span class="tr-station">Baker Street</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 28 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">10:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🔍 福爾摩斯博物館 221B Baker Street <span class="price-tag">NT$450/人</span> <a class="map-btn" href="https://maps.google.com/?q=Sherlock+Holmes+Museum+221B+Baker+Street+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">全世界最有名的虛構地址，還原維多利亞時代客廳</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">出 Baker Street 站，跟著 Sherlock Holmes Museum 指標走（往北）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">門口有穿福爾摩斯服裝的人，可以拍照</span></div><div class="step"><span class="step-num">3</span><span class="step-text">排隊買票（平日通常 20-30 分鐘），現場購票即可</span></div><div class="step"><span class="step-num">4</span><span class="step-text">按路線參觀各樓層還原場景</span></div><div class="step"><span class="step-num">5</span><span class="step-text">最後紀念品店買明信片</span></div></div><div class="tip-box">不需要預約，直接排隊就好</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">11:30</div>
+      <div class="tl-content">
+        <div class="tl-title">📚 Daunt Books + 馬里波恩高街  <a class="map-btn" href="https://maps.google.com/?q=Daunt+Books+Marylebone+London" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從博物館步行約 10 分鐘</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>Daunt Books</strong>：全倫敦最美書店之一，按地區分類的旅遊書</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>Marylebone High Street</strong>：倫敦最愜意的購物街，都是獨立小店</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">13:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🥗 午餐：Marylebone 咖啡館野餐  </div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">在 Daunt Books 附近買咖啡和點心</span></div><div class="step"><span class="step-num">2</span><span class="step-text">帶到攝政公園野餐（步行約10分鐘）</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">14:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🌹 攝政公園玫瑰花園 Regent's Park <span class="free-tag">免費</span> <a class="map-btn" href="https://maps.google.com/?q=Queen+Mary+Rose+Garden+Regents+Park+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">8月玫瑰盛開，超過12,000株</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從馬里波恩高街步行約 10 分鐘進公園</span></div><div class="step"><span class="step-num">2</span><span class="step-text">找 <strong>Queen Mary's Gardens</strong>（玫瑰花園）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">7-8月玫瑰盛花期，繞園散步約 1 小時</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">晚餐</div>
+      <div class="tl-content">
+        <div class="tl-title">🍝 晚餐：Baker Street 附近  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 回程：Baker Street → Stratford</div>
+    <div class="transport-route"><span class="tr-station">Baker Street</span><span class="tr-arrow">→</span><span class="tr-line">Jubilee Line（銀色）</span><span class="tr-arrow">→</span><span class="tr-station">Stratford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 28 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>Wagamama Baker Street</strong>（永遠安全選擇）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">或 <strong>Carluccio's</strong>（義大利菜，有圖菜單）</span></div></div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d8">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/5</span>
+      <span class="day-main-title">溫莎堡近郊</span>
+      <span class="day-theme-tag">皇家城堡</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">4 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">NT$1,360/人 + 火車約 NT$800</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">中等（含城堡步行）</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">08:30 出發</div>
+      <div class="tl-content">
+        <div class="tl-title">🚂 交通：Stratford → Windsor（火車）  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → Windsor & Eton Central（二段）</div>
+    <div class="transport-route"><span class="tr-station">Stratford（地鐵 Jubilee Line）</span><span class="tr-arrow">→</span><span class="tr-line">→ Paddington</span><span class="tr-arrow">→</span><span class="tr-station">GWR 火車 → Windsor & Eton Central</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 地鐵22分 + 火車30-40分</span>
+      <span class="tr-cost">💰 來回約 NT$800-1,000/人</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>【提前購票】</strong>：nationalrail.co.uk 或 Trainline app，選 London Paddington → Windsor & Eton Central，Advance 票最便宜</span></div><div class="step"><span class="step-num">2</span><span class="step-text">當天早上8:30 Stratford 搭 Jubilee Line 到 <strong>Paddington</strong>（22分鐘）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">在 Paddington 火車站找 <strong>GWR</strong> 月台（大廳螢幕出發前15分才顯示月台號）</span></div><div class="step"><span class="step-num">4</span><span class="step-text">搭火車約 30-40 分鐘到 <strong>Windsor & Eton Central</strong></span></div><div class="step"><span class="step-num">5</span><span class="step-text">出站後溫莎堡就在眼前，步行約 3 分鐘</span></div></div><div class="tip-box">Paddington 站很大，預留 15 分鐘找月台</div><div class="tip-box">e-ticket 手機截圖存好，出示給車掌看</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">10:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🏰 溫莎堡 Windsor Castle <span class="price-tag">NT$1,360/人</span> <a class="map-btn" href="https://maps.google.com/?q=Windsor+Castle+Windsor" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">世界上有人居住最古老的城堡，英國皇室週末居所</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">出示 rct.uk 預購票 QR Code 入場</span></div><div class="step"><span class="step-num">2</span><span class="step-text">領取中文語音導覽</span></div><div class="step"><span class="step-num">3</span><span class="step-text">必看 ①：<strong>State Apartments（國宴廳）</strong>：各種皇家藝術收藏</span></div><div class="step"><span class="step-num">4</span><span class="step-text">必看 ②：<strong>Queen Mary's Dolls' House</strong>：1:12 縮比宮殿，精緻到不可思議</span></div><div class="step"><span class="step-num">5</span><span class="step-text">必看 ③：<strong>St. George's Chapel</strong>：哈利王子婚禮場地，多位英王長眠於此</span></div><div class="step"><span class="step-num">6</span><span class="step-text">沿城牆走一圈，俯瞰 Eton College 和溫莎小鎮</span></div></div><div class="tip-box">週末上午 11:00 衛兵換崗儀式，很壯觀，值得等</div><div class="tip-box">整個城堡需 2.5-3 小時</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">13:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🍺 午餐：溫莎小鎮 Two Brewers  <a class="map-btn" href="https://maps.google.com/?q=Two+Brewers+Windsor" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">出城堡後往小鎮走（Peascod Street 是主街）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">走到吧台說 <strong>"Fish and chips, please"</strong>（炸魚薯條）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">付完錢自己找座位等叫號</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">14:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🚶 溫莎小鎮 + Eton 散步  </div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">逛 High Street 主街的紀念品店</span></div><div class="step"><span class="step-num">2</span><span class="step-text">走過 Windsor Bridge 到對岸 <strong>Eton 伊頓小鎮</strong>，看伊頓公學（Eton College）圍牆，很多穿燕尾服的學生</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">16:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🚂 回程  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Windsor → Stratford（回程）</div>
+    <div class="transport-route"><span class="tr-station">Windsor & Eton Central（GWR）</span><span class="tr-arrow">→</span><span class="tr-line">→ London Paddington</span><span class="tr-arrow">→</span><span class="tr-station">Jubilee Line → Stratford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 火車30-40分 + 地鐵22分</span>
+      <span class="tr-cost">💰 含在來回票</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">到 Windsor 火車站，看大廳螢幕找下一班往 Paddington</span></div><div class="step"><span class="step-num">2</span><span class="step-text">出示手機票上車</span></div><div class="step"><span class="step-num">3</span><span class="step-text">到 Paddington 換地鐵 Jubilee Line 回 Stratford</span></div></div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d9">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/6</span>
+      <span class="day-main-title">牛津 + Bicester Village</span>
+      <span class="day-theme-tag">學城購物</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">4 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">約 NT$600/人（牛津）+ 購物</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">多（約18,000步）</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">08:00 出發</div>
+      <div class="tl-content">
+        <div class="tl-title">🚂 交通：Stratford → Oxford（火車）  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → Oxford（二段）</div>
+    <div class="transport-route"><span class="tr-station">Stratford（地鐵）</span><span class="tr-arrow">→</span><span class="tr-line">Elizabeth/Central Line → Paddington</span><span class="tr-arrow">→</span><span class="tr-station">Chiltern Railways → Oxford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 地鐵22分 + 火車55-65分</span>
+      <span class="tr-cost">💰 來回約 NT$700-900/人</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>【提前購票】</strong>：nationalrail.co.uk，選 London Paddington → Oxford，Advance 票</span></div><div class="step"><span class="step-num">2</span><span class="step-text">當天8:00 Stratford 搭地鐵到 <strong>Paddington</strong>（22分鐘）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">找 <strong>Chiltern Railways</strong> 月台（或 GWR，看訂的班次）</span></div><div class="step"><span class="step-num">4</span><span class="step-text">約 55-65 分鐘後到 <strong>Oxford</strong> 火車站</span></div><div class="step"><span class="step-num">5</span><span class="step-text">出站搭公車 1/10 到市中心（約10分鐘），或步行約25分鐘</span></div></div><div class="tip-box">建議8點前出發，早到牛津早點玩</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">10:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🎓 牛津大學  <a class="map-btn" href="https://maps.google.com/?q=Christ+Church+College+Oxford" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>Christ Church College</strong>（推薦必進）：哈利波特餐廳（Great Hall）原型，入口在 St Aldate's，買票進場，NT$600/人</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>Bodleian Library</strong> 外觀拍照（免費）</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>Radcliffe Camera</strong>（圓形建築，外觀免費）拍照</span></div><div class="step"><span class="step-num">4</span><span class="step-text">在 <strong>Covered Market（有頂市場）</strong>逛逛</span></div></div><div class="tip-box">大部分 College 夏天開放參觀但要買票，選 1-2 個進入就夠了</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">12:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🥘 午餐：牛津市中心  </div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>Covered Market</strong> 內有多家便宜選擇</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>Brown's Restaurant</strong>（High Street，傳統英式）</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">14:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🛍️ 前往 Bicester Village  <a class="map-btn" href="https://maps.google.com/?q=Bicester+Village+outlet+Bicester" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">歐洲最著名 Outlet，品牌折扣 30-70%</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">在牛津 <strong>Gloucester Green Bus Station</strong> 搭 <strong>S5 路公車</strong></span></div><div class="step"><span class="step-num">2</span><span class="step-text">約 30-35 分鐘到 <strong>Bicester Village</strong>（公車直達，上車付約 £5）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">進入後是戶外步行街，各品牌獨立店舖</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>帶護照！</strong>部分品牌可辦 VAT 退稅（20% 退回）</span></div><div class="step"><span class="step-num">5</span><span class="step-text">台灣人最愛：Burberry、Coach、Polo Ralph Lauren、Clarks</span></div></div><div class="tip-box">VAT 退稅：在店內購物時出示護照說 'I'd like a tax refund'，店員會給你退稅表格</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">17:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🚂 回程：Bicester → London  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Bicester → Stratford（回程）</div>
+    <div class="transport-route"><span class="tr-station">Bicester Village 站（步行5分鐘）</span><span class="tr-arrow">→</span><span class="tr-line">Chiltern Railways → London Marylebone</span><span class="tr-arrow">→</span><span class="tr-station">地鐵 Bakerloo → Baker St → Jubilee → Stratford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 火車45分 + 地鐵35分</span>
+      <span class="tr-cost">💰 另買 Bicester → Marylebone 票</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">Bicester Village 步行約 5 分鐘到 <strong>Bicester Village 火車站</strong></span></div><div class="step"><span class="step-num">2</span><span class="step-text">搭 Chiltern Railways 直達 <strong>London Marylebone</strong>（45分鐘）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">在 Marylebone 站換地鐵回 Stratford</span></div></div><div class="tip-box">這是 Bicester 往返倫敦最直接的方式，不需要回牛津火車站</div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d10">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/7</span>
+      <span class="day-main-title">劍橋一日遊</span>
+      <span class="day-theme-tag">撐篙</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">5 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">約 NT$900/人 + 火車</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">中等（約14,000步）</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">08:30 出發</div>
+      <div class="tl-content">
+        <div class="tl-title">🚂 交通：Stratford → Cambridge（火車）  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → Cambridge（二段）</div>
+    <div class="transport-route"><span class="tr-station">Stratford（地鐵）</span><span class="tr-arrow">→</span><span class="tr-line">Victoria Line → Tottenham Hale</span><span class="tr-arrow">→</span><span class="tr-station">Greater Anglia → Cambridge</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 地鐵20分 + 火車65-75分</span>
+      <span class="tr-cost">💰 來回約 NT$800-1,000/人</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>【提前購票】</strong>：nationalrail.co.uk，選 London Liverpool Street → Cambridge 或 Tottenham Hale → Cambridge</span></div><div class="step"><span class="step-num">2</span><span class="step-text">從 Stratford 搭地鐵到 <strong>Tottenham Hale</strong>（先搭 Jubilee → Westminster → Victoria Line）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">在 Tottenham Hale 換 <strong>Greater Anglia</strong> 火車到 <strong>Cambridge</strong>（約60分鐘）</span></div><div class="step"><span class="step-num">4</span><span class="step-text">出劍橋火車站步行約25分鐘到市中心，或搭公車 1/3/7（約15分鐘）</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">10:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🎓 劍橋大學各學院  <a class="map-btn" href="https://maps.google.com/?q=Kings+College+Chapel+Cambridge" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>King's College</strong>（推薦買票進入，NT$400）：King's College Chapel 哥德式大教堂令人屏息</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>Queen's College 外觀</strong>（隔著圍欄拍「數學橋」，木製橋，免費看）</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>Trinity College 外觀</strong>（牛頓就讀，外牆有蘋果樹）</span></div><div class="step"><span class="step-num">4</span><span class="step-text">沿著 <strong>The Backs</strong>（各學院背面河邊步道）散步，劍橋最美風景</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">12:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🥘 午餐：The Anchor Pub（可看撐篙）  <a class="map-btn" href="https://maps.google.com/?q=The+Anchor+pub+Cambridge+Silver+Street" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">Silver Street 旁的 pub，可以邊吃邊看外面的撐篙</span></div><div class="step"><span class="step-num">2</span><span class="step-text">進門找吧台點餐付款，自己找座位</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">14:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🚣 撐篙 Punting（Scudamore's）  <a class="map-btn" href="https://maps.google.com/?q=Cambridge+Punting+Scudamores" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">劍橋最不可錯過的體驗！從水上欣賞各學院</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">主要出發點：<strong>Mill Pond</strong>（Scudamore's 公司）</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>推薦：共乘 Shared Tour</strong>：一艘約12-15人，有船夫導覽，NT$500/人，約45分鐘</span></div><div class="step"><span class="step-num">3</span><span class="step-text">或 <strong>自行撐篙 Self-hire</strong>：包一艘船自己玩，NT$1,500起，3人分攤很划算（但容易掉槳）</span></div><div class="step"><span class="step-num">4</span><span class="step-text">現場排隊即可，也可在 scudamores.com 提前預約</span></div></div><div class="tip-box">穿防水底的鞋，船上可能有點濕</div><div class="tip-box">自行撐篙很容易轉圈圈，當成笑料也很好玩</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">15:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🏛️ Fitzwilliam Museum <span class="free-tag">免費</span> <a class="map-btn" href="https://maps.google.com/?q=Fitzwilliam+Museum+Cambridge" target="_blank">📍 Maps</a></div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從撐篙點步行約 10 分鐘</span></div><div class="step"><span class="step-num">2</span><span class="step-text">劍橋最重要藝術古文物博物館，有埃及文物、歐洲繪畫</span></div><div class="step"><span class="step-num">3</span><span class="step-text">約 45 分鐘-1 小時</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">17:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🚂 回程  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Cambridge → Stratford（回程）</div>
+    <div class="transport-route"><span class="tr-station">Cambridge（Greater Anglia）</span><span class="tr-arrow">→</span><span class="tr-line">→ Liverpool Street 或 Tottenham Hale</span><span class="tr-arrow">→</span><span class="tr-station">地鐵回 Stratford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 火車65分 + 地鐵20分</span>
+      <span class="tr-cost">💰 含在來回票</span>
+    </div>
+  </div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d11">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/8</span>
+      <span class="day-main-title">肯辛頓博物館 + Harrods</span>
+      <span class="day-theme-tag">免費博物館日</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">3 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">博物館免費</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">中等（約13,000步）</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">出發</div>
+      <div class="tl-content">
+        <div class="tl-title">🚇 交通：Stratford → South Kensington  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → South Kensington</div>
+    <div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">Central Line → Holborn</span><span class="tr-arrow">→</span><span class="tr-station">Piccadilly Line → South Kensington</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 35 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">10:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🦕 自然史博物館 Natural History Museum <span class="free-tag">免費</span> <a class="map-btn" href="https://maps.google.com/?q=Natural+History+Museum+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">倫敦最受歡迎的免費博物館</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">出 South Kensington 站，跟著博物館指標走隧道（約5分鐘）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">一進大廳就是巨大藍鯨骨架懸掛天花板，馬上拍！</span></div><div class="step"><span class="step-num">3</span><span class="step-text">必看：Blue Zone（海洋生物）、Red Zone（地球科學）、Green Zone（恐龍化石）</span></div><div class="step"><span class="step-num">4</span><span class="step-text">建議花 2-2.5 小時</span></div></div><div class="tip-box">可和旁邊科學博物館（也免費）連逛</div><div class="tip-box">下午 2 點後人最多，早點去</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">13:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🥗 午餐：South Kensington 咖啡館  </div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">博物館內咖啡廳（稍貴但方便）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">或出來在 Old Brompton Road 找法式咖啡館</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">14:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🏬 Harrods 百貨  <a class="map-btn" href="https://maps.google.com/?q=Harrods+Knightsbridge+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">倫敦最豪華百貨，不買也值得進去開眼界</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從 South Kensington 步行15分鐘，或地鐵一站到 <strong>Knightsbridge</strong></span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>Food Hall（食品廳）</strong>：頂級食材、茶包、巧克力，適合買伴手禮</span></div><div class="step"><span class="step-num">3</span><span class="step-text">推薦伴手禮：Harrods 鐵盒裝茶包</span></div><div class="step"><span class="step-num">4</span><span class="step-text">逛各層精品（不買看看也開心）</span></div></div><div class="tip-box">Harrods 廁所很豪華，可以去感受一下（真的）</div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">晚餐</div>
+      <div class="tl-content">
+        <div class="tl-title">🍽️ 晚餐：Knightsbridge 附近或回 Stratford  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 回程：Knightsbridge → Stratford</div>
+    <div class="transport-route"><span class="tr-station">Knightsbridge</span><span class="tr-arrow">→</span><span class="tr-line">Piccadilly Line → Holborn</span><span class="tr-arrow">→</span><span class="tr-station">Central Line → Stratford</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 35 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d12">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/9</span>
+      <span class="day-main-title">Notting Hill + 泰特現代</span>
+      <span class="day-theme-tag">文青市集</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">4 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">免費</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">多（約16,000步）</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">出發</div>
+      <div class="tl-content">
+        <div class="tl-title">🚇 交通：Stratford → Notting Hill Gate  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → Notting Hill Gate</div>
+    <div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">Central Line（紅色）</span><span class="tr-arrow">→</span><span class="tr-station">Notting Hill Gate</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 30 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">10:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🏘️ 波多貝羅市場 + Notting Hill 彩色房子  <a class="map-btn" href="https://maps.google.com/?q=Portobello+Road+Market+Notting+Hill+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">電影「新娘百分百」拍攝地</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">出 Notting Hill Gate 站，往 Pembridge Road → Portobello Road 方向走</span></div><div class="step"><span class="step-num">2</span><span class="step-text">路上出現彩色房子，一路拍照</span></div><div class="step"><span class="step-num">3</span><span class="step-text">波多貝羅市場（週六最熱鬧）：古董、衣服、小吃</span></div><div class="step"><span class="step-num">4</span><span class="step-text">往北走（往 Golborne Road 方向）有更多在地感攤位</span></div><div class="step"><span class="step-num">5</span><span class="step-text"><strong>Blenheim Crescent</strong>（書店街）、<strong>Elgin Crescent</strong>（最上鏡彩色房子）</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">12:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🥐 午餐：市集小吃  </div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">在市集裡買現做小吃站著吃</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>Hummingbird Bakery</strong>（美式杯子蛋糕）</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>Lisboa Pâtisserie</strong>（葡式蛋塔，Golborne Road 末端）</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">14:00</div>
+      <div class="tl-content">
+        <div class="tl-title">🚇 前往 Tate Modern  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Notting Hill Gate → Tate Modern</div>
+    <div class="transport-route"><span class="tr-station">Notting Hill Gate</span><span class="tr-arrow">→</span><span class="tr-line">Circle/District Line → Blackfriars</span><span class="tr-arrow">→</span><span class="tr-station">步行 10 分鐘</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 25 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">14:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🎨 泰特現代美術館 Tate Modern <span class="free-tag">免費（特展需付費）</span> <a class="map-btn" href="https://maps.google.com/?q=Tate+Modern+London" target="_blank">📍 Maps</a></div>
+        <div class="tl-desc">世界最重要當代美術館，前身是發電廠</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">入口在泰晤士河岸邊（Bankside），走進那個大煙囪建築</span></div><div class="step"><span class="step-num">2</span><span class="step-text">大廳（Turbine Hall）本身就是藝術裝置空間，超壯觀</span></div><div class="step"><span class="step-num">3</span><span class="step-text">各樓層隨意逛不同主題展覽</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>一定要去 10 樓觀景台</strong>（免費）：360度俯瞰倫敦，聖保羅大教堂就在正對面</span></div></div>
+      </div>
+    </div><div class="tl-item">
+      <div class="tl-time">晚餐</div>
+      <div class="tl-content">
+        <div class="tl-title">🍔 晚餐：Shoreditch 區  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 回程：Shoreditch → Stratford</div>
+    <div class="transport-route"><span class="tr-station">Shoreditch High Street（Overground）</span><span class="tr-arrow">→</span><span class="tr-line">→ Stratford</span><span class="tr-arrow">→</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 15 分鐘</span>
+      <span class="tr-cost">💰 計入每日上限</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">搭地鐵到 <strong>Shoreditch High Street</strong>（Overground）</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>Bleecker Burger</strong>（評價極高的漢堡，約 NT$500-700）</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>Padella</strong>（義大利麵，如果沒排到之前的話）</span></div><div class="step"><span class="step-num">4</span><span class="step-text">飯後可以在 Brick Lane 附近看塗鴉牆</span></div></div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d13">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/10-11</span>
+      <span class="day-main-title">彈性備用日×2</span>
+      <span class="day-theme-tag">自由安排</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">依選擇 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">依選擇</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">依選擇</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">兩天</div>
+      <div class="tl-content">
+        <div class="tl-title">💡 彈性日建議選項  </div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">補跑前幾天沒去完的景點，或天氣不好時改到的景點</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>西區音樂劇</strong>：Leicester Square 的 TKTS Booth 排隊買當天折扣票（The Lion King、Mamma Mia 等）</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>Victoria & Albert Museum（V&A）</strong>：設計和藝術，免費，South Kensington</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>肯辛頓宮 Kensington Palace</strong>：Diana 王妃紀念展</span></div><div class="step"><span class="step-num">5</span><span class="step-text"><strong>Hampstead Heath</strong>：北倫敦爬山，免費，俯瞰整個倫敦，搭 Northern Line</span></div><div class="step"><span class="step-num">6</span><span class="step-text">在 Westfield Stratford 消磨一天，最後採購</span></div><div class="step"><span class="step-num">7</span><span class="step-text">完全休息充電</span></div></div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d14">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/12-13</span>
+      <span class="day-main-title">最後採購 + 整理</span>
+      <span class="day-theme-tag">收尾</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">-- 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">購物預算</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">輕鬆</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">最後兩天</div>
+      <div class="tl-content">
+        <div class="tl-title">🛍️ 最後採購重點  </div>
+        <div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text"><strong>Westfield Stratford</strong>（飯店旁）：Boots 藥妝（Bio-Oil、Nurofen、Lemsip）、M&S 食品</span></div><div class="step"><span class="step-num">2</span><span class="step-text"><strong>伴手禮清單</strong>：Harrods 鐵盒茶包、Cadbury 巧克力、McVitie's 餅乾、Fortnum & Mason 果醬</span></div><div class="step"><span class="step-num">3</span><span class="step-text"><strong>行李重量</strong>：超重費很貴（每公斤 £20-50），先秤重再打包</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>退稅準備</strong>：整理 Bicester Village 和其他超過 £50 的購物收據</span></div></div><div class="tip-box">最後一晚把行李秤重，超重把重的東西分到隨身行李（固體可以，不超過 100ml 液體）</div>
+      </div>
+    </div></div>
+    </div>
+  </div><div class="day-panel" id="d15">
+    <div class="day-header-bar">
+      <span class="day-num-badge">8/14</span>
+      <span class="day-main-title">離境回台</span>
+      <span class="day-theme-tag">回家</span>
+    </div>
+    <div class="day-body">
+      <div class="day-summary">
+        <div class="ds-row">
+          <div class="ds-item"><span class="ds-label">景點數</span><span class="ds-val">-- 站</span></div>
+          <div class="ds-item"><span class="ds-label">費用</span><span class="ds-val">交通</span></div>
+          <div class="ds-item"><span class="ds-label">步行量</span><span class="ds-val">輕鬆</span></div>
+        </div>
+      </div>
+      <div class="timeline"><div class="tl-item">
+      <div class="tl-time">起飛前3小時出門</div>
+      <div class="tl-content">
+        <div class="tl-title">✈️ 飯店 → Heathrow 機場  </div>
+        <div class="transport-card">
+    <div class="tc-title">🚇 Stratford → Heathrow（Elizabeth Line）</div>
+    <div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">Elizabeth Line（紫色）直達</span><span class="tr-arrow">→</span><span class="tr-station">Heathrow T2/3/4/5</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
+      <span class="tr-duration">⏱ 約 50 分鐘</span>
+      <span class="tr-cost">💰 約 £5.50</span>
+    </div>
+  </div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">飛機起飛前 <strong>3 小時</strong> 出門（Heathrow 安檢常排 60-90 分鐘）</span></div><div class="step"><span class="step-num">2</span><span class="step-text">確認機票上的 Terminal 號碼（T2 / T3 / T4 / T5）</span></div><div class="step"><span class="step-num">3</span><span class="step-text">搭 Elizabeth Line 往 <strong>Heathrow</strong> 方向（確認是往 Reading/Heathrow 的班次）</span></div><div class="step"><span class="step-num">4</span><span class="step-text"><strong>退 Oyster Card 押金（£7）</strong>：機場地鐵站自動售票機 → Oyster → Get Refund</span></div><div class="step"><span class="step-num">5</span><span class="step-text"><strong>退稅（重要！）</strong>：過安檢前先找 Tax Refund 服務台蓋章，蓋完才 check-in 和過安檢。過了關就沒機會退稅！</span></div><div class="step"><span class="step-num">6</span><span class="step-text">出境大廳有退稅機器，刷卡電子退稅</span></div></div><div class="tip-box">退稅一定要在過安檢『前』蓋章！</div><div class="tip-box">Elizabeth Line 比 Heathrow Express 便宜且一樣直達</div>
+      </div>
+    </div></div>
+    </div>
+  </div></div>
+</section>
+
+<section id="transport" class="section">
+<div class="notice"><strong>&#128161; 重點：</strong>倫敦市區用 Contactless 信用卡搭地鐵。近郊（Windsor、Oxford、Cambridge）要另外買火車票。</div>
+<div class="info-card">
+  <h3>&#128648; Step 1：下飛機後第一件事</h3>
+  <ul>
+    <li>最簡單：直接用台灣 <strong>Visa / Mastercard 感應（Contactless）</strong>搭地鐵，卡片上有無線波浪符號就可以用</li>
+    <li>或買 Oyster Card：機場地鐵站黃色自動售票機 → Buy Oyster Card → 儲值 £20-30</li>
+    <li>每日有 Daily Cap 上限，Zone 1-2 每天最多扣 £8.10，搭再多不超過這金額</li>
+  </ul>
+</div>
+<div class="info-card">
+  <h3>&#128647; 倫敦地鐵使用方式</h3>
+  <ul>
+    <li><strong>進站：</strong>把信用卡/Oyster 感應閘門黃色圓點，閘門開</li>
+    <li><strong>出站：</strong>再次感應同一張卡！非常重要，沒感應出站會被罰款</li>
+    <li><strong>找路：</strong>看地鐵站牌顏色 + 終點站方向（比月台號更好找）</li>
+    <li><strong>搭錯了：</strong>下一站出來換對面月台，重新感應進站不額外收費</li>
+    <li>推薦 app：<strong>TfL Go</strong>（輸入起點終點，告訴你搭哪條線、幾號出口）</li>
+  </ul>
+</div>
+<div class="info-card">
+  <h3>&#128642; 近郊火車購票（Windsor / Oxford / Cambridge）</h3>
+  <ul>
+    <li>前往 <strong>nationalrail.co.uk</strong> 或下載 <strong>Trainline app</strong></li>
+    <li>輸入出發站（如 London Paddington）→ 目的地 → 日期時間</li>
+    <li>選 <strong>Advance</strong> 票種（最便宜，固定班次）</li>
+    <li>付款收到 e-ticket → 手機截圖 → 上車出示給車掌</li>
+    <li>提前 2-4 週購買最便宜，3人可省 30-40%！</li>
+  </ul>
+</div>
+<div class="info-card">
+  <h3>&#128652; 機場到飯店交通</h3>
+  <ul>
+    <li><strong>Heathrow → Stratford：</strong>Elizabeth Line（紫色）直達，約50分鐘，£5.50</li>
+    <li><strong>Gatwick → Stratford：</strong>Gatwick Express → Victoria → 地鐵，約70-80分鐘</li>
+    <li><strong>Stansted → Stratford：</strong>Stansted Express → Liverpool Street → Central Line，約60-70分鐘</li>
+  </ul>
+</div>
+<div class="info-card">
+  <h3>&#128100; 語言不通時的交通求救</h3>
+  <ul>
+    <li>在車站找 <strong>&#10067; Information</strong> 標誌（詢問處），指著手機地圖問</li>
+    <li>說 <strong>"Stratford, please"</strong> + 出示手機目的地，站員通常會指引</li>
+    <li>搭地鐵直接看 TfL Go app，跟著走不需要問人</li>
+    <li><strong>Uber</strong> 在英國可正常使用，輸入中文地址也能找到，語言不通的救星</li>
+  </ul>
+</div>
+</section>
+
+<section id="tips" class="section">
+<div class="danger"><strong>&#9888; 基本常識：</strong>英國用英鎊 GBP（&#163;），<strong>不是歐元！</strong>現金基本用不到，信用卡感應到處通用。</div>
+<div class="info-card">
+  <h3>&#128196; 出發前必做清單</h3>
+  <ul>
+    <li>&#9989; 買英國 SIM 卡（蝦皮搜「英國 SIM 卡 Three / EE」，約 NT$500-800，30天無限上網）</li>
+    <li>&#9989; 下載 Google Maps 倫敦離線地圖（手機 → Google Maps → 右上角頭像 → 離線地圖）</li>
+    <li>&#9989; 下載 Google Translate 英中離線包（可拍照翻譯菜單）</li>
+    <li>&#9989; 下載 TfL Go app（倫敦地鐵路線規劃）</li>
+    <li>&#9989; 下載 Trainline app（近郊火車購票）</li>
+    <li>&#9989; 確認台灣信用卡有 Contactless 功能（卡片上有無線波浪符號）</li>
+    <li>&#9989; 提前購買：白金漢宮（rct.uk）、倫敦塔（hrp.org.uk）、溫莎堡（rct.uk）</li>
+    <li>&#9989; 確認護照有效期超過 2027年2月以上</li>
+    <li>&#9989; 手機存好：飯店訂房確認信截圖、回程機票截圖</li>
+  </ul>
+</div>
+<div class="info-card">
+  <h3>&#127869; 餐廳禮儀（和台灣非常不同）</h3>
+  <ul>
+    <li>進餐廳門口站著等，等服務生說 <strong>"Table for 3, please"</strong></li>
+    <li>服務生帶位後不會主動再來，要<strong>舉手或說 "Excuse me"</strong></li>
+    <li>不要羊肉說：<strong>"No lamb, please"</strong>（菜單上 lamb / mutton = 羊肉）</li>
+    <li>結帳說：<strong>"Can I get the bill, please?"</strong></li>
+    <li>帳單如有 Service Charge 10-12.5% 就不用另外給小費</li>
+    <li>不確定菜色：用 Google Translate 拍照翻譯</li>
+  </ul>
+</div>
+<div class="info-card">
+  <h3>&#127783; 天氣 &amp; 打包</h3>
+  <ul>
+    <li>7-8月約 18-25°C，但可能突然下雨（英國天氣出名難預測）</li>
+    <li>必帶：<strong>輕薄防水外套</strong>（每天出門都要帶！）+ 折疊傘 + 防曬乳</li>
+    <li>穿舒適走路鞋，避免高跟鞋（石板路多，每天 15,000-20,000 步要穿好鞋）</li>
+    <li>夏天日照超長，晚上9點還是亮的，不用擔心天黑</li>
+  </ul>
+</div>
+<div class="info-card">
+  <h3>&#128176; 金錢管理</h3>
+  <ul>
+    <li>推薦帶 <strong>Wise 多幣卡</strong>（網路申請，儲值英鎊，無手續費）或台新 Richart</li>
+    <li>現金帶 £100-150 當備用，大部分地方用不到</li>
+    <li>超市（M&amp;S、Sainsbury's）買早餐和點心省很多</li>
+    <li>地鐵 Daily Cap：Zone 1-2 每天最多扣 £8.10，超過不再扣費</li>
+  </ul>
+</div>
+</section>
+
+<section id="tickets" class="section">
+<div class="warning">&#11088; 標記的景點建議<strong>現在就購買</strong>，夏天旺季容易售罄。票價為估算，以官網為準。</div>
+<div class="info-card">
+  <table class="ticket-table">
+    <thead><tr><th>景點</th><th>票價/人</th><th>3人合計</th><th>購票</th></tr></thead>
+    <tbody>
+      <tr><td>&#127963; 西敏寺</td><td class="nt">NT$1,320</td><td class="nt">NT$3,960</td><td><a class="buy-btn" href="https://www.westminster-abbey.org/visit-us/admission" target="_blank">官網</a></td></tr>
+      <tr><td>&#127984; 白金漢宮 &#11088;</td><td class="nt">NT$1,400</td><td class="nt">NT$4,200</td><td><a class="buy-btn" href="https://www.rct.uk/visit/the-state-rooms-buckingham-palace" target="_blank">官網</a></td></tr>
+      <tr><td>&#127984; 倫敦塔 &#11088;</td><td class="nt">NT$1,500</td><td class="nt">NT$4,500</td><td><a class="buy-btn" href="https://www.hrp.org.uk/tower-of-london/" target="_blank">官網</a></td></tr>
+      <tr><td>&#127753; 倫敦塔橋（登橋）</td><td class="nt">NT$690</td><td class="nt">NT$2,070</td><td><a class="buy-btn" href="https://www.towerbridge.org.uk/visit/tickets" target="_blank">官網</a></td></tr>
+      <tr><td>&#128065; 倫敦之眼</td><td class="nt">NT$638</td><td class="nt">NT$1,914</td><td><a class="buy-btn" href="https://www.londoneye.com/tickets/" target="_blank">官網</a></td></tr>
+      <tr><td>&#127963; 大英博物館語音導覽</td><td class="nt">NT$343</td><td class="nt">NT$1,029</td><td><a class="buy-btn" href="https://www.britishmuseum.org/visit" target="_blank">官網</a></td></tr>
+      <tr><td>&#9962; 聖保羅大教堂</td><td class="nt">NT$1,154</td><td class="nt">NT$3,462</td><td><a class="buy-btn" href="https://www.stpauls.co.uk/visit" target="_blank">官網</a></td></tr>
+      <tr><td>&#127984; 溫莎堡 &#11088;</td><td class="nt">NT$1,360</td><td class="nt">NT$4,080</td><td><a class="buy-btn" href="https://www.rct.uk/visit/windsor-castle" target="_blank">官網</a></td></tr>
+      <tr><td>&#127758; 格林威治一日通票</td><td class="nt">NT$1,445</td><td class="nt">NT$4,335</td><td><a class="buy-btn" href="https://www.rmg.co.uk/visit" target="_blank">官網</a></td></tr>
+      <tr><td>&#128270; 福爾摩斯博物館</td><td class="nt">NT$450</td><td class="nt">NT$1,350</td><td><a class="buy-btn" href="https://www.sherlock-holmes.co.uk/visit-us/" target="_blank">官網</a></td></tr>
+      <tr><td>&#127891; 牛津 Christ Church</td><td class="nt">NT$600</td><td class="nt">NT$1,800</td><td><a class="buy-btn" href="https://www.chch.ox.ac.uk/visiting" target="_blank">官網</a></td></tr>
+      <tr><td>&#127891; 劍橋 King's College</td><td class="nt">NT$400</td><td class="nt">NT$1,200</td><td><a class="buy-btn" href="https://www.kings.cam.ac.uk/visit" target="_blank">官網</a></td></tr>
+      <tr><td>&#128675; 劍橋撐篙（共乘）</td><td class="nt">NT$500</td><td class="nt">NT$1,500</td><td><a class="buy-btn" href="https://scudamores.com" target="_blank">Scudamore's</a></td></tr>
+      <tr><td>&#127961; 碎片塔（可選）</td><td class="nt">NT$808</td><td class="nt">NT$2,424</td><td><a class="buy-btn" href="https://www.theviewfromtheshard.com" target="_blank">官網</a></td></tr>
+      <tr class="total"><td colspan="2"><strong>景點票合計（不含碎片塔）</strong></td><td class="nt"><strong>&#8776; NT$35,400</strong></td><td></td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<section id="customs" class="section">
+<div class="danger"><strong>&#128444; 使用方式：</strong>截圖存手機相簿，或列印。遇到溝通問題時出示給海關人員。</div>
+<div class="customs-box">
+  <div class="customs-header">
+    <h2>&#127468;&#127463; 入境英國聲明 / UK Entry Statement</h2>
+    <p>Taiwan Passport &nbsp;·&nbsp; Visa-exempt &nbsp;·&nbsp; Tourism Only</p>
+  </div>
+  <div class="customs-row"><div class="zh">我們是來自台灣的觀光旅客，共 3 人。</div><div class="en">We are tourists from Taiwan. There are 3 of us traveling together.</div></div>
+  <div class="customs-row"><div class="zh">我們將在英國停留 17 天。</div><div class="en">We will stay in the UK for 17 days.</div></div>
+  <div class="customs-row"><div class="zh">入境：2026年7月29日 &nbsp;·&nbsp; 離境：2026年8月14日</div><div class="en">Arrival: July 29, 2026 &nbsp;·&nbsp; Departure: August 14, 2026</div></div>
+  <div class="customs-row"><div class="zh">住宿地址：</div><div class="en"><strong>Moxy London Stratford Hotel</strong><br>5 Celebration Avenue, London, E20 1DB, United Kingdom</div></div>
+  <div class="customs-row"><div class="zh">我們是純觀光，不工作也不讀書。</div><div class="en">We are here for tourism only. We are not working or studying in the UK.</div></div>
+  <div class="customs-row"><div class="zh">我們有訂好的回程機票（返回台灣）。</div><div class="en">We have return flights booked back to Taiwan.</div></div>
+  <div class="customs-row"><div class="zh">我們攜帶信用卡及足夠旅遊費用。</div><div class="en">We have credit cards and sufficient funds for our stay.</div></div>
+</div>
+<div class="info-card">
+  <h3>&#128483; 海關常見問答</h3>
+  <div class="qa-item"><div class="qa-q">Q: What's the purpose of your visit?（目的？）</div><div class="qa-a">Tourism. We are sightseeing.</div></div>
+  <div class="qa-item"><div class="qa-q">Q: How long are you staying?（停多久？）</div><div class="qa-a">17 days. Until August 14th.</div></div>
+  <div class="qa-item"><div class="qa-q">Q: Where are you staying?（住哪？）</div><div class="qa-a">Moxy Hotel, Stratford, London.（出示訂房確認信）</div></div>
+  <div class="qa-item"><div class="qa-q">Q: Do you have a return ticket?（有回程票？）</div><div class="qa-a">Yes, I have a return flight to Taiwan.（出示機票截圖）</div></div>
+  <div class="qa-item"><div class="qa-q">Q: How much money do you have?（帶多少錢？）</div><div class="qa-a">I have credit cards and some cash.</div></div>
+</div>
+<div class="info-card">
+  <h3>&#9989; 入境前確認清單</h3>
+  <ul>
+    <li>&#9989; 台灣護照免簽英國，停留上限 6 個月</li>
+    <li>&#9989; 護照有效期超過離境日 6 個月以上</li>
+    <li>&#9989; 備妥：飯店訂房確認信截圖、回程機票截圖（存手機相簿）</li>
+    <li>&#9989; 電子閘門（eGate）若進不去，直接走人工窗口，說 "Tourism"</li>
+    <li>&#9888; 肉類、蔬果不可攜帶入境英國</li>
+    <li>&#9888; 超過 &#163;390 商品需申報</li>
+    <li>&#9888; 液體 100ml 以下，放透明夾鏈袋</li>
+  </ul>
+</div>
+</section>
+
+<section id="food" class="section">
+<div class="notice">所有推薦已排除羊肉主打。點餐說 <strong>"No lamb, please"</strong>，或 Google Translate 拍菜單。</div>
+<div class="info-card">
+  <h3>&#127869; 推薦餐廳（英文不好也能點）</h3>
+  <ul>
+    <li><strong>Wagamama</strong>｜圖文菜單，日式麵食，全倫敦多分店，最輕鬆的選擇</li>
+    <li><strong>Nando's</strong>｜葡式烤雞，可選辣度，圖片點餐，完全沒問題</li>
+    <li><strong>Dishoom</strong>｜印度料理排隊名店，Covent Garden / King's Cross</li>
+    <li><strong>Chinatown 中國城</strong>｜Leicester Square 站旁，中文菜單，語言零障礙</li>
+    <li><strong>Borough Market</strong>｜各國街頭小吃，用手指點，不需說話</li>
+    <li><strong>Flat Iron</strong>｜平價牛排，Covent Garden / Shoreditch，約 NT$400-600</li>
+    <li><strong>Padella</strong>｜義大利麵，Borough Market 旁，需排隊但超值</li>
+    <li><strong>Greggs</strong>｜英式平民烘焙，早餐每樣 NT$60-100，隨處可見</li>
+  </ul>
+</div>
+<div class="info-card">
+  <h3>&#128717; 超市省錢早餐</h3>
+  <ul>
+    <li><strong>M&amp;S Food Hall</strong>｜Westfield Stratford 內，品質好，自備早餐省很多</li>
+    <li><strong>Sainsbury's / Tesco</strong>｜三明治約 NT$120，咖啡約 NT$60</li>
+    <li><strong>Pret A Manger</strong>｜健康三明治連鎖，約 NT$150-250，到處都有</li>
+  </ul>
+</div>
+</section>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0, 0);
+}
+function switchDay(id, btn) {
+  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.day-nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  document.querySelector('#itinerary').scrollTop = 0;
+  window.scrollTo(0, 120);
+}
+document.getElementById('d1').classList.add('active');
+</script>
+</body>
+</html>
