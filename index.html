@@ -1,34 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英國之旅 2026 | 方案選擇</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --gold: #c9a84c;
+      --gold-light: #f0d898;
+      --cream: #faf8f3;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      font-family: 'Noto Sans TC', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: var(--navy);
+      padding: 20px;
+    }
+
+    .selection-screen {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 24px;
+      box-shadow: 0 10px 40px rgba(26, 39, 68, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .icon {
+      font-size: 60px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .sub-title {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    button {
+      padding: 18px 24px;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 12px;
+      border: none;
+      background: var(--navy);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 4px 12px rgba(26, 39, 68, 0.15);
+      text-decoration: none;
+      width: 100%;
+    }
+
+    button span {
+      font-size: 20px;
+    }
+
+    button:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    /* Mobile specific adjustments */
+    @media (max-width: 480px) {
+      .selection-screen {
+        padding: 40px 20px;
+        border-radius: 0;
+        height: 100vh;
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      h2 {
+        font-size: 28px;
+      }
+      .sub-title {
+        font-size: 16px;
+      }
+      button {
+        padding: 20px;
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
 <div class="selection-screen">
-  <h2>🇬🇧 英國之旅 2026 方案選擇</h2>
-  <button onclick="location.href='plan_1.html'">地圖版本</button>
-  <button onclick="location.href='plan_2.html'">簡述版本</button>
-  <button onclick="location.href='plan_3.html'">詳細版本</button>
+  <span class="icon">🇬🇧</span>
+  <h2>英國之旅 2026</h2>
+  <p class="sub-title">ITINERARY SELECTION</p>
+  
+  <div class="button-group">
+    <button onclick="location.href='plan_1.html'">
+      <span>🗺️</span> 地圖版本
+    </button>
+    <button onclick="location.href='plan_2.html'">
+      <span>📝</span> 簡述版本
+    </button>
+    <button onclick="location.href='plan_3.html'">
+      <span>📅</span> 詳細版本
+    </button>
+  </div>
 </div>
 
-<style>
-  .selection-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    gap: 20px;
-    font-family: sans-serif;
-  }
-
-  button {
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 10px;
-    border: none;
-    background: #1a2744;
-    color: white;
-    cursor: pointer;
-    width: 80%;
-    max-width: 300px;
-  }
-
-  button:hover {
-    background: #c9a84c;
-  }
-</style>
+</body>
+</html>
