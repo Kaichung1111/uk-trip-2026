@@ -15,7 +15,7 @@ header::before{content:'';position:absolute;inset:0;background:repeating-linear-
 header h1{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold-light);position:relative;}
 header .sub{font-size:0.82rem;color:rgba(255,255,255,0.55);margin-top:0.3rem;letter-spacing:0.08em;position:relative;}
 header .dates{display:inline-block;background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.35);color:var(--gold-light);font-size:0.8rem;padding:0.3rem 1.1rem;border-radius:20px;margin-top:0.7rem;position:relative;}
-nav{background:white;border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+nav{background:white;border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;position:sticky;top:37px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
 nav::-webkit-scrollbar{display:none;}
 .tab-btn{flex-shrink:0;padding:0.85rem 1.2rem;border:none;background:none;cursor:pointer;font-size:0.8rem;font-family:'Noto Sans TC',sans-serif;color:var(--muted);border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;font-weight:500;}
 .tab-btn:hover{color:var(--navy);}
@@ -92,9 +92,52 @@ nav::-webkit-scrollbar{display:none;}
 .nt{color:var(--green);font-weight:600;}
 .buy-btn{display:inline-block;background:var(--gold);color:var(--navy);font-size:0.68rem;padding:2px 8px;border-radius:4px;text-decoration:none;font-weight:700;}
 @media(max-width:500px){header h1{font-size:1.45rem;}.section{padding:0.85rem;}.tl-time{min-width:56px;font-size:0.68rem;}.day-theme-tag{display:none;}}
+
+/* ============ VERSION SWITCHER ============ */
+.version-switcher {
+  background: #0d1117;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-family: 'Noto Sans TC', sans-serif;
+}
+.v-link {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+  padding: 4px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.v-link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+.v-link.active {
+  color: #c9a84c;
+  background: rgba(201,168,76,0.2);
+  pointer-events: none;
+}
+@media(max-width:480px) {
+  .version-switcher { gap: 5px; }
+  .v-link { padding: 4px 8px; font-size: 11px; }
+}
 </style>
 </head>
 <body>
+
+<nav class="version-switcher">
+  <a href="plan_1.html" class="v-link">🗺️ 地圖版本</a>
+  <a href="plan_2.html" class="v-link">📝 簡述版本</a>
+  <a href="plan_3.html" class="v-link active">📅 詳細版本</a>
+</nav>
 <header>
   <h1>&#127468;&#127463; 英國旅遊行程 2026</h1>
   <div class="sub">STEP BY STEP 詳細版 &nbsp;·&nbsp; 第一次自助旅行專用</div>

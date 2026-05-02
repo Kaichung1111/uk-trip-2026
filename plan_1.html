@@ -23,7 +23,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--t
   height:var(--header-h);
   display:flex;align-items:center;gap:14px;
   padding:0 20px;
-  position:sticky;top:0;z-index:200;
+  position:sticky;top:37px;z-index:200;
   box-shadow:0 2px 12px rgba(0,0,0,.3);
 }
 .site-logo{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold-light);white-space:nowrap;}
@@ -45,8 +45,8 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--t
   width:var(--sidebar-w);min-width:var(--sidebar-w);
   background:var(--card);border-right:1px solid var(--border);
   display:flex;flex-direction:column;
-  position:sticky;top:var(--header-h);
-  height:calc(100vh - var(--header-h));
+  position:sticky;top:calc(37px + var(--header-h));
+  height:calc(100vh - 37px - var(--header-h));
   overflow:hidden;
   transition:transform .28s ease;
 }
@@ -230,8 +230,8 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--t
   .mob-menu-btn{display:block;}
   /* On mobile, hide sidebar by default; slide in when open */
   .sidebar{
-    position:fixed;top:var(--header-h);left:0;
-    height:calc(100vh - var(--header-h));
+    position:fixed;top:calc(37px + var(--header-h));left:0;
+    height:calc(100vh - 37px - var(--header-h));
     z-index:160;transform:translateX(-100%);
     box-shadow:4px 0 20px rgba(0,0,0,.15);
   }
@@ -254,9 +254,52 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--t
   .tab-btn{padding:5px 5px;font-size:10.5px;}
   .official-grid{grid-template-columns:1fr;}
 }
+
+/* ============ VERSION SWITCHER ============ */
+.version-switcher {
+  background: #0d1117;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-family: 'Noto Sans TC', sans-serif;
+}
+.v-link {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+  padding: 4px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.v-link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+.v-link.active {
+  color: #c9a84c;
+  background: rgba(201,168,76,0.2);
+  pointer-events: none;
+}
+@media(max-width:480px) {
+  .version-switcher { gap: 5px; }
+  .v-link { padding: 4px 8px; font-size: 11px; }
+}
 </style>
 </head>
 <body>
+
+<nav class="version-switcher">
+  <a href="plan_1.html" class="v-link active">🗺️ 地圖版本</a>
+  <a href="plan_2.html" class="v-link">📝 簡述版本</a>
+  <a href="plan_3.html" class="v-link">📅 詳細版本</a>
+</nav>
 
 <!-- HEADER -->
 <header class="site-header">
