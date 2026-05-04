@@ -263,6 +263,11 @@ nav::-webkit-scrollbar{display:none;}
 .fix-log strong{color:var(--green);}
 @media(max-width:520px){.ticket-manager table{min-width:760px}.ticket-manager th:nth-child(4),.ticket-manager td:nth-child(4){display:table-cell}.ticket-manager th,.ticket-manager td{font-size:.72rem;padding:.4rem}}
 
+
+/* ===== Static daily map replacement ===== */
+.static-map-image{width:100%;height:620px;object-fit:cover;display:block;background:#f7fbff;}
+.static-map-note{position:absolute;top:14px;right:14px;z-index:5;background:rgba(255,255,255,.94);border:1px solid rgba(224,216,200,.9);border-radius:999px;padding:6px 10px;font-size:.7rem;font-weight:800;color:var(--navy);box-shadow:0 4px 12px rgba(0,0,0,.10);}
+@media(max-width:900px){.static-map-image{height:auto;min-height:0}.static-map-note{position:static;display:inline-block;margin:.65rem}}
 </style>
 </head>
 <body>
@@ -1549,7 +1554,7 @@ nav::-webkit-scrollbar{display:none;}
 </section>
 <section class="section" id="mapview">
 <div class="map-overview">
-<div class="map-intro"><strong>🗺️ 每日地圖總覽：</strong>這個分頁用來快速判斷「今天主要會在哪些區域活動」。可切換日期查看景點分布、移動順序、交通概覽與 Google Maps 一鍵路線。地圖預覽改用 Google Maps，不再載入 OpenStreetMap/Leaflet；實際步行與搭車請以 Google Maps / Citymapper 當下導航為準。</div>
+<div class="map-intro"><strong>🗺️ 每日地圖總覽：</strong>這個分頁用來快速判斷「今天主要會在哪些區域活動」。可切換日期查看景點分布、移動順序、交通概覽與 Google Maps 一鍵路線。地圖預覽已改成每日靜態區域圖，不再使用 iframe 嵌入路線；實際步行與搭車請按「開啟 Google Maps 路線」外開導航。</div>
 <div class="map-layout">
 <aside class="map-panel map-sidebar">
 <div class="map-date-scroll" id="mapDateButtons"></div>
@@ -1578,8 +1583,8 @@ nav::-webkit-scrollbar{display:none;}
 <div class="map-panel map-canvas-panel">
 <div id="dailyMap"></div>
 <div class="map-fallback" id="mapFallback">
-<div class="map-title">無法載入 Google Maps 預覽</div>
-<div class="map-subtitle">可能是目前離線、網路較慢，或瀏覽器阻擋 Google Maps iframe。下方仍可查看今日地點清單，也可用「開啟 Google Maps 路線」直接跳轉。</div>
+<div class="map-title">靜態地圖備援清單</div>
+<div class="map-subtitle">若靜態圖未顯示，下方仍可查看今日地點清單，也可用「開啟 Google Maps 路線」直接跳轉。</div>
 <div class="map-fallback-grid" id="mapFallbackGrid"></div>
 </div>
 <div class="map-bottom-card">
@@ -1943,12 +1948,12 @@ function buildGoogleEmbedUrl(dayId){
   const d = MAP_DAY_DATA[dayId] || MAP_DAY_DATA.d1;
   const stops = d.stops;
   if(stops.length < 2){
-    return `https://www.google.com/maps?q=${encodeURIComponent(d.area)}&output=embed`;
+    return `https://www.google.com/maps?q=${encodeURIComponent(d.area)}`;
   }
   const origin = `${stops[0][3]},${stops[0][4]}`;
   const destination = `${stops[stops.length-1][3]},${stops[stops.length-1][4]}`;
   const waypoints = stops.slice(1,-1).map(s=>`${s[3]},${s[4]}`).join('|');
-  return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}&travelmode=transit${waypoints?`&waypoints=${encodeURIComponent(waypoints)}`:''}&output=embed`;
+  return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}&travelmode=transit${waypoints?`&waypoints=${encodeURIComponent(waypoints)}`:''}`;
 }
 function initMapDateButtons(){
   const wrap = document.getElementById('mapDateButtons');
@@ -1974,12 +1979,18 @@ function renderFallbackCards(dayId){
   if(!grid) return;
   grid.innerHTML = d.stops.map((s,i)=>`<div class="map-fallback-card"><strong>${i+1}. ${s[1]}</strong><br><span>${s[2]}</span><br><a href="https://maps.google.com/?q=${encodeURIComponent(s[1])}" target="_blank" rel="noopener">Google Maps</a></div>`).join('');
 }
+
+function getStaticMapSrc(dayId){
+  const order = Object.keys(MAP_DAY_DATA);
+  const idx = Math.max(0, order.indexOf(dayId)) + 1;
+  return `maps/day${idx}.svg`;
+}
 function renderGoogleMapPreview(dayId){
   const wrap = document.getElementById('dailyMap');
   const d = MAP_DAY_DATA[dayId] || MAP_DAY_DATA.d1;
   if(!wrap) return;
   const chips = d.stops.map((s,i)=>`<div class="map-point-chip ${mapStopTypeClass(s[0])}"><span class="map-point-num">${i+1}</span><div><div class="map-point-name">${s[1]}</div><div class="map-point-meta">${s[2]}</div></div></div>`).join('');
-  wrap.innerHTML = `<iframe class="google-map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${buildGoogleEmbedUrl(dayId)}" onerror="document.getElementById('mapFallback')?.classList.add('active')"></iframe><div class="map-map-note">Google Maps 預覽</div><div class="map-point-overlay">${chips}</div>`;
+  wrap.innerHTML = `<img class="static-map-image" src="${getStaticMapSrc(dayId)}" alt="${d.label} 靜態地圖" loading="lazy" onerror="document.getElementById('mapFallback')?.classList.add('active')"><div class="static-map-note">靜態每日區域圖</div><div class="map-point-overlay">${chips}</div>`;
 }
 function renderMapDay(dayId){
   activeMapDayId = dayId || activeMapDayId || getActiveDayId();
