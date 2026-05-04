@@ -252,6 +252,17 @@ nav::-webkit-scrollbar{display:none;}
 @media(max-width:900px){.map-layout{grid-template-columns:1fr}.map-canvas-panel{min-height:520px}#dailyMap{height:520px}.map-bottom-card{position:static;margin:0;border-radius:0;border-left:0;border-right:0;border-bottom:0;box-shadow:none;grid-template-columns:1fr}.map-legend{justify-content:flex-start}}
 @media(max-width:520px){.map-overview{padding:0 .2rem}.map-sidebar{padding:.85rem}.map-canvas-panel{min-height:460px}#dailyMap{height:460px}.map-date-btn{font-size:.68rem;padding:5px 9px}.map-chip{font-size:.68rem}.map-action-btn{font-size:.69rem;padding:6px 10px}}
 
+
+/* ===== Ticket schedule annotation upgrade ===== */
+.ticket-manager{overflow-x:auto;}
+.ticket-manager table{min-width:820px;}
+.ticket-day{display:block;font-size:.72rem;color:var(--muted);line-height:1.35;margin-top:2px;}
+.ticket-time-note{font-size:.72rem;color:var(--blue);font-weight:700;line-height:1.45;}
+.ticket-risk{display:inline-block;background:#fff0f0;color:#7f1d1d;border:1px solid #fca5a5;border-radius:999px;padding:1px 7px;font-size:.68rem;font-weight:800;margin-left:4px;}
+.fix-log{background:#f0f7f3;border:1px solid #b7dfc5;border-left:4px solid var(--green);border-radius:8px;padding:.75rem 1rem;margin-bottom:1rem;font-size:.82rem;line-height:1.75;color:#24533b;}
+.fix-log strong{color:var(--green);}
+@media(max-width:520px){.ticket-manager table{min-width:760px}.ticket-manager th:nth-child(4),.ticket-manager td:nth-child(4){display:table-cell}.ticket-manager th,.ticket-manager td{font-size:.72rem;padding:.4rem}}
+
 </style>
 </head>
 <body>
@@ -315,7 +326,7 @@ nav::-webkit-scrollbar{display:none;}
 <div class="tl-time">08:50</div>
 <div class="tl-content">
 <div class="tl-title">✈️ 去程航班：台北 → London Heathrow</div>
-<div class="tl-desc">TAIPEI 08:50 29Jul2026 → LONDON HEATHROW 16:30 29Jul2026。</div>
+<div class="tl-desc">TAIPEI 08:50 29Jul2026 → LONDON HEATHROW 16:30 29Jul2026。航班編號與 Heathrow 航廈請出發前填入票券備註；入境、領行李、通關抓 1.5–2 小時。</div>
 <div class="tip-box">把飯店訂房、回程機票、ETA、保險截圖存在手機相簿與雲端。</div>
 <div class="status-checks"><label><input data-check-key="d1-item-1-done" type="checkbox"/> 已完成</label><label><input data-check-key="d1-item-1-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
@@ -344,7 +355,7 @@ nav::-webkit-scrollbar{display:none;}
 <div class="tl-time">19:30</div>
 <div class="tl-content">
 <div class="tl-title">🏨 Moxy London Stratford Check-in <a class="map-btn" href="https://maps.google.com/?q=Moxy+London+Stratford" target="_blank">📍 Maps</a></div>
-<div class="tl-desc">住宿：Moxy London Stratford · 5 Celebration Ave, London E20 1DB。</div>
+<div class="tl-desc">住宿：Moxy London Stratford · 5 Celebration Ave, London E20 1DB。一般入住時間多為 15:00 後；若提早抵達可先詢問寄放行李，飯店電話請出發前補入緊急資訊。</div>
 <div class="tip-box">住宿資訊只放抵達日；後續日期不再重複顯示。</div>
 <div class="status-checks"><label><input data-check-key="d1-item-4-done" type="checkbox"/> 已完成</label><label><input data-check-key="d1-item-4-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
@@ -407,22 +418,22 @@ nav::-webkit-scrollbar{display:none;}
 <div class="status-checks"><label><input data-check-key="d2-item-7-done" type="checkbox"/> 已完成</label><label><input data-check-key="d2-item-7-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
-<div class="tl-time">09:30</div>
+<div class="tl-time">10:30</div>
 <div class="tl-content">
 <div class="tl-title">🏰 白金漢宮 Buckingham Palace <span class="price-tag">約 NT$1,400/人</span> <a class="map-btn" href="https://maps.google.com/?q=Buckingham+Palace+London" target="_blank">📍 Maps</a></div>
 <div class="tl-desc">7–9月 State Rooms 開放，含免費中文語音導覽。</div>
-<div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">入口通常在 Buckingham Palace Road 側，不是正面廣場。</span></div><div class="step"><span class="step-num">2</span><span class="step-text">出示預購 QR Code，領中文語音導覽。</span></div><div class="step"><span class="step-num">3</span><span class="step-text">抓 2–2.5 小時，上午進場比下午更穩。</span></div></div><div class="warn-box">旺季容易售罄，建議官網提前購票。</div>
+<div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">入口通常在 Buckingham Palace Road 側，不是正面廣場。</span></div><div class="step"><span class="step-num">2</span><span class="step-text">出示預購 QR Code，領中文語音導覽。</span></div><div class="step"><span class="step-num">3</span><span class="step-text">抓 2–2.5 小時，因前一晚剛抵達，建議訂 10:30 或之後入場，保留早餐與時差緩衝。</span></div></div><div class="warn-box">旺季容易售罄，建議官網提前購票；購票前務必確認 2026 State Rooms 開放日期。若時差太累，當天改白金漢宮外觀 + St James’s Park，入內票改買可退改或移到補位日。</div>
 <div class="status-checks"><label><input data-check-key="d2-item-8-done" type="checkbox"/> 已完成</label><label><input data-check-key="d2-item-8-ticket" type="checkbox"/> 已買票</label><label><input data-check-key="d2-item-8-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
-<div class="tl-time">12:15</div>
+<div class="tl-time">13:00</div>
 <div class="tl-content">
 <div class="tl-title">🌳 聖詹姆斯公園休息 + 輕午餐 <a class="map-btn" href="https://maps.google.com/?q=St+James+Park+London" target="_blank">📍 Maps</a></div>
 <div class="tl-desc">這段視為休息與移動，不算主要景點；可在公園或附近 Pret / M&amp;S 簡單吃。</div>
 <div class="status-checks"><label><input data-check-key="d2-item-9-done" type="checkbox"/> 已完成</label><label><input data-check-key="d2-item-9-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
-<div class="tl-time">14:00</div>
+<div class="tl-time">15:00</div>
 <div class="tl-content">
 <div class="tl-title">🕐 Big Ben + 國會大廈外觀 <span class="free-tag">免費</span> <a class="map-btn" href="https://maps.google.com/?q=Big+Ben+Westminster+Bridge+London" target="_blank">📍 Maps</a></div>
 <div class="tl-desc">Westminster Bridge 拍大笨鐘、紅巴士與泰晤士河。</div>
@@ -1025,7 +1036,7 @@ nav::-webkit-scrollbar{display:none;}
 <div class="tool-grid">
 <div>
 <h3>✅ 今日出門前檢查</h3>
-<div class="check-list"><label class="check-row"><input data-check-key="d11-daily-1" type="checkbox"/> <span>護照正本或影本，退稅可能需要</span></label><label class="check-row"><input data-check-key="d11-daily-2" type="checkbox"/> <span>信用卡與購物預算</span></label><label class="check-row"><input data-check-key="d11-daily-3" type="checkbox"/> <span>Bicester 會員/折扣碼</span></label><label class="check-row"><input data-check-key="d11-daily-4" type="checkbox"/> <span>行李空間評估</span></label><label class="check-row"><input data-check-key="d11-daily-5" type="checkbox"/> <span>回倫敦火車票與末班車時間</span></label></div>
+<div class="check-list"><label class="check-row"><input data-check-key="d11-daily-1" type="checkbox"/> <span>護照正本或影本，部分品牌會員折扣可能需要</span></label><label class="check-row"><input data-check-key="d11-daily-2" type="checkbox"/> <span>信用卡與購物預算</span></label><label class="check-row"><input data-check-key="d11-daily-3" type="checkbox"/> <span>Bicester 會員/折扣碼</span></label><label class="check-row"><input data-check-key="d11-daily-4" type="checkbox"/> <span>行李空間評估</span></label><label class="check-row"><input data-check-key="d11-daily-5" type="checkbox"/> <span>回倫敦火車票與末班車時間</span></label></div>
 </div>
 <div class="route-card">
 <h3>📍 今日 Google Maps 一鍵路線</h3>
@@ -1041,12 +1052,12 @@ nav::-webkit-scrollbar{display:none;}
 <div class="tl-title">🚇 Stratford → Bicester Village</div>
 <div class="transport-card">
 <div class="tc-title">Stratford → Bicester Village</div>
-<div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">地鐵/Elizabeth Line → Marylebone</span><span class="tr-arrow">→</span><span class="tr-station">Bicester Village</span></div>
+<div class="transport-route"><span class="tr-station">Stratford</span><span class="tr-arrow">→</span><span class="tr-line">Elizabeth Line → Paddington → 步行/轉乘至 Marylebone</span><span class="tr-arrow">→</span><span class="tr-station">Bicester Village</span></div>
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">
 <span class="tr-duration">⏱ 約 80–95 分鐘</span>
 <span class="tr-cost">💰 火車來回約 NT$800–1,200/人；依時段浮動</span>
 </div>
-</div><div class="rescue-box"><strong>交通救援：</strong>坐錯方向先不要出站，下一站下車到對面月台搭回；坐過站也直接反向搭回。火車月台常在出發前 10–15 分鐘才公布，先看大螢幕。</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從 Marylebone 搭 Chiltern Railways 直達 Bicester Village。</span></div><div class="step"><span class="step-num">2</span><span class="step-text">若從 Oxford 接續，可搭 S5 公車約 30–35 分鐘；單程約 £5 左右。</span></div></div>
+</div><div class="rescue-box"><strong>交通救援：</strong>坐錯方向先不要出站，下一站下車到對面月台搭回；坐過站也直接反向搭回。火車月台常在出發前 10–15 分鐘才公布，先看大螢幕。</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">從 Marylebone 搭 Chiltern Railways 直達 Bicester Village；Elizabeth Line 不到 Marylebone，需先到 Paddington 再轉往 Marylebone。</span></div><div class="step"><span class="step-num">2</span><span class="step-text">若從 Oxford 接續，可搭 S5 公車約 30–35 分鐘；單程約 £5 左右。</span></div></div>
 <div class="status-checks"><label><input data-check-key="d11-item-50-done" type="checkbox"/> 已完成</label><label><input data-check-key="d11-item-50-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
@@ -1054,7 +1065,7 @@ nav::-webkit-scrollbar{display:none;}
 <div class="tl-content">
 <div class="tl-title">🛍️ Bicester Village Outlet 比斯特購物村 <a class="map-btn" href="https://maps.google.com/?q=Bicester+Village+Outlet" target="_blank">📍 Maps</a></div>
 <div class="tl-desc">這天只排 Outlet，不跟牛津硬塞同一天，避免超過 2 景點且購物太趕。</div>
-<div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">帶護照與信用卡。</span></div><div class="step"><span class="step-num">2</span><span class="step-text">高價品先問店員是否可辦退稅文件。</span></div><div class="step"><span class="step-num">3</span><span class="step-text">買完直接從 Bicester Village 站回 London Marylebone。</span></div></div><div class="tip-box">若這天購物量少，晚上可回 Stratford 整理戰利品。</div>
+<div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">帶護照與信用卡。</span></div><div class="step"><span class="step-num">2</span><span class="step-text">高價品先問店員是否有會員折扣或品牌自有免稅/寄送方案；一般英國零售購物已無機場 VAT 退稅。</span></div><div class="step"><span class="step-num">3</span><span class="step-text">買完直接從 Bicester Village 站回 London Marylebone。</span></div></div><div class="tip-box">若這天購物量少，晚上可回 Stratford 整理戰利品。</div>
 <div class="status-checks"><label><input data-check-key="d11-item-51-done" type="checkbox"/> 已完成</label><label><input data-check-key="d11-item-51-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
@@ -1116,17 +1127,17 @@ nav::-webkit-scrollbar{display:none;}
 <div class="status-checks"><label><input data-check-key="d12-item-54-done" type="checkbox"/> 已完成</label><label><input data-check-key="d12-item-54-ticket" type="checkbox"/> 已買票</label><label><input data-check-key="d12-item-54-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
-<div class="tl-time">14:00</div>
+<div class="tl-time">13:30</div>
 <div class="tl-content">
 <div class="tl-title">🚣 劍橋撐篙 Punting <span class="price-tag">共乘約 NT$500/人</span> <a class="map-btn" href="https://maps.google.com/?q=Scudamores+Punting+Cambridge" target="_blank">📍 Maps</a></div>
-<div class="tl-desc">Scudamore’s 共乘導覽最省心；自行撐篙較有趣但耗體力。</div>
+<div class="tl-desc">Scudamore’s 共乘導覽最省心；自行撐篙較有趣但耗體力。建議 13:30 開始，回程火車抓 17:00 後，避免 16:00 太趕。</div>
 <div class="status-checks"><label><input data-check-key="d12-item-55-done" type="checkbox"/> 已完成</label><label><input data-check-key="d12-item-55-ticket" type="checkbox"/> 已買票</label><label><input data-check-key="d12-item-55-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
-<div class="tl-time">16:00</div>
+<div class="tl-time">16:15</div>
 <div class="tl-content">
 <div class="tl-title">🚌 Cambridge 火車站回程交通</div>
-<div class="tl-desc">市中心到 Cambridge Station 可搭公車 1 / 3 / 7，約 10–15 分鐘；也可步行約 25 分鐘。</div>
+<div class="tl-desc">市中心到 Cambridge Station 可搭公車 1 / 3 / 7，約 10–15 分鐘；也可步行約 25 分鐘。建議回程班次抓 17:00 後，避免撐篙結束後趕車。</div>
 <div class="status-checks"><label><input data-check-key="d12-item-56-done" type="checkbox"/> 已完成</label><label><input data-check-key="d12-item-56-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
@@ -1240,8 +1251,8 @@ nav::-webkit-scrollbar{display:none;}
 </div>
 <div class="route-card">
 <h3>📍 今日 Google Maps 一鍵路線</h3>
-<div class="tl-desc">已依今日順序串接：Moxy London Stratford → Portobello Road Market London → Tate Modern London → Shoreditch High Street London → Moxy London Stratford</div>
-<div class="route-actions"><a class="route-btn" href="https://www.google.com/maps/dir/?api=1&amp;origin=Moxy+London+Stratford&amp;destination=Moxy+London+Stratford&amp;waypoints=Portobello+Road+Market+London%7CTate+Modern+London%7CShoreditch+High+Street+London&amp;travelmode=transit" rel="noopener" target="_blank">開啟今日完整路線</a><button class="mini-btn" onclick="copyDaySummary('d14')">複製今日行程</button></div>
+<div class="tl-desc">已依今日順序串接：Moxy London Stratford → Notting Hill Gate London → Portobello Road London → Tate Modern London → Shoreditch High Street London → Moxy London Stratford</div>
+<div class="route-actions"><a class="route-btn" href="https://www.google.com/maps/dir/?api=1&amp;origin=Moxy+London+Stratford&amp;destination=Moxy+London+Stratford&amp;waypoints=Notting+Hill+Gate+London%7CPortobello+Road+London%7CTate+Modern+London%7CShoreditch+High+Street+London&amp;travelmode=transit" rel="noopener" target="_blank">開啟今日完整路線</a><button class="mini-btn" onclick="copyDaySummary('d14')">複製今日行程</button></div>
 </div>
 </div>
 </div>
@@ -1263,8 +1274,8 @@ nav::-webkit-scrollbar{display:none;}
 <div class="tl-item">
 <div class="tl-time">10:00</div>
 <div class="tl-content">
-<div class="tl-title">🏘️ Notting Hill + Portobello Road Market <a class="map-btn" href="https://maps.google.com/?q=Portobello+Road+Market+Notting+Hill+London" target="_blank">📍 Maps</a></div>
-<div class="tl-desc">彩色房子、市集、二手古董與小吃。</div>
+<div class="tl-title">🏘️ Notting Hill 彩色街區 + Portobello Road <a class="map-btn" href="https://maps.google.com/?q=Notting+Hill+colourful+houses+London" target="_blank">📍 Maps</a></div>
+<div class="tl-desc">8/11 是星期二，Portobello 主要市集攤販較少；這天改以彩色房子街道、咖啡店與書店慢逛為主，不把市集當主要賣點。</div>
 <div class="status-checks"><label><input data-check-key="d14-item-64-done" type="checkbox"/> 已完成</label><label><input data-check-key="d14-item-64-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
@@ -1381,7 +1392,7 @@ nav::-webkit-scrollbar{display:none;}
 <div class="tool-grid">
 <div>
 <h3>✅ 今日出門前檢查</h3>
-<div class="check-list"><label class="check-row"><input data-check-key="d16-daily-1" type="checkbox"/> <span>King’s Cross 9¾ 月台排隊預期</span></label><label class="check-row"><input data-check-key="d16-daily-2" type="checkbox"/> <span>Camden Market 現金少量/信用卡</span></label><label class="check-row"><input data-check-key="d16-daily-3" type="checkbox"/> <span>晚上回飯店秤重打包</span></label><label class="check-row"><input data-check-key="d16-daily-4" type="checkbox"/> <span>退稅收據集中</span></label><label class="check-row"><input data-check-key="d16-daily-5" type="checkbox"/> <span>行李箱空間確認</span></label></div>
+<div class="check-list"><label class="check-row"><input data-check-key="d16-daily-1" type="checkbox"/> <span>King’s Cross 9¾ 月台排隊預期</span></label><label class="check-row"><input data-check-key="d16-daily-2" type="checkbox"/> <span>Camden Market 現金少量/信用卡</span></label><label class="check-row"><input data-check-key="d16-daily-3" type="checkbox"/> <span>晚上回飯店秤重打包</span></label><label class="check-row"><input data-check-key="d16-daily-4" type="checkbox"/> <span>購物收據集中；英國一般零售購物無機場 VAT 退稅</span></label><label class="check-row"><input data-check-key="d16-daily-5" type="checkbox"/> <span>行李箱空間確認</span></label></div>
 </div>
 <div class="route-card">
 <h3>📍 今日 Google Maps 一鍵路線</h3>
@@ -1437,7 +1448,7 @@ nav::-webkit-scrollbar{display:none;}
 <div class="tl-time">19:00</div>
 <div class="tl-content">
 <div class="tl-title">🧳 回 Stratford 打包、秤重、整理退稅</div>
-<div class="tl-desc">起飛前一天晚上整理收據、退稅文件與行李重量。</div>
+<div class="tl-desc">起飛前一天晚上整理收據、購物收據、保固資料與行李重量。</div>
 <div class="status-checks"><label><input data-check-key="d16-item-76-done" type="checkbox"/> 已完成</label><label><input data-check-key="d16-item-76-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
@@ -1467,7 +1478,7 @@ nav::-webkit-scrollbar{display:none;}
 <div class="tool-grid">
 <div>
 <h3>✅ 今日出門前檢查</h3>
-<div class="check-list"><label class="check-row"><input data-check-key="d17-daily-1" type="checkbox"/> <span>護照、登機證、ETA/簽證資料</span></label><label class="check-row"><input data-check-key="d17-daily-2" type="checkbox"/> <span>退稅單、收據、商品備查</span></label><label class="check-row"><input data-check-key="d17-daily-3" type="checkbox"/> <span>行李重量確認</span></label><label class="check-row"><input data-check-key="d17-daily-4" type="checkbox"/> <span>液體 100ml 袋</span></label><label class="check-row"><input data-check-key="d17-daily-5" type="checkbox"/> <span>16:00 左右出發，17:00 抵達 Heathrow</span></label></div>
+<div class="check-list"><label class="check-row"><input data-check-key="d17-daily-1" type="checkbox"/> <span>護照、登機證、ETA/簽證資料</span></label><label class="check-row"><input data-check-key="d17-daily-2" type="checkbox"/> <span>購物收據、保固文件、商品備查</span></label><label class="check-row"><input data-check-key="d17-daily-3" type="checkbox"/> <span>行李重量確認</span></label><label class="check-row"><input data-check-key="d17-daily-4" type="checkbox"/> <span>液體 100ml 袋</span></label><label class="check-row"><input data-check-key="d17-daily-5" type="checkbox"/> <span>16:00 左右出發，17:00 抵達 Heathrow</span></label></div>
 </div>
 <div class="route-card">
 <h3>📍 今日 Google Maps 一鍵路線</h3>
@@ -1481,7 +1492,7 @@ nav::-webkit-scrollbar{display:none;}
 <div class="tl-time">09:00</div>
 <div class="tl-content">
 <div class="tl-title">🌤️ 悠閒起床、退房、寄放行李</div>
-<div class="tl-desc">把大件行李寄放 Moxy 櫃檯。</div>
+<div class="tl-desc">一般退房多為 11:00–12:00；把大件行李寄放 Moxy 櫃檯，取行李時一併確認護照、登機證、退稅/購物文件與液體袋。</div>
 <div class="status-checks"><label><input data-check-key="d17-item-78-done" type="checkbox"/> 已完成</label><label><input data-check-key="d17-item-78-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
@@ -1502,7 +1513,7 @@ nav::-webkit-scrollbar{display:none;}
 <div class="tl-time">15:30</div>
 <div class="tl-content">
 <div class="tl-title">🧳 領行李，步行至 Stratford 車站</div>
-<div class="tl-desc">確認護照、錢包、手機、退稅文件、機票截圖。</div>
+<div class="tl-desc">確認護照、錢包、手機、購物收據、機票截圖。</div>
 <div class="status-checks"><label><input data-check-key="d17-item-81-done" type="checkbox"/> 已完成</label><label><input data-check-key="d17-item-81-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
@@ -1516,7 +1527,7 @@ nav::-webkit-scrollbar{display:none;}
 <span class="tr-duration">⏱ 約 50–60 分鐘</span>
 <span class="tr-cost">💰 Elizabeth Line 約 £13–15；Heathrow Express 約 £25 / 約 NT$1,100 起但需轉車</span>
 </div>
-</div><div class="rescue-box"><strong>交通救援：</strong>坐錯方向先不要出站，下一站下車到對面月台搭回；坐過站也直接反向搭回。火車月台常在出發前 10–15 分鐘才公布，先看大螢幕。</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">16:00 左右上車，目標 17:00 到 Heathrow。</span></div><div class="step"><span class="step-num">2</span><span class="step-text">先辦退稅，再托運、安檢。</span></div><div class="step"><span class="step-num">3</span><span class="step-text">回程航班：London Heathrow 21:10 14Aug2026 → Taipei 08:05 15Aug2026。</span></div></div>
+</div><div class="rescue-box"><strong>交通救援：</strong>坐錯方向先不要出站，下一站下車到對面月台搭回；坐過站也直接反向搭回。火車月台常在出發前 10–15 分鐘才公布，先看大螢幕。</div><div class="steps"><div class="step"><span class="step-num">1</span><span class="step-text">16:00 左右上車，目標 17:00 到 Heathrow。</span></div><div class="step"><span class="step-num">2</span><span class="step-text">先確認航空公司航廈與托運櫃台；一般英國零售購物無機場 VAT 退稅，若有品牌特別文件再依店家說明處理。</span></div><div class="step"><span class="step-num">3</span><span class="step-text">回程航班：London Heathrow 21:10 14Aug2026 → Taipei 08:05 15Aug2026（隔日 8/15 抵達）。航廈請以航空公司行前通知為準；目標 17:00 抵達機場，保留 4 小時辦理托運、安檢與購物文件檢查。</span></div></div>
 <div class="status-checks"><label><input data-check-key="d17-item-82-done" type="checkbox"/> 已完成</label><label><input data-check-key="d17-item-82-map" type="checkbox"/> 已存地圖</label></div></div>
 </div>
 <div class="tl-item">
@@ -1536,60 +1547,57 @@ nav::-webkit-scrollbar{display:none;}
 </div>
 </div></div>
 </section>
-
-
 <section class="section" id="mapview">
-  <div class="map-overview">
-    <div class="map-intro"><strong>🗺️ 每日地圖總覽：</strong>這個分頁用來快速判斷「今天主要會在哪些區域活動」。可切換日期查看景點分布、移動順序、交通概覽與 Google Maps 一鍵路線。地圖預覽改用 Google Maps，不再載入 OpenStreetMap/Leaflet；實際步行與搭車請以 Google Maps / Citymapper 當下導航為準。</div>
-    <div class="map-layout">
-      <aside class="map-panel map-sidebar">
-        <div class="map-date-scroll" id="mapDateButtons"></div>
-        <div>
-          <div class="map-title" id="mapDayTitle">每日地圖總覽</div>
-          <div class="map-subtitle" id="mapDaySubtitle">選擇日期後會顯示當天活動範圍。</div>
-        </div>
-        <div class="map-chip-row" id="mapChips"></div>
-        <div>
-          <div class="map-list-title">今日主要地點</div>
-          <div class="map-stop-list" id="mapStopList"></div>
-        </div>
-        <div>
-          <div class="map-list-title">今日路線順序</div>
-          <div class="map-route-list" id="mapRouteList"></div>
-        </div>
-        <div>
-          <div class="map-list-title">交通概覽</div>
-          <div class="map-route-list" id="mapTransportList"></div>
-        </div>
-        <div class="map-actions">
-          <a class="map-action-btn" id="mapGoogleRoute" href="#" target="_blank" rel="noopener">📍 開啟 Google Maps 路線</a>
-          <button class="map-action-btn secondary" type="button" onclick="copyMapDaySummary()">📋 複製今日地圖摘要</button>
-        </div>
-      </aside>
-      <div class="map-panel map-canvas-panel">
-        <div id="dailyMap"></div>
-        <div class="map-fallback" id="mapFallback">
-          <div class="map-title">無法載入 Google Maps 預覽</div>
-          <div class="map-subtitle">可能是目前離線、網路較慢，或瀏覽器阻擋 Google Maps iframe。下方仍可查看今日地點清單，也可用「開啟 Google Maps 路線」直接跳轉。</div>
-          <div class="map-fallback-grid" id="mapFallbackGrid"></div>
-        </div>
-        <div class="map-bottom-card">
-          <div>
-            <div class="map-bottom-title" id="mapAreaTitle">今日重點區域</div>
-            <div class="map-bottom-text" id="mapAreaText">選擇日期後顯示。</div>
-          </div>
-          <div class="map-legend">
-            <span class="legend-pill">🏨 飯店 / 出發</span>
-            <span class="legend-pill">📍 景點</span>
-            <span class="legend-pill">🍽 餐廳 / 市集</span>
-            <span class="legend-pill">🚇 交通點</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="map-overview">
+<div class="map-intro"><strong>🗺️ 每日地圖總覽：</strong>這個分頁用來快速判斷「今天主要會在哪些區域活動」。可切換日期查看景點分布、移動順序、交通概覽與 Google Maps 一鍵路線。地圖預覽改用 Google Maps，不再載入 OpenStreetMap/Leaflet；實際步行與搭車請以 Google Maps / Citymapper 當下導航為準。</div>
+<div class="map-layout">
+<aside class="map-panel map-sidebar">
+<div class="map-date-scroll" id="mapDateButtons"></div>
+<div>
+<div class="map-title" id="mapDayTitle">每日地圖總覽</div>
+<div class="map-subtitle" id="mapDaySubtitle">選擇日期後會顯示當天活動範圍。</div>
+</div>
+<div class="map-chip-row" id="mapChips"></div>
+<div>
+<div class="map-list-title">今日主要地點</div>
+<div class="map-stop-list" id="mapStopList"></div>
+</div>
+<div>
+<div class="map-list-title">今日路線順序</div>
+<div class="map-route-list" id="mapRouteList"></div>
+</div>
+<div>
+<div class="map-list-title">交通概覽</div>
+<div class="map-route-list" id="mapTransportList"></div>
+</div>
+<div class="map-actions">
+<a class="map-action-btn" href="#" id="mapGoogleRoute" rel="noopener" target="_blank">📍 開啟 Google Maps 路線</a>
+<button class="map-action-btn secondary" onclick="copyMapDaySummary()" type="button">📋 複製今日地圖摘要</button>
+</div>
+</aside>
+<div class="map-panel map-canvas-panel">
+<div id="dailyMap"></div>
+<div class="map-fallback" id="mapFallback">
+<div class="map-title">無法載入 Google Maps 預覽</div>
+<div class="map-subtitle">可能是目前離線、網路較慢，或瀏覽器阻擋 Google Maps iframe。下方仍可查看今日地點清單，也可用「開啟 Google Maps 路線」直接跳轉。</div>
+<div class="map-fallback-grid" id="mapFallbackGrid"></div>
+</div>
+<div class="map-bottom-card">
+<div>
+<div class="map-bottom-title" id="mapAreaTitle">今日重點區域</div>
+<div class="map-bottom-text" id="mapAreaText">選擇日期後顯示。</div>
+</div>
+<div class="map-legend">
+<span class="legend-pill">🏨 飯店 / 出發</span>
+<span class="legend-pill">📍 景點</span>
+<span class="legend-pill">🍽 餐廳 / 市集</span>
+<span class="legend-pill">🚇 交通點</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <section class="section" id="transport">
 <div class="notice"><strong>💡 重點：</strong>倫敦市區用 Contactless 信用卡搭地鐵。近郊（Windsor、Oxford、Cambridge）要另外買火車票。</div><div class="info-card"><h3>🧯 交通救援速查</h3><ul><li><strong>地鐵坐錯方向：</strong>下一站下車，不要出站，換到對面月台搭回來。</li><li><strong>坐過站：</strong>保持冷靜，直接反方向搭回；若已出站再進站可能重新計費。</li><li><strong>火車月台找不到：</strong>英國大站常在出發前 10–15 分鐘才顯示月台，先看大螢幕，不要只靠 Google Maps。</li><li><strong>公車搭錯：</strong>下一站下車，用 Citymapper 重新規劃；倫敦巴士下車不用刷卡。</li><li><strong>DLR 沒有司機：</strong>這是正常的自動輕軌，不用緊張。</li></ul></div><div class="info-card"><h3>💷 2026 交通費用更新</h3><ul><li><strong>倫敦市區 Zone 1-2：</strong>Contactless / Oyster 單程多落在約 £3.10–£3.60，當日上限 £8.90。</li><li><strong>倫敦巴士：</strong>單程 £1.75，1 小時內可免費轉乘其他巴士/電車（Hopper Fare）；只需上車刷卡，下車不用刷。</li><li><strong>Heathrow Elizabeth Line：</strong>Heathrow 進出倫敦為特殊票價，約 £13.90 起；出發前建議用 TfL Single Fare Finder 再查一次。</li><li><strong>近郊火車：</strong>Windsor / Oxford / Cambridge 需另外購票，建議提前 8–12 週查 Advance / Off-Peak / GroupSave。</li></ul></div>
 <div class="info-card">
@@ -1640,18 +1648,27 @@ nav::-webkit-scrollbar{display:none;}
 </section>
 <section class="section" id="tips">
 <div class="danger"><strong>⚠️ 基本常識：</strong>英國用英鎊 GBP（£），<strong>不是歐元！</strong>現金基本用不到，信用卡感應到處通用。</div>
+<div class="fix-log"><strong>✅ 已依「行程問題檢視報告」修正：</strong>補強抵達與離境航班/機場緩衝、Day 2 加入時差與白金漢宮開放日提醒、Day 11 修正 Bicester Village 交通、Day 12 撐篙提前並延後回程建議、Day 14 改為 Notting Hill 彩色街區而非主要市集日、票價頁統一加上行程日期/建議購票時間、並修正英國一般零售購物無機場 VAT 退稅的提醒。</div>
 <div class="info-card">
 <h3>🛂 重要：ETA 旅遊許可 (2026新規)</h3>
 <ul>
 <li>英國政府規定，自 2026 年 2 月 25 日起，台灣旅客皆須事先申請 <strong>ETA (電子旅遊許可)</strong> 才能入境。</li>
-<li>每人費用約 £10-20，建議出發前 3 天完成申請。</li>
+<li>目前官方 ETA 費用為 £20，建議出發前提早完成申請；請只用 GOV.UK 或官方 UK ETA App，避免代辦網站加價。</li>
 </ul>
 </div><div class="info-card"><h3>🧭 補充提醒：出門前與每天出門前</h3><ul><li><strong>交通 App：</strong>Citymapper 用來判斷地鐵/公車即時路線；TfL Go 用來看倫敦地鐵狀態；Trainline 或 National Rail 用來看近郊火車。</li><li><strong>離線資料：</strong>Google Maps 下載倫敦離線地圖；Google Translate 下載英中離線包，餐廳菜單可直接拍照翻譯。</li><li><strong>三人火車票：</strong>溫莎、牛津、劍橋等近郊票，先查 Off-Peak 與 GroupSave，三人同行常比現場臨時買更划算。</li><li><strong>餐廳禮儀：</strong>進門先等帶位；結帳說 “Can I get the bill, please?”；不吃羊肉就說 “No lamb, please.”</li><li><strong>入境與安檢：</strong>飯店訂房、回程機票、ETA、護照影本與保險資料都存手機；手提液體維持 100ml 以下。</li></ul></div>
+<div class="info-card">
+<h3>🧾 英國購物退稅提醒（重要）</h3>
+<ul>
+<li>英國 Great Britain（英格蘭、蘇格蘭、威爾斯）一般零售購物的 VAT Retail Export Scheme 已撤回，通常不能像歐盟國家一樣在 Heathrow 辦機場退稅。</li>
+<li>Bicester Village、Harrods 或品牌店若提到「退稅 / Tax Free」，請現場確認是否為品牌自有折扣、海外寄送或特定活動，不要把它當作一定能機場退稅。</li>
+<li>仍建議保留收據：用於保固、退換貨、信用卡爭議或海關查驗。</li>
+</ul>
+</div>
 <div class="info-card">
 <h3>📄 出發前必做清單</h3>
 <ul>
 <li>✅ 出發前3天完成申請英國 ETA (電子旅遊許可)</li>
-<li>✅ 買英國 SIM 卡（蝦皮搜「英國 SIM 卡 Three / EE」，約 NT$500-800，30天無限上網）</li>
+<li>✅ 買英國 SIM / eSIM：可在台灣先買 eSIM 並出發前安裝，或抵達 Heathrow / 市區後購買 Three、EE、Vodafone 等方案</li>
 <li>✅ 下載 Google Maps 倫敦離線地圖（手機 → Google Maps → 右上角頭像 → 離線地圖）</li>
 <li>✅ 下載 Google Translate 英中離線包（可拍照翻譯菜單）</li>
 <li>✅ 下載 TfL Go app（倫敦地鐵路線規劃）</li>
@@ -1674,6 +1691,14 @@ nav::-webkit-scrollbar{display:none;}
 </ul>
 </div>
 <div class="info-card">
+<h3>🗓 市集與營業日提醒</h3>
+<ul>
+<li>Portobello Road Market 主要熱鬧日通常是週五、週六；8/11（二）已改成 Notting Hill 彩色街區慢逛，不以市集攤販為主。</li>
+<li>Borough Market 週日或特殊節日可能提早結束；出發前請再查官方營業時間。</li>
+<li>2026/8/31 是英格蘭夏季 Bank Holiday，但不在本行程日期內；仍建議出發前確認各景點暑期營業日。</li>
+</ul>
+</div>
+<div class="info-card">
 <h3>🌧 天氣 &amp; 打包</h3>
 <ul>
 <li>7-8月約 18-25°C，但可能突然下雨（英國天氣出名難預測）</li>
@@ -1685,7 +1710,7 @@ nav::-webkit-scrollbar{display:none;}
 <div class="info-card">
 <h3>💰 金錢管理</h3>
 <ul>
-<li>推薦帶 <strong>Wise 多幣卡</strong>（網路申請，儲值英鎊，無手續費）或台新 Richart</li>
+<li>推薦帶 <strong>Wise 多幣卡</strong>（網路申請，儲值英鎊，手續費通常較透明）或台灣可海外刷卡的信用卡</li>
 <li>現金帶 £100-150 當備用，大部分地方用不到</li>
 <li>超市（M&amp;S、Sainsbury's）買早餐和點心省很多</li>
 <li>地鐵 Daily Cap：Zone 1-2 每天最多扣 £8.90，超過不再扣費</li>
@@ -1693,7 +1718,7 @@ nav::-webkit-scrollbar{display:none;}
 </div>
 </section>
 <section class="section" id="tickets">
-<div class="warning"><strong>購票注意：</strong>本慢遊版仍保留所有指定景點；但每天最多安排 2 個主要景點。白金漢宮、倫敦塔、溫莎堡建議優先官網購票；碎片塔請看天氣能見度再買；倫敦之眼建議選可改期或天氣較好的時段。近郊火車票可查 Off-Peak / GroupSave。</div><div class="info-card ticket-manager"><h3>✅ 票券狀態管理</h3><div class="small-note">可在手機上勾選已購票、填入場時間與備註；資料會存在此瀏覽器 localStorage，重新開啟同一檔案仍會保留。</div><table><thead><tr><th>景點</th><th>狀態</th><th>時間</th><th>備註</th></tr></thead><tbody><tr><td>白金漢宮</td><td><input data-ticket-key="ticket-1-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-1-time" type="time" value="10:00"/></td><td><input data-ticket-key="ticket-1-note" type="text" value="指定時段，提前 15–30 分鐘到"/></td></tr><tr><td>西敏寺</td><td><input data-ticket-key="ticket-2-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-2-time" type="time" value="09:30"/></td><td><input data-ticket-key="ticket-2-note" type="text" value="安檢排隊，語音導覽可選中文"/></td></tr><tr><td>倫敦塔</td><td><input data-ticket-key="ticket-3-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-3-time" type="time" value="09:30"/></td><td><input data-ticket-key="ticket-3-note" type="text" value="先看 Crown Jewels"/></td></tr><tr><td>倫敦塔橋</td><td><input data-ticket-key="ticket-4-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-4-time" type="time" value=""/></td><td><input data-ticket-key="ticket-4-note" type="text" value="玻璃地板需買入內票"/></td></tr><tr><td>倫敦之眼</td><td><input data-ticket-key="ticket-5-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-5-time" type="time" value="黃昏"/></td><td><input data-ticket-key="ticket-5-note" type="text" value="天氣差可改期票較保險"/></td></tr><tr><td>聖保羅大教堂</td><td><input data-ticket-key="ticket-6-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-6-time" type="time" value="09:30"/></td><td><input data-ticket-key="ticket-6-note" type="text" value="登頂請評估體力"/></td></tr><tr><td>溫莎堡</td><td><input data-ticket-key="ticket-7-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-7-time" type="time" value="10:00"/></td><td><input data-ticket-key="ticket-7-note" type="text" value="近郊火車票另買"/></td></tr><tr><td>格林威治一日通票</td><td><input data-ticket-key="ticket-8-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-8-time" type="time" value=""/></td><td><input data-ticket-key="ticket-8-note" type="text" value="含天文台 / Cutty Sark 等"/></td></tr><tr><td>牛津 Christ Church</td><td><input data-ticket-key="ticket-9-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-9-time" type="time" value=""/></td><td><input data-ticket-key="ticket-9-note" type="text" value="確認開放日與餐廳開放"/></td></tr><tr><td>劍橋 King’s College</td><td><input data-ticket-key="ticket-10-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-10-time" type="time" value=""/></td><td><input data-ticket-key="ticket-10-note" type="text" value="禮拜堂有時段限制"/></td></tr><tr><td>劍橋撐篙</td><td><input data-ticket-key="ticket-11-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-11-time" type="time" value="14:00"/></td><td><input data-ticket-key="ticket-11-note" type="text" value="下雨可取消或改共乘"/></td></tr><tr><td>碎片塔</td><td><input data-ticket-key="ticket-12-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-12-time" type="time" value=""/></td><td><input data-ticket-key="ticket-12-note" type="text" value="能見度差就不要上去"/></td></tr></tbody></table></div><div class="warning">⭐ 標記的景點建議<strong>現在就購買</strong>，夏天旺季容易售罄。票價為估算，以官網為準。</div><div class="info-card"><h3>🎟️ 購票注意事項</h3><ul><li><strong>優先用官網購票：</strong>白金漢宮、倫敦塔、溫莎堡等旺季熱門票，建議用官網或官方授權平台，避免現場售罄。</li><li><strong>日期、時段、姓名要核對：</strong>部分票券為指定入場時段，購買前確認日期、時間、成人/兒童/長者票種。</li><li><strong>QR Code 離線保存：</strong>買完票後截圖並存到手機相簿，也可備份到同行者手機。</li><li><strong>提早到場：</strong>熱門景點即使有票仍要安檢，建議提早 15–30 分鐘抵達。</li><li><strong>大型行李限制：</strong>倫敦塔、倫敦之眼、博物館或宮殿類景點通常不適合帶大行李；行李留飯店最穩。</li><li><strong>退改規則先看：</strong>特價票、Advance 火車票、指定時段票通常退改限制較多。</li></ul></div>
+<div class="warning"><strong>購票注意：</strong>本慢遊版仍保留所有指定景點；但每天最多安排 2 個主要景點。白金漢宮、倫敦塔、溫莎堡建議優先官網購票；碎片塔請看天氣能見度再買；倫敦之眼建議選可改期或天氣較好的時段。近郊火車票可查 Off-Peak / GroupSave。</div><div class="info-card ticket-manager"><h3>✅ 票券狀態管理</h3><div class="small-note">可在手機上勾選已購票、填入實際票券時段與備註；我已依每日行程先標出日期與建議購票時間。資料會存在此瀏覽器 localStorage，重新開啟同一檔案仍會保留。</div><table><thead><tr><th>景點 / 票券</th><th>行程日期</th><th>行程時間</th><th>建議購票時段</th><th>狀態</th><th>備註</th></tr></thead><tbody><tr><td><strong>白金漢宮 State Rooms ⭐</strong></td><td>7/30（四）Day 2</td><td><span class="ticket-time-note">10:30</span></td><td><input data-ticket-key="ticket-1-time" type="text" value="10:30 或之後"/></td><td><input data-ticket-key="ticket-1-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-1-note" type="text" value="確認 2026 State Rooms 開放日；前一晚剛抵達，勿買太早"/></td></tr><tr><td><strong>西敏寺 Westminster Abbey</strong></td><td>7/31（五）Day 3</td><td><span class="ticket-time-note">09:30</span></td><td><input data-ticket-key="ticket-2-time" type="text" value="09:30"/></td><td><input data-ticket-key="ticket-2-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-2-note" type="text" value="確認非禮拜/典禮限制；提前 15–30 分鐘安檢"/></td></tr><tr><td><strong>倫敦之眼 London Eye</strong></td><td>7/31（五）Day 3</td><td><span class="ticket-time-note">14:00</span></td><td><input data-ticket-key="ticket-3-time" type="text" value="14:00 或可改期票"/></td><td><input data-ticket-key="ticket-3-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-3-note" type="text" value="天氣差可移到 8/12 補位日"/></td></tr><tr><td><strong>倫敦塔 Tower of London ⭐</strong></td><td>8/1（六）Day 4</td><td><span class="ticket-time-note">09:30</span></td><td><input data-ticket-key="ticket-4-time" type="text" value="09:30"/></td><td><input data-ticket-key="ticket-4-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-4-note" type="text" value="一入場先看 Crown Jewels"/></td></tr><tr><td><strong>倫敦塔橋 Tower Bridge</strong></td><td>8/1（六）Day 4</td><td><span class="ticket-time-note">14:30</span></td><td><input data-ticket-key="ticket-5-time" type="text" value="14:30"/></td><td><input data-ticket-key="ticket-5-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-5-note" type="text" value="只過橋免費；玻璃地板/上方走廊需買票"/></td></tr><tr><td><strong>聖保羅大教堂 St Paul’s</strong></td><td>8/2（日）Day 5</td><td><span class="ticket-time-note">09:30</span></td><td><input data-ticket-key="ticket-6-time" type="text" value="09:30"/></td><td><input data-ticket-key="ticket-6-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-6-note" type="text" value="若要登頂請評估體力與天氣"/></td></tr><tr><td><strong>大英博物館語音導覽</strong></td><td>8/3（一）Day 6</td><td><span class="ticket-time-note">10:00</span></td><td><input data-ticket-key="ticket-7-time" type="text" value="10:00"/></td><td><input data-ticket-key="ticket-7-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-7-note" type="text" value="入場免費，語音導覽/特展另計"/></td></tr><tr><td><strong>福爾摩斯博物館</strong></td><td>8/4（二）Day 7</td><td><span class="ticket-time-note">10:00</span></td><td><input data-ticket-key="ticket-8-time" type="text" value="10:00"/></td><td><input data-ticket-key="ticket-8-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-8-note" type="text" value="可現場排隊；若要穩定就預先購票"/></td></tr><tr><td><strong>格林威治一日通票</strong></td><td>8/5（三）Day 8</td><td><span class="ticket-time-note">10:00</span></td><td><input data-ticket-key="ticket-9-time" type="text" value="10:00–10:30"/></td><td><input data-ticket-key="ticket-9-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-9-note" type="text" value="含天文台 / Cutty Sark 等，注意上坡路段"/></td></tr><tr><td><strong>溫莎堡 Windsor Castle ⭐</strong></td><td>8/6（四）Day 9</td><td><span class="ticket-time-note">10:30</span></td><td><input data-ticket-key="ticket-10-time" type="text" value="10:30"/></td><td><input data-ticket-key="ticket-10-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-10-note" type="text" value="火車票另買；確認 St George’s Chapel 開放"/></td></tr><tr><td><strong>牛津 Christ Church</strong></td><td>8/7（五）Day 10</td><td><span class="ticket-time-note">10:30</span></td><td><input data-ticket-key="ticket-11-time" type="text" value="10:30–11:00"/></td><td><input data-ticket-key="ticket-11-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-11-note" type="text" value="確認開放日與入內區域；只選一個學院入內"/></td></tr><tr><td><strong>Bicester Village 火車</strong></td><td>8/8（六）Day 11</td><td><span class="ticket-time-note">出發約 09:00</span></td><td><input data-ticket-key="ticket-12-time" type="text" value="Off-Peak / GroupSave"/></td><td><input data-ticket-key="ticket-12-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-12-note" type="text" value="Marylebone 搭 Chiltern；Elizabeth Line 不到 Marylebone"/></td></tr><tr><td><strong>劍橋 King’s College</strong></td><td>8/9（日）Day 12</td><td><span class="ticket-time-note">10:30</span></td><td><input data-ticket-key="ticket-13-time" type="text" value="10:30–11:00"/></td><td><input data-ticket-key="ticket-13-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-13-note" type="text" value="禮拜堂可能有時段限制"/></td></tr><tr><td><strong>劍橋撐篙 Punting</strong></td><td>8/9（日）Day 12</td><td><span class="ticket-time-note">13:30</span></td><td><input data-ticket-key="ticket-14-time" type="text" value="13:30"/></td><td><input data-ticket-key="ticket-14-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-14-note" type="text" value="回程火車建議抓 17:00 後，不要抓 16:00"/></td></tr><tr><td><strong>碎片塔 The Shard（可選）</strong></td><td>8/12（三）Day 15</td><td><span class="ticket-time-note">10:30</span></td><td><input data-ticket-key="ticket-15-time" type="text" value="天氣好再買"/></td><td><input data-ticket-key="ticket-15-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-15-note" type="text" value="低雲/下雨/能見度差就不要上去"/></td></tr></tbody></table></div><div class="warning">⭐ 標記的景點建議<strong>優先購買</strong>，夏天旺季容易售罄。票價為估算，以官網為準；台幣約以 £1 ≈ NT$40 粗估，實際依刷卡匯率與官網售價為準。</div><div class="info-card"><h3>🎟️ 購票注意事項</h3><ul><li><strong>優先用官網購票：</strong>白金漢宮、倫敦塔、溫莎堡等旺季熱門票，建議用官網或官方授權平台，避免現場售罄。</li><li><strong>日期、時段、姓名要核對：</strong>部分票券為指定入場時段，購買前確認日期、時間、成人/兒童/長者票種。</li><li><strong>QR Code 離線保存：</strong>買完票後截圖並存到手機相簿，也可備份到同行者手機。</li><li><strong>提早到場：</strong>熱門景點即使有票仍要安檢，建議提早 15–30 分鐘抵達。</li><li><strong>大型行李限制：</strong>倫敦塔、倫敦之眼、博物館或宮殿類景點通常不適合帶大行李；行李留飯店最穩。</li><li><strong>退改規則先看：</strong>特價票、Advance 火車票、指定時段票通常退改限制較多。</li></ul></div>
 <div class="info-card">
 <table class="ticket-table">
 <thead><tr><th>景點</th><th>票價/人</th><th>3人合計</th><th>購票</th></tr></thead>
