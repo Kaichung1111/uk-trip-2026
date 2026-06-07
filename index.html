@@ -6,6 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>英國旅遊行程 2026 | 每日最多兩景點慢遊版</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
 <style>
 :root{--navy:#1a2744;--gold:#c9a84c;--gold-light:#f0d898;--cream:#faf8f3;--red:#b5282d;--green:#2d6a4f;--blue:#1a5f9e;--text:#2c2c2c;--muted:#6b6b6b;--border:#e0d8c8;--card-bg:#fff;}
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -249,8 +250,17 @@ nav::-webkit-scrollbar{display:none;}
 .map-fallback.active{display:block;}
 .map-fallback-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;margin-top:.7rem;}
 .map-fallback-card{border:1px solid var(--border);background:#fff;border-radius:10px;padding:.65rem;font-size:.78rem;}
+.leaflet-map{height:100%;min-height:620px;width:100%;}
+.leaflet-control-attribution{font-family:'Noto Sans TC',sans-serif;font-size:.64rem;}
+.leaflet-popup-content{font-family:'Noto Sans TC',sans-serif;font-size:.78rem;line-height:1.55;margin:.65rem .8rem;}
+.trip-map-marker{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--red);color:#fff;border:3px solid #fff;font-size:.76rem;font-weight:900;box-shadow:0 3px 10px rgba(0,0,0,.28);}
+.trip-map-marker.home{background:var(--navy);}
+.trip-map-marker.food{background:var(--green);}
+.trip-map-marker.transit{background:var(--blue);}
+.trip-popup-title{font-weight:900;color:var(--navy);margin-bottom:.15rem;}
+.trip-popup-meta{color:var(--muted);}
 @media(max-width:900px){.map-layout{grid-template-columns:1fr}.map-canvas-panel{min-height:520px}#dailyMap{height:520px}.map-bottom-card{position:static;margin:0;border-radius:0;border-left:0;border-right:0;border-bottom:0;box-shadow:none;grid-template-columns:1fr}.map-legend{justify-content:flex-start}}
-@media(max-width:520px){.map-overview{padding:0 .2rem}.map-sidebar{padding:.85rem}.map-canvas-panel{min-height:460px}#dailyMap{height:460px}.map-date-btn{font-size:.68rem;padding:5px 9px}.map-chip{font-size:.68rem}.map-action-btn{font-size:.69rem;padding:6px 10px}}
+@media(max-width:520px){.map-overview{padding:0 .2rem}.map-sidebar{padding:.85rem}.map-canvas-panel{min-height:460px}#dailyMap{height:460px}.leaflet-map{min-height:460px}.map-date-btn{font-size:.68rem;padding:5px 9px}.map-chip{font-size:.68rem}.map-action-btn{font-size:.69rem;padding:6px 10px}}
 
 
 /* ===== Ticket schedule annotation upgrade ===== */
@@ -1165,7 +1175,7 @@ nav::-webkit-scrollbar{display:none;}
 </section>
 <section class="section" id="mapview">
 <div class="map-overview">
-<div class="map-intro"><strong>🗺️ 每日地圖總覽：</strong>這個分頁用來快速判斷「今天主要會在哪些區域活動」。可切換日期查看景點分布、移動順序、交通概覽與 Google Maps 一鍵路線。地圖預覽已改成每日靜態區域圖，不再使用 iframe 嵌入路線；實際步行與搭車請按「開啟 Google Maps 路線」外開導航。</div>
+<div class="map-intro"><strong>🗺️ 每日地圖總覽：</strong>這個分頁用來快速判斷「今天主要會在哪些區域活動」。可切換日期查看互動地圖、景點分布、移動順序、交通概覽與 Google Maps 一鍵路線；實際步行與搭車請按「開啟 Google Maps 路線」外開導航。</div>
 <div class="map-layout">
 <aside class="map-panel map-sidebar">
 <div class="map-date-scroll" id="mapDateButtons"></div>
@@ -1194,8 +1204,8 @@ nav::-webkit-scrollbar{display:none;}
 <div class="map-panel map-canvas-panel">
 <div id="dailyMap"></div>
 <div class="map-fallback" id="mapFallback">
-<div class="map-title">靜態地圖備援清單</div>
-<div class="map-subtitle">若靜態圖未顯示，下方仍可查看今日地點清單，也可用「開啟 Google Maps 路線」直接跳轉。</div>
+<div class="map-title">互動地圖備援清單</div>
+<div class="map-subtitle">若互動地圖未載入，下方仍可查看今日地點清單，也可用「開啟 Google Maps 路線」直接跳轉。</div>
 <div class="map-fallback-grid" id="mapFallbackGrid"></div>
 </div>
 <div class="map-bottom-card">
@@ -1441,7 +1451,7 @@ nav::-webkit-scrollbar{display:none;}
 </div>
 <div class="info-card"><h3>🗣️ 緊急英文句</h3><ul><li>I need help. Please call the police.（我需要協助，請報警。）</li><li>I need an ambulance.（我需要救護車。）</li><li>My passport was lost / stolen.（我的護照遺失 / 被偷。）</li><li>We are staying at Moxy London Stratford.（我們住在 Moxy London Stratford。）</li><li>Please help me contact the Taipei Representative Office.（請協助我聯絡駐英國台北代表處。）</li></ul></div>
 <div class="small-note">資料來源連結：<a href="https://www.gov.uk/guidance/999-and-112-the-uks-national-emergency-numbers" target="_blank">UK 999/112</a>、<a href="https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/when-to-use-111/" target="_blank">NHS 111</a>、<a href="https://en.mofa.gov.tw/CountryInfoEn.aspx?CASN=1&amp;n=1290&amp;s=88&amp;sms=0" target="_blank">外交部駐英資訊</a></div>
-</section><script>
+</section><script defer onload="if(window.renderMapDay &amp;&amp; document.getElementById('mapview')?.classList.contains('active')) window.renderMapDay();" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
 
 const DAY_INFO = {
   d1:{date:'2026-07-29', label:'7/29 抵達倫敦', place:'London Heathrow / Stratford', lat:51.4700, lon:-0.4543},
@@ -1550,6 +1560,8 @@ const MAP_DAY_DATA = {
     note:'今日只在 Stratford 周邊短暫活動，下午直接前往 Heathrow，避免拖著行李跑市區。'}
 };
 let activeMapDayId = 'd1';
+let leafletMap = null;
+let leafletLayer = null;
 function mapStopTypeClass(type){
   if(type === 'home') return 'home';
   if(type === 'food') return 'food';
@@ -1592,6 +1604,22 @@ function initDailyMap(){
   initMapDateButtons();
   const fallback = document.getElementById('mapFallback');
   if(fallback) fallback.classList.remove('active');
+  if(typeof L === 'undefined'){
+    if(fallback) fallback.classList.add('active');
+    return false;
+  }
+  const mapEl = document.getElementById('dailyMap');
+  if(!mapEl) return false;
+  if(!leafletMap){
+    mapEl.classList.add('leaflet-map');
+    leafletMap = L.map(mapEl, { scrollWheelZoom:false, zoomControl:true });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(leafletMap);
+    leafletLayer = L.layerGroup().addTo(leafletMap);
+  }
+  setTimeout(()=>leafletMap.invalidateSize(), 0);
   return true;
 }
 function renderFallbackCards(dayId){
@@ -1601,17 +1629,40 @@ function renderFallbackCards(dayId){
   grid.innerHTML = d.stops.map((s,i)=>`<div class="map-fallback-card"><strong>${i+1}. ${s[1]}</strong><br><span>${s[2]}</span><br><a href="https://maps.google.com/?q=${encodeURIComponent(s[1])}" target="_blank" rel="noopener">Google Maps</a></div>`).join('');
 }
 
-function getStaticMapSrc(dayId){
-  const order = Object.keys(MAP_DAY_DATA);
-  const idx = Math.max(0, order.indexOf(dayId)) + 1;
-  return `maps/day${idx}.svg`;
+function createTripMarker(stop, index){
+  const typeClass = mapStopTypeClass(stop[0]);
+  return L.divIcon({
+    className:'',
+    html:`<div class="trip-map-marker ${typeClass}">${index + 1}</div>`,
+    iconSize:[30,30],
+    iconAnchor:[15,15],
+    popupAnchor:[0,-15]
+  });
 }
-function renderGoogleMapPreview(dayId){
-  const wrap = document.getElementById('dailyMap');
+function renderLeafletMap(dayId){
   const d = MAP_DAY_DATA[dayId] || MAP_DAY_DATA.d1;
-  if(!wrap) return;
-  const chips = d.stops.map((s,i)=>`<div class="map-point-chip ${mapStopTypeClass(s[0])}"><span class="map-point-num">${i+1}</span><div><div class="map-point-name">${s[1]}</div><div class="map-point-meta">${s[2]}</div></div></div>`).join('');
-  wrap.innerHTML = `<img class="static-map-image" src="${getStaticMapSrc(dayId)}" alt="${d.label} 靜態地圖" loading="lazy" onerror="document.getElementById('mapFallback')?.classList.add('active')"><div class="static-map-note">靜態每日區域圖</div><div class="map-point-overlay">${chips}</div>`;
+  if(!initDailyMap() || !leafletMap || !leafletLayer) return;
+  leafletLayer.clearLayers();
+  const points = d.stops.map(s=>[Number(s[3]), Number(s[4])]).filter(p=>Number.isFinite(p[0]) && Number.isFinite(p[1]));
+  d.stops.forEach((s,i)=>{
+    const lat = Number(s[3]);
+    const lon = Number(s[4]);
+    if(!Number.isFinite(lat) || !Number.isFinite(lon)) return;
+    L.marker([lat, lon], { icon:createTripMarker(s, i) })
+      .bindPopup(`<div class="trip-popup-title">${i+1}. ${s[1]}</div><div class="trip-popup-meta">${s[2]}</div>`)
+      .addTo(leafletLayer);
+  });
+  if(points.length > 1){
+    L.polyline(points, { color:'#1a5f9e', weight:3, opacity:.72, dashArray:'7 8' }).addTo(leafletLayer);
+  }
+  if(points.length === 1){
+    leafletMap.setView(points[0], d.zoom || 13);
+  }else if(points.length > 1){
+    leafletMap.fitBounds(points, { padding:[36,36], maxZoom:d.zoom || 14 });
+  }else{
+    leafletMap.setView(d.center || [51.5074,-0.1278], d.zoom || 11);
+  }
+  setTimeout(()=>leafletMap.invalidateSize(), 50);
 }
 function renderMapDay(dayId){
   activeMapDayId = dayId || activeMapDayId || getActiveDayId();
@@ -1629,7 +1680,7 @@ function renderMapDay(dayId){
   document.getElementById('mapAreaText').textContent = d.note;
   renderFallbackCards(activeMapDayId);
   initDailyMap();
-  renderGoogleMapPreview(activeMapDayId);
+  renderLeafletMap(activeMapDayId);
 }
 function copyMapDaySummary(){
   const d = MAP_DAY_DATA[activeMapDayId] || MAP_DAY_DATA.d1;
