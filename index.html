@@ -281,17 +281,21 @@ nav::-webkit-scrollbar{display:none;}
   .ticket-manager thead{display:none;}
   .ticket-manager tbody{display:grid;gap:.75rem;}
   .ticket-manager tr{display:block;border:1px solid var(--border);border-radius:8px;background:#fff;overflow:hidden;}
-  .ticket-manager td{display:grid;grid-template-columns:92px 1fr;gap:.5rem;align-items:start;border-bottom:1px solid #f0eee8;padding:.6rem .7rem!important;font-size:.78rem!important;}
+  .ticket-manager td{display:block;border-bottom:1px solid #f0eee8;padding:.62rem .75rem!important;font-size:.8rem!important;line-height:1.55;}
   .ticket-manager td:last-child{border-bottom:none;}
-  .ticket-manager td::before{font-weight:800;color:var(--navy);font-size:.72rem;line-height:1.45;}
+  .ticket-manager td::before{display:block;font-weight:800;color:var(--navy);font-size:.72rem;line-height:1.35;margin-bottom:.18rem;}
   .ticket-manager td:nth-child(1)::before{content:'景點 / 票券';}
   .ticket-manager td:nth-child(2)::before{content:'行程日期';}
   .ticket-manager td:nth-child(3)::before{content:'行程時間';}
   .ticket-manager td:nth-child(4)::before{content:'購買處 / 票價';}
   .ticket-manager td:nth-child(5)::before{content:'狀態';}
   .ticket-manager td:nth-child(6)::before{content:'備註';}
-  .ticket-manager input[type='text']{min-height:34px;font-size:.76rem;}
-  .ticket-manager input[type='checkbox']{margin-right:4px;}
+  .ticket-manager td:nth-child(1){background:#fbfaf6;}
+  .ticket-manager td:nth-child(1) strong{display:block;font-size:.88rem;line-height:1.45;color:var(--navy);}
+  .ticket-manager td:nth-child(5){display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;}
+  .ticket-manager td:nth-child(5)::before{width:100%;margin-bottom:.05rem;}
+  .ticket-manager input[type='text']{width:100%;min-height:38px;font-size:.78rem;line-height:1.45;padding:7px 9px;}
+  .ticket-manager input[type='checkbox']{width:18px;height:18px;margin:0;}
 }
 
 
@@ -1330,7 +1334,7 @@ nav::-webkit-scrollbar{display:none;}
 </div>
 </section>
 <section class="section" id="tickets">
-<div class="warning"><strong>購票注意：</strong>已改為 Klook 3 景點通票 + 三個 Klook 中文一日遊。白金漢宮已在官網購買；倫敦眼、塔橋、碎片塔、福爾摩斯博物館保留彈性單買。</div><div class="info-card ticket-manager"><h3>✅ 票券狀態管理</h3><div class="small-note">已依目前購票策略更新：可在手機上勾選已購票、填入實際票券時段與備註。資料會存在此瀏覽器 localStorage。</div><table><thead><tr><th>景點 / 票券</th><th>行程日期</th><th>行程時間</th><th>購買處 / 票價</th><th>狀態</th><th>備註</th></tr></thead><tbody>
+<div class="warning"><strong>購票注意：</strong>已改為 Klook 3 景點通票 + 三個 Klook 中文一日遊。白金漢宮已在官網購買；倫敦眼、塔橋、碎片塔、福爾摩斯博物館保留彈性單買。</div><div class="info-card ticket-manager"><h3>✅ 票券狀態管理</h3><div class="small-note">已依目前購票策略更新：可在手機上勾選已購票、填入實際票券時段與備註。資料會自動保存在此瀏覽器。</div><table><thead><tr><th>景點 / 票券</th><th>行程日期</th><th>行程時間</th><th>購買處 / 票價</th><th>狀態</th><th>備註</th></tr></thead><tbody>
 <tr><td><strong>白金漢宮 State Rooms ⭐</strong><span class="ticket-day">官網已買</span></td><td>7/30（四）Day 2</td><td><span class="ticket-time-note">09:30</span></td><td><input data-ticket-key="ticket-1-time" type="text" value="Royal Collection Trust 官網，約 £33/人"/></td><td><input data-ticket-key="ticket-1-bought" type="checkbox" checked/> 已購</td><td><input data-ticket-key="ticket-1-note" type="text" value="憑證檔：0730白金漢宮.pdf；實付金額以訂單為準"/></td></tr>
 <tr><td><strong>Klook 3 景點通票</strong><span class="ticket-day">西敏寺 / 倫敦塔 / 聖保羅</span></td><td>7/31、8/1、8/5</td><td><span class="ticket-time-note">依各日行程</span></td><td><input data-ticket-key="ticket-2-time" type="text" value="Klook NT$3,256/人，選無加購"/></td><td><input data-ticket-key="ticket-2-bought" type="checkbox" checked/> 已購</td><td><input data-ticket-key="ticket-2-note" type="text" value="憑證檔：0731西敏寺、0801倫敦塔、0805聖保羅；不要把塔橋放進 Pass"/></td></tr>
 <tr><td><strong>倫敦之眼 London Eye</strong></td><td>7/31 或 8/6 / 8/12</td><td><span class="ticket-time-note">看天氣</span></td><td><input data-ticket-key="ticket-3-time" type="text" value="Klook / 官網，天氣好再買"/></td><td><input data-ticket-key="ticket-3-bought" type="checkbox"/> 已購</td><td><input data-ticket-key="ticket-3-note" type="text" value="保留彈性，不放 Klook Pass"/></td></tr>
