@@ -16,7 +16,7 @@ header::before{content:'';position:absolute;inset:0;background:repeating-linear-
 header h1{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold-light);position:relative;}
 header .sub{font-size:0.82rem;color:rgba(255,255,255,0.55);margin-top:0.3rem;letter-spacing:0.08em;position:relative;}
 header .dates{display:inline-block;background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.35);color:var(--gold-light);font-size:0.8rem;padding:0.3rem 1.1rem;border-radius:20px;margin-top:0.7rem;position:relative;}
-nav{background:white;border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;position:sticky;top:37px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+nav{background:white;border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
 nav::-webkit-scrollbar{display:none;}
 .tab-btn{flex-shrink:0;padding:0.85rem 1.2rem;border:none;background:none;cursor:pointer;font-size:0.8rem;font-family:'Noto Sans TC',sans-serif;color:var(--muted);border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;font-weight:500;}
 .tab-btn:hover{color:var(--navy);}
@@ -275,6 +275,24 @@ nav::-webkit-scrollbar{display:none;}
 .fix-log strong{color:var(--green);}
 @media(min-width:700px){.voucher-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.ticket-manager table{min-width:760px}.ticket-manager th:nth-child(4),.ticket-manager td:nth-child(4){display:table-cell}.ticket-manager th,.ticket-manager td{font-size:.72rem;padding:.4rem}}
+@media(max-width:650px){
+  .info-card.ticket-manager{overflow:visible;}
+  .ticket-manager table{min-width:0;border-collapse:separate;border-spacing:0;display:block;}
+  .ticket-manager thead{display:none;}
+  .ticket-manager tbody{display:grid;gap:.75rem;}
+  .ticket-manager tr{display:block;border:1px solid var(--border);border-radius:8px;background:#fff;overflow:hidden;}
+  .ticket-manager td{display:grid;grid-template-columns:92px 1fr;gap:.5rem;align-items:start;border-bottom:1px solid #f0eee8;padding:.6rem .7rem!important;font-size:.78rem!important;}
+  .ticket-manager td:last-child{border-bottom:none;}
+  .ticket-manager td::before{font-weight:800;color:var(--navy);font-size:.72rem;line-height:1.45;}
+  .ticket-manager td:nth-child(1)::before{content:'景點 / 票券';}
+  .ticket-manager td:nth-child(2)::before{content:'行程日期';}
+  .ticket-manager td:nth-child(3)::before{content:'行程時間';}
+  .ticket-manager td:nth-child(4)::before{content:'購買處 / 票價';}
+  .ticket-manager td:nth-child(5)::before{content:'狀態';}
+  .ticket-manager td:nth-child(6)::before{content:'備註';}
+  .ticket-manager input[type='text']{min-height:34px;font-size:.76rem;}
+  .ticket-manager input[type='checkbox']{margin-right:4px;}
+}
 
 
 /* ===== Static daily map replacement ===== */
@@ -284,10 +302,6 @@ nav::-webkit-scrollbar{display:none;}
 </style>
 </head>
 <body>
-<nav class="version-switcher">
-<a class="v-link" href="plan_2.html">📝 正常版</a>
-<a class="v-link active" href="plan_3_slow_2spots_complete_tools.html">📅 慢遊版</a>
-</nav>
 <header>
 <h1>🇬🇧 英國旅遊行程 2026｜慢遊版</h1>
 <div class="sub">每天最多 2 個主要景點 · 交通與餐廳備案完整保留</div>
