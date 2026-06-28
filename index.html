@@ -313,6 +313,53 @@ nav::-webkit-scrollbar{display:none;}
 .static-map-image{width:100%;height:620px;object-fit:cover;display:block;background:#f7fbff;}
 .static-map-note{position:absolute;top:14px;right:14px;z-index:5;background:rgba(255,255,255,.94);border:1px solid rgba(224,216,200,.9);border-radius:999px;padding:6px 10px;font-size:.7rem;font-weight:800;color:var(--navy);box-shadow:0 4px 12px rgba(0,0,0,.10);}
 @media(max-width:900px){.static-map-image{height:auto;min-height:0}.static-map-note{position:static;display:inline-block;margin:.65rem}}
+.survival-card{background:#fbfaf6;border:1px solid #e0d8c8;border-left:4px solid var(--gold);border-radius:10px;padding:.9rem 1rem;grid-column:1/-1;}
+.survival-card h3{display:flex;align-items:center;gap:.35rem;margin-bottom:.65rem!important;font-size:.95rem!important;}
+.survival-grid{display:grid;grid-template-columns:1fr;gap:.7rem;}
+.survival-item{background:#fff;border:1px solid #eee6d8;border-radius:8px;padding:.75rem .85rem;font-size:.84rem;line-height:1.75;color:var(--text);}
+.survival-item.retreat{background:#fff8e5;border-color:#e7c45a;}
+.survival-label{display:block;font-weight:800;color:var(--navy);font-size:.78rem;margin-bottom:.25rem;}
+.survival-item ul{margin:.25rem 0 0;padding-left:1.15rem;}
+.survival-item li{margin-bottom:.2rem;}
+.survival-ticket-links{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.5rem;}
+.survival-ticket-links .voucher-open{margin-top:0;font-size:.75rem;padding:6px 12px;border-radius:999px;}
+@media(max-width:520px){.survival-card{padding:.75rem}.survival-grid{gap:.55rem}.survival-item{font-size:.8rem;padding:.65rem .7rem}}
+.daily-assist-card{background:#f8faff;border:1px solid #c7d8f0;border-left:4px solid var(--blue);border-radius:10px;padding:.9rem 1rem;grid-column:1/-1;}
+.daily-assist-card h3{display:flex;align-items:center;gap:.35rem;margin-bottom:.65rem!important;font-size:.95rem!important;}
+.plan-switch{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:.65rem;}
+.plan-switch button{border:1px solid #c7d8f0;background:#fff;color:var(--blue);border-radius:999px;padding:6px 12px;font-size:.76rem;font-weight:800;cursor:pointer;}
+.plan-switch button.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+.plan-panel{background:#fff;border:1px solid #d7e7fb;border-radius:8px;padding:.75rem .85rem;font-size:.84rem;line-height:1.75;margin-bottom:.75rem;}
+.plan-panel strong{color:var(--navy);}
+.assist-grid{display:grid;grid-template-columns:1fr;gap:.7rem;}
+.assist-item{background:#fff;border:1px solid #d7e7fb;border-radius:8px;padding:.75rem .85rem;font-size:.82rem;line-height:1.7;}
+.assist-label{display:block;font-weight:800;color:var(--navy);font-size:.78rem;margin-bottom:.25rem;}
+.assist-item ul{margin:.25rem 0 0;padding-left:1.15rem;}
+.assist-item li{margin-bottom:.2rem;}
+@media(min-width:900px){.assist-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.daily-assist-card{padding:.75rem}.plan-switch button{font-size:.72rem;padding:5px 10px}.plan-panel,.assist-item{font-size:.79rem;padding:.65rem .7rem}}
+.day-panel.compact-view .day-summary,.day-panel.compact-view .daily-tools,.day-panel.compact-view .timeline{display:none;}
+.day-panel.compact-view.show-tools .daily-tools{display:grid;}
+.day-panel.compact-view.show-timeline .timeline{display:block;}
+.focus-card{background:#fff;border:1px solid #dbe5f2;border-radius:12px;margin:.9rem 1.1rem 1rem;padding:1rem 1.05rem;box-shadow:0 6px 18px rgba(26,50,88,.06);}
+.focus-top{display:flex;justify-content:space-between;gap:.75rem;align-items:flex-start;margin-bottom:.8rem;}
+.focus-eyebrow{font-size:.72rem;color:var(--muted);font-weight:800;margin-bottom:.15rem;}
+.focus-title{font-size:1.05rem;font-weight:900;color:var(--navy);line-height:1.45;}
+.focus-date{background:#f4edcf;color:#6b4d00;border:1px solid #d4af37;border-radius:999px;padding:4px 10px;font-size:.76rem;font-weight:900;white-space:nowrap;}
+.focus-grid{display:grid;grid-template-columns:1fr;gap:.65rem;margin-bottom:.85rem;}
+.focus-bit{background:#f8faff;border:1px solid #d7e7fb;border-radius:9px;padding:.7rem .78rem;line-height:1.65;}
+.focus-bit.primary{background:#fff8e5;border-color:#e7c45a;}
+.focus-label{display:block;font-size:.72rem;font-weight:900;color:var(--blue);margin-bottom:.15rem;}
+.focus-bit strong{display:block;color:var(--navy);font-size:.86rem;}
+.focus-bit span.text{font-size:.82rem;color:var(--text);}
+.focus-actions{display:flex;gap:.45rem;flex-wrap:wrap;border-top:1px solid #edf1f7;padding-top:.8rem;}
+.focus-action{border:1px solid #c7d8f0;background:#fff;color:var(--blue);border-radius:999px;padding:7px 12px;font-size:.76rem;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
+.focus-action.primary{background:var(--blue);color:#fff!important;border-color:var(--blue);}
+.focus-action.active{background:#17284a;color:#fff;border-color:#17284a;}
+.focus-card .voucher-open{margin:0;font-size:.75rem;padding:6px 12px;}
+@media(min-width:760px){.focus-grid{grid-template-columns:1.15fr 1fr}.focus-bit.ticket{grid-column:1/-1}}
+@media(min-width:1050px){.focus-grid{grid-template-columns:1.15fr 1fr 1fr}.focus-bit.ticket{grid-column:auto}}
+@media(max-width:520px){.focus-card{margin:.75rem .75rem .9rem;padding:.82rem}.focus-top{display:block}.focus-date{display:inline-block;margin-top:.45rem}.focus-title{font-size:.98rem}.focus-action{font-size:.72rem;padding:6px 10px}}
 </style>
 </head>
 <body>
@@ -1474,6 +1521,178 @@ const DAY_INFO = {
 
 };
 
+const DAILY_SURVIVAL_INFO = {
+  d1:{leave:'20:45 後只買隔天早餐和水，21:30 前回飯店休息。', tickets:[], rest:['Heathrow 入境後先上洗手間再搭 Elizabeth Line','Moxy London Stratford 大廳可短暫整理行李','Westfield Stratford City：M&S Food Hall / Food Court 補給']},
+  d2:{leave:'16:30 前離開 Westminster / Covent Garden 一帶；20:30 後直接回 Stratford。', tickets:[['白金漢宮 PDF','tickets/2026-07-30-buckingham-palace.pdf']], rest:['Green Park / St James’s Park 周邊找公廁與長椅','Westminster Station 可作洗手間與轉乘休息點','Covent Garden / Chinatown 周邊餐廳密集，排隊太久就換備案']},
+  d3:{leave:'倫敦眼若排隊或天氣差，16:30 前取消；20:30 前從 South Bank / Waterloo 回程。', tickets:[['西敏寺 PDF','tickets/2026-07-31-westminster-abbey.pdf']], rest:['Westminster Abbey 入場前先找洗手間','Southbank Centre / Royal Festival Hall 適合坐下休息','Waterloo Station 有洗手間、超市與回程交通']},
+  d4:{leave:'15:30 前結束塔橋或 St Dunstan；若人潮太多，直接回 London Bridge / Stratford 晚餐。', tickets:[['倫敦塔 PDF','tickets/2026-08-01-tower-of-london.pdf']], rest:['Tower of London 內先利用洗手間再排 Crown Jewels','Tower Bridge / London Bridge 之間可找咖啡店休息','London Bridge Station / Borough Market 周邊可補水與外帶']},
+  d5:{leave:'16:00 前決定是否去 Regent’s Park；17:30 後以 Baker Street 回程或晚餐為主。', tickets:[], rest:['Baker Street Station 是主要洗手間與集合點','Daunt Books / Marylebone 咖啡店適合坐下休息','Regent’s Park 內有公廁，天氣差就取消公園']},
+  d6:{leave:'15:30 前離開大英博物館；18:30 後只保留晚餐，不再加購物點。', tickets:[], rest:['British Museum 入館後先確認洗手間位置','Tottenham Court Road / Oxford Street 百貨可休息補給','Covent Garden / Chinatown 餐廳多，排隊超過 30 分鐘換備案']},
+  d7:{leave:'07:00 必須從飯店出門；回倫敦後不加景點，20:30 前回 Stratford。', tickets:[['格林威治＋劍橋 PDF','tickets/2026-08-04-greenwich-cambridge-tour.pdf']], rest:['Victoria Station 到集合點前先上洗手間','巴士中途休息以導遊安排為準，早餐和水前一晚準備','回 Victoria 後若太累，直接地鐵回 Westfield / 飯店']},
+  d8:{leave:'14:30 前離開 Borough Market；16:00 後只做咖啡休息或回飯店。', tickets:[['聖保羅 PDF','tickets/2026-08-05-st-pauls-cathedral.pdf']], rest:['St Paul’s Cathedral 入場前後先找洗手間','Borough Market 人多時改 Pret / M&S / 咖啡店外帶','London Bridge Station 有洗手間、超市與回程交通']},
+  d9:{leave:'緩衝日不硬排行程；17:00 前結束補位，晚上整理票券和衣物。', tickets:[], rest:['Moxy / Westfield 作為主要休息基地','Westfield Stratford City：超市、餐廳、洗手間最方便','若進市區補位，只選一個區域，不跨太多點']},
+  d10:{leave:'06:35–06:45 從飯店出門；回倫敦後不加景點，直接吃飯回飯店。', tickets:[['溫莎＋巨石陣＋牛津 PDF','tickets/2026-08-07-windsor-stonehenge-oxford-tour.pdf']], rest:['Victoria Station 集合前先上洗手間並買水','長途車日早餐前一晚買好，午餐以導遊安排為準','回程到 Victoria 後，太累就直接外帶回 Stratford']},
+  d11:{leave:'16:30 前離開 Bicester Village；戰利品多就不排晚餐景點。', tickets:[], rest:['Bicester Village Station 抵達後先確認回程班次','購物村 Visitor Centre / 餐飲區可休息與上洗手間','回 Stratford 後用 Westfield / 飯店整理購物袋']},
+  d12:{leave:'16:30 前從 Oxford 市中心往車站移動；17:30 後回倫敦不再加行程。', tickets:[], rest:['Oxford Station 抵達後先確認回程月台資訊','Covered Market / Westgate Oxford 適合午餐、洗手間與休息','石板路多，腳累就用公車回 Oxford Station']},
+  d13:{leave:'08:00–08:10 從飯店出門；白崖日風大，回倫敦後直接回飯店。', tickets:[['七姐妹＋布萊頓 PDF','tickets/2026-08-10-seven-sisters-brighton.pdf']], rest:['King’s Cross 集合前先上洗手間並買水','白崖自由活動先確認集合時間和回車地點','Brighton 自由活動以碼頭/市中心洗手間和咖啡店為休息點']},
+  d14:{leave:'15:30 前離開 Notting Hill；若要去 Tate，17:30 前抵達，19:30 前回程。', tickets:[], rest:['Notting Hill Gate Station 作為轉乘和集合點','Portobello Road 周邊咖啡店多，市集少也可休息','Tate Modern 內有洗手間、座位與免費室內備案']},
+  d15:{leave:'碎片塔天氣不好就取消；16:00 前結束補位，晚上保留體力。', tickets:[], rest:['London Bridge Station / The Shard 周邊洗手間與餐飲多','Borough / Hay’s Galleria 可坐下休息和補水','若前幾天累積疲勞，下午直接回 Stratford']},
+  d16:{leave:'16:30 前離開 Camden；18:30 前回 Stratford 打包秤重。', tickets:[], rest:['King’s Cross St Pancras 可先上洗手間與買水','Coal Drops Yard / Granary Square 適合坐下休息','Camden Market 人多時改外帶，別硬排太久']},
+  d17:{leave:'15:30 必須回飯店領行李；16:00 搭 Elizabeth Line 往 Heathrow。', tickets:[], rest:['Moxy 退房後確認寄放行李領取時間','Westfield Stratford City 做最後補給與洗手間','Heathrow 抵達後先確認航廈、托運櫃台與安檢時間']}
+};
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function buildTicketHTML(tickets){
+  if(!tickets || tickets.length === 0){
+    return '<div>今日無預購票券，保留彈性；若臨時購票，先截圖 QR Code 和訂單編號。</div>';
+  }
+  const links = tickets.map(([label, href]) => `<a class="voucher-open" href="${escapeHTML(href)}" target="_blank" rel="noopener">${escapeHTML(label)}</a>`).join('');
+  return `<div>出門前先開啟 PDF、截圖 QR Code，確認密碼和集合資訊。</div><div class="survival-ticket-links">${links}</div>`;
+}
+function initDailySurvivalCards(){
+  Object.entries(DAILY_SURVIVAL_INFO).forEach(([dayId, info]) => {
+    const panel = document.getElementById(dayId);
+    const tools = panel?.querySelector('.daily-tools');
+    if(!tools || tools.querySelector('.survival-card')) return;
+    const card = document.createElement('div');
+    card.className = 'survival-card';
+    card.innerHTML = `
+      <h3>🧭 今日保命資訊</h3>
+      <div class="survival-grid">
+        <div class="survival-item retreat"><span class="survival-label">最晚撤退時間</span>${escapeHTML(info.leave)}</div>
+        <div class="survival-item ticket"><span class="survival-label">今日票券入口</span>${buildTicketHTML(info.tickets)}</div>
+        <div class="survival-item supplies"><span class="survival-label">洗手間 / 休息 / 補給</span><ul>${info.rest.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul></div>
+      </div>`;
+    tools.appendChild(card);
+  });
+}
+
+const DAILY_ASSIST_INFO = {
+  d1:{plans:{normal:'照原計畫：入境、Elizabeth Line 到 Stratford、Moxy check-in，晚餐與補給只在 Westfield。',rain:'雨天版：不加戶外散步，Heathrow 直接進城，晚餐改 Westfield 室內餐廳或 M&S 外帶。',tired:'低體力版：飯店 check-in 後只買水和早餐，晚餐外帶回房間，21:30 前休息。'},rescue:['Elizabeth Line 延誤：改 Heathrow Express 到 Paddington，再轉 Elizabeth / 地鐵往 Stratford。','很晚或行李太多：在 Heathrow 指定上車點叫 Uber / Bolt 到 Moxy。','保底回飯店：任何市區點先找 Elizabeth Line / Central Line 到 Stratford。'],budget:'約 £25–45/人：機場進城、晚餐、飲水早餐。主要刷 Contactless；留少量現金備用。',offline:['截圖飯店地址、訂房、回程機票、ETA。','確認 Google Maps 倫敦離線地圖與 eSIM 可用。','把緊急電話與飯店地址加到手機備忘錄。'],end:['手機、行動電源、相機全部充電。','明天白金漢宮 PDF / QR Code 截圖。','查明天 Westminster 天氣與地鐵狀態。']},
+  d2:{plans:{normal:'照原計畫：白金漢宮入內、Horse Guards、St James’s Park、Big Ben，晚餐 Covent Garden。',rain:'雨天版：白金漢宮照去；公園縮短，改 National Gallery / Covent Garden 室內休息。',tired:'低體力版：白金漢宮後只走到 St James’s Park / Big Ben 外觀，晚餐回 Stratford。'},rescue:['Jubilee/Central 延誤：用 Elizabeth Line 到 Bond Street，再轉或步行到 Green Park。','叫車點：Green Park / Victoria / Covent Garden 外圍較好叫 Uber / Bolt，避開白金漢宮正門。','保底回飯店：Westminster / Green Park / Bond Street 找線回 Stratford。'],budget:'約 £25–55/人：白金漢宮已購，另加市區交通、午晚餐。主要刷卡；公園小攤可能備零錢。',offline:['白金漢宮 PDF、密碼、入口位置截圖。','下載 Westminster / Green Park 周邊離線地圖。','存 Flat Iron / 晚餐備案位置。'],end:['明天西敏寺 PDF 截圖。','確認倫敦眼天氣與是否購票。','檢查鞋子與雨具。']},
+  d3:{plans:{normal:'照原計畫：西敏寺、Westminster Bridge、倫敦眼或 South Bank，晚餐南岸。',rain:'雨天版：西敏寺照去；倫敦眼視能見度取消，改 Southbank Centre / National Gallery。',tired:'低體力版：西敏寺後只在 South Bank 吃飯休息，倫敦眼延到緩衝日。'},rescue:['Jubilee 延誤：Stratford 用 Elizabeth/Central 進市區，再轉 District/Circle 或步行。','叫車點：Waterloo / Southbank 外圍比 Westminster Bridge 更容易上車。','保底回飯店：Waterloo 搭 Jubilee 到 Stratford；或到 Tottenham Court Road 轉 Elizabeth。'],budget:'約 £35–85/人：西敏寺已購，倫敦眼若買票另計。刷卡為主；河岸小吃可備少量現金。',offline:['西敏寺 PDF 和倫敦眼購票頁截圖。','存 Waterloo、Westminster、Southbank 三個回程點。','天氣差時先存室內備案。'],end:['明天倫敦塔 PDF 截圖。','確認 Tower Hill 路線與開門時間。','手機照片備份到雲端。']},
+  d4:{plans:{normal:'照原計畫：倫敦塔、塔橋、可選 St Dunstan，晚餐 London Bridge 或 Stratford。',rain:'雨天版：倫敦塔照去；塔橋只拍外觀或登橋，取消 St Dunstan。',tired:'低體力版：倫敦塔看 Crown Jewels 後直接吃午餐，塔橋只走橋面。'},rescue:['District/Circle 延誤：改 Jubilee 到 London Bridge，再步行過橋到倫敦塔。','叫車點：London Bridge Station / Tower Hill 外圍，避開塔橋橋面。','保底回飯店：London Bridge 搭 Jubilee 到 Stratford。'],budget:'約 £30–70/人：倫敦塔已購，塔橋登橋另計。市場與餐廳多可刷卡。',offline:['倫敦塔 PDF 截圖。','存 Tower Hill、London Bridge、Borough Market 地圖。','塔橋若現場買票，截圖訂單。'],end:['明天福爾摩斯 / Baker Street 路線先存。','確認是否需要福爾摩斯博物館票。','整理已用票券，避免隔天找不到。']},
+  d5:{plans:{normal:'照原計畫：福爾摩斯博物館、Daunt Books、Marylebone，體力好再 Regent’s Park。',rain:'雨天版：取消 Regent’s Park，改 Marylebone 書店、咖啡店、百貨室內。',tired:'低體力版：只去 Baker Street 和 Daunt Books，下午回 Westfield 休息。'},rescue:['Jubilee 延誤：用 Elizabeth/Central 進 Bond Street，再轉車或叫車。','叫車點：Baker Street Station 或 Marylebone High Street 外圍。','保底回飯店：Baker Street 搭 Jubilee 直回 Stratford。'],budget:'約 £25–60/人：博物館若入內另計，餐飲與咖啡為主。刷卡即可；小店備少量現金。',offline:['存 Baker Street、Daunt Books、Regent’s Park。','若購票，票券截圖。','Google Translate 離線包確認可用。'],end:['明天大英博物館路線與重點展區先存。','確認購物清單和餐廳備案。','補買水與早餐。']},
+  d6:{plans:{normal:'照原計畫：大英博物館、Soho / Oxford Circus、Covent Garden 晚餐。',rain:'雨天版：大英博物館延長，購物改百貨/商場，減少街區散步。',tired:'低體力版：大英博物館只看重點展區，午餐後回飯店或只到 Covent Garden。'},rescue:['Central 延誤：用 Elizabeth Line 到 Tottenham Court Road 或 Bond Street。','叫車點：Tottenham Court Road / British Museum 外圍道路。','保底回飯店：Tottenham Court Road 搭 Elizabeth 或 Central 回 Stratford。'],budget:'約 £35–80/人：博物館免費，主要是餐飲和購物。刷卡為主；街邊小吃可備零錢。',offline:['存大英博物館、Covent Garden、晚餐備案。','Whittard / 採買清單截圖。','明天一日遊集合點先截圖。'],end:['8/4 Klook PDF、集合點、導遊資訊截圖。','早餐、水、行動電源先放包包。','查明天 Victoria 路線和地鐵狀態。']},
+  d7:{plans:{normal:'照原計畫：07:00 出門，到 Victoria 集合，跟一日遊走，晚上回 Stratford。',rain:'雨天版：一日遊通常照走；帶雨衣、防水外套，戶外自由活動縮短。',tired:'低體力版：車上休息，劍橋自由活動只跟集合點附近，不加購撐篙。'},rescue:['地鐵延誤：立刻叫 Uber / Bolt 到 Victoria Station Stop 11，別賭轉乘。','集合快遲到：用 Klook 憑證聯絡導遊，同時往集合點移動。','保底回飯店：回 Victoria 後搭 Victoria/Central 或叫車回 Moxy。'],budget:'約 £25–55/人：一日遊已購，另加餐飲、飲料、小費或加購。備一點現金。',offline:['Klook PDF、集合點、導遊電話截圖。','Google Maps 存 Victoria Stop 11。','把飯店地址給同行者都存一份。'],end:['明天聖保羅 PDF 截圖。','洗衣或整理包包，補水和零食。','確認 8/7 長途一日遊 PDF。']},
+  d8:{plans:{normal:'照原計畫：聖保羅、千禧橋、Borough Market，可選 St Dunstan。',rain:'雨天版：聖保羅照去；千禧橋快速通過，Borough Market 後改 Tate Modern 室內。',tired:'低體力版：聖保羅不登頂，Borough Market 午餐後直接回飯店。'},rescue:['Central 延誤：Elizabeth Line 到 Liverpool Street，再轉或叫車到 St Paul’s。','叫車點：St Paul’s / London Bridge Station 外圍。','保底回飯店：London Bridge 搭 Jubilee 到 Stratford。'],budget:'約 £30–70/人：聖保羅已購，Borough Market 餐飲另計。市場多可刷卡，備少量現金。',offline:['聖保羅 PDF 截圖。','存 Borough Market、London Bridge 回程點。','天氣差時存 Tate Modern。'],end:['明天緩衝日決定是否補倫敦眼。','整理髒衣和票券。','查看 8/7 長途日天氣與集合路線。']},
+  d9:{plans:{normal:'照原計畫：睡晚一點、洗衣補給，天氣好才補倫敦眼或 Tate。',rain:'雨天版：完全改室內，Westfield / Tate / Covent Garden 擇一，不跨太多區。',tired:'低體力版：只留飯店、Westfield、洗衣和採買，晚上早睡。'},rescue:['市區交通亂：今天不進 Zone 1，以 Stratford / Westfield 為基地。','叫車點：Moxy 門口或 Westfield 指定上車點。','保底回飯店：任何時候回 Stratford，不加第二個區域。'],budget:'約 £20–70/人：視補位景點而定。刷卡為主；洗衣和小額消費備零錢或小鈔。',offline:['檢查所有已購 PDF 都可離線開啟。','下載/更新 Google Maps 離線地圖。','把緊急資訊分頁截圖。'],end:['明天 8/7 一日遊 PDF、集合點、出門時間確認。','行動電源充滿。','早餐、水、外套先準備。']},
+  d10:{plans:{normal:'照原計畫：06:35–06:45 出門，Victoria 集合，長途巴士日。',rain:'雨天版：一日遊照走；溫莎/巨石陣戶外縮短，優先跟緊導遊。',tired:'低體力版：自由活動只走近點，不加購額外項目，回程直接飯店。'},rescue:['地鐵延誤：直接 Uber / Bolt 到 Victoria Stop 11。','集合異動：以 Klook 當日通知為準，先聯絡導遊。','保底回飯店：回 Victoria 後不吃遠餐廳，直接回 Stratford。'],budget:'約 £30–65/人：團費已購，另加餐飲、飲料、可能門票差額。備現金小鈔。',offline:['Klook PDF、集合點、導遊資訊截圖。','下載 Windsor/Oxford 簡易離線地圖。','飯店地址和保險資料離線保存。'],end:['明天 Bicester 火車路線和購物清單確認。','整理購物預算和信用卡額度。','早點睡，腳要恢復。']},
+  d11:{plans:{normal:'照原計畫：晚點出門去 Bicester Village，購物後回 Stratford 整理。',rain:'雨天版：Bicester 多為戶外街區，雨大就延後出門或改 Westfield 購物。',tired:'低體力版：只逛重點品牌 2–3 小時，提早回飯店。'},rescue:['Marylebone 火車延誤：查 Chiltern 下一班；太混亂就取消改 Westfield。','叫車點：Bicester Village 官方上車區或 London Marylebone。','保底回飯店：回 Marylebone 後地鐵/Elizabeth 回 Stratford。'],budget:'約 £40–200+/人：火車、餐飲、購物。刷卡為主；護照/會員資料可能要出示。',offline:['火車 e-ticket 或班次截圖。','Bicester Village 地圖、會員碼、品牌清單截圖。','信用卡客服/銀行 App 確認可用。'],end:['明天 Oxford 火車路線和票券確認。','整理戰利品和收據。','行李重量先估一次。']},
+  d12:{plans:{normal:'照原計畫：Oxford 市中心、學院外觀、Covered Market，傍晚回倫敦。',rain:'雨天版：減少街拍，改 Covered Market、Bodleian 周邊、咖啡店。',tired:'低體力版：Oxford 只走車站到市中心核心區，不入內學院，早點回程。'},rescue:['Paddington/GWR 延誤：查 Marylebone/Chiltern 替代路線。','叫車點：Oxford Station 或 Westgate Oxford。','保底回飯店：先回 London Paddington/Marylebone，再回 Stratford。'],budget:'約 £45–95/人：火車、午晚餐、可選學院票。刷卡為主；小店備零錢。',offline:['火車票、Oxford Station、市中心地圖截圖。','Covered Market 和回程班次截圖。','明天白崖一日遊 PDF 先存。'],end:['8/10 Klook PDF、集合點、出門時間確認。','防風雨外套和防曬都放包包。','手機容量清照片。']},
+  d13:{plans:{normal:'照原計畫：08:00–08:10 出門，國王十字集合，白崖和布萊頓一日遊。',rain:'雨天版：一日遊若照常，白崖停留縮短；雨太大以導遊安全安排為準。',tired:'低體力版：白崖只走安全近距離，Brighton 以咖啡店/碼頭附近休息為主。'},rescue:['地鐵延誤：直接叫 Uber / Bolt 到 King’s Cross 集合點。','戶外天候惡劣：跟導遊，不自行靠近崖邊或改走遠路。','保底回飯店：Kings Cross 散團後直接地鐵回 Stratford。'],budget:'約 £25–55/人：團費已購，餐飲、飲料和個人消費另計。備少量現金。',offline:['Klook PDF、集合點、導遊資訊截圖。','白崖日沒有穩定網路時，先存回車集合點。','防風外套、雨具、行動電源確認。'],end:['明天 Notting Hill / Tate 路線看天氣決定。','鞋子晾乾，照片備份。','補買水和早餐。']},
+  d14:{plans:{normal:'照原計畫：Notting Hill、Portobello Road、Tate Modern，晚餐 Shoreditch 或 Stratford。',rain:'雨天版：Notting Hill 縮短，重點放 Tate Modern 室內。',tired:'低體力版：只選 Notting Hill 或 Tate 其中一個，下午回飯店。'},rescue:['Central 延誤：Elizabeth Line 到 Paddington，再轉或叫車到 Notting Hill。','叫車點：Notting Hill Gate / Tate Modern 外圍。','保底回飯店：Tate 走到 London Bridge/Blackfriars，再回 Stratford。'],budget:'約 £25–75/人：多數免費，餐飲和購物為主。刷卡為主；市集小攤備現金。',offline:['Notting Hill、Tate、回程站點截圖。','Portobello 若只是街拍，不依賴市集營業。','明天碎片塔看天氣再決定。'],end:['查 The Shard 能見度和票價。','整理伴手禮清單。','確認最後兩天行李空間。']},
+  d15:{plans:{normal:'照原計畫：天氣好上碎片塔，下午補位或 Borough / London Bridge。',rain:'雨天版：取消碎片塔，改 Tate / Borough / Westfield 室內。',tired:'低體力版：只在 London Bridge 午餐或直接回 Stratford 休息。'},rescue:['Jubilee 延誤：Elizabeth/Central 進城後轉車；必要時 Uber 到 London Bridge。','叫車點：London Bridge Station / The Shard 外圍。','保底回飯店：London Bridge 搭 Jubilee 直回 Stratford。'],budget:'約 £25–95/人：碎片塔若買票另計。刷卡為主；市場小吃備少量現金。',offline:['The Shard 訂單或取消決策截圖。','補位清單只留 1–2 個點。','明天 King’s Cross / Camden 路線存好。'],end:['明天最後完整日，不要排太滿。','整理退房前要洗的衣物。','行李重量再確認一次。']},
+  d16:{plans:{normal:'照原計畫：King’s Cross 9¾、Coal Drops Yard / Camden，晚上回飯店打包。',rain:'雨天版：King’s Cross 室內和 Coal Drops Yard 為主，Camden 縮短。',tired:'低體力版：只去 King’s Cross 拍照和午餐，下午回飯店打包。'},rescue:['Central/地鐵延誤：Elizabeth 到 Liverpool Street，再轉到 King’s Cross。','叫車點：King’s Cross / Coal Drops Yard 外圍較好上車。','保底回飯店：King’s Cross 搭地鐵回 Stratford；不要拖到太晚。'],budget:'約 £30–90/人：餐飲、紀念品、最後採買。刷卡為主；市集小吃備零錢。',offline:['明天機場路線、航班、航廈資訊截圖。','飯店退房/寄行李規則截圖。','緊急資訊和保險資料再次確認。'],end:['完成打包秤重。','護照、錢包、票券放隨身包。','明天 15:30 領行李、16:00 出發去 Heathrow。']},
+  d17:{plans:{normal:'照原計畫：退房寄行李，Westfield / Olympic Park，15:30 領行李，16:00 去 Heathrow。',rain:'雨天版：取消 Olympic Park，只在 Westfield 室內吃飯補貨。',tired:'低體力版：退房後只待 Westfield / 飯店附近，提早去機場。'},rescue:['Elizabeth Line 延誤：改 Jubilee/Central 進城轉 Heathrow Express，或直接 Uber / Bolt。','叫車點：Moxy 門口或 Westfield 指定上車點。','保底去機場：15:30 取行李後不再購物，直接往 Heathrow。'],budget:'約 £35–80/人：機場交通、午餐、最後補貨。刷卡為主；保留一張可用信用卡。',offline:['航班、航廈、回程機票截圖。','Heathrow 航廈地圖和航空公司櫃台資訊截圖。','所有護照/票券放隨身，不放托運。'],end:['這天沒有睡前檢查；進機場後確認托運、安檢、登機口。','退房前檢查保險箱、插座、浴室、床底。','抵達機場後通知家人。']}
+};
+
+function buildListHTML(items){
+  return `<ul>${items.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul>`;
+}
+function initDailyAssistCards(){
+  Object.entries(DAILY_ASSIST_INFO).forEach(([dayId, info]) => {
+    const panel = document.getElementById(dayId);
+    const tools = panel?.querySelector('.daily-tools');
+    if(!tools || tools.querySelector('.daily-assist-card')) return;
+    const card = document.createElement('div');
+    card.className = 'daily-assist-card';
+    card.innerHTML = `
+      <h3>🛟 今日應變與收尾</h3>
+      <div class="plan-switch" role="group" aria-label="今日替代方案">
+        <button type="button" class="active" data-plan="normal">照原計畫</button>
+        <button type="button" data-plan="rain">雨天版</button>
+        <button type="button" data-plan="tired">低體力版</button>
+      </div>
+      <div class="plan-panel" aria-live="polite"><strong>照原計畫：</strong>${escapeHTML(info.plans.normal.replace(/^照原計畫：/, ''))}</div>
+      <div class="assist-grid">
+        <div class="assist-item"><span class="assist-label">交通中斷救援</span>${buildListHTML(info.rescue)}</div>
+        <div class="assist-item"><span class="assist-label">每日預算與付款</span>${escapeHTML(info.budget)}</div>
+        <div class="assist-item"><span class="assist-label">離線可用提醒</span>${buildListHTML(info.offline)}</div>
+        <div class="assist-item"><span class="assist-label">每日結束前檢查</span>${buildListHTML(info.end)}</div>
+      </div>`;
+    card.querySelectorAll('.plan-switch button').forEach(button => {
+      button.addEventListener('click', () => {
+        const key = button.dataset.plan;
+        const label = button.textContent;
+        card.querySelectorAll('.plan-switch button').forEach(b => b.classList.toggle('active', b === button));
+        card.querySelector('.plan-panel').innerHTML = `<strong>${escapeHTML(label)}：</strong>${escapeHTML(info.plans[key].replace(/^[^：]+：/, ''))}`;
+      });
+    });
+    tools.appendChild(card);
+  });
+}
+
+function getFirstTimelineSummary(panel){
+  const first = panel.querySelector('.timeline .tl-item');
+  if(!first) return '查看今日完整時間軸';
+  const time = extractText(first.querySelector('.tl-time'));
+  const title = extractText(first.querySelector('.tl-title')).replace('問 ChatGPT','').trim();
+  return [time, title].filter(Boolean).join('｜') || '查看今日完整時間軸';
+}
+function buildFocusTicketHTML(tickets){
+  if(!tickets || tickets.length === 0) return '<span class="text">今日無預購票券；臨時購票後先截圖 QR Code。</span>';
+  return `<div class="survival-ticket-links">${tickets.map(([label, href]) => `<a class="voucher-open" href="${escapeHTML(href)}" target="_blank" rel="noopener">${escapeHTML(label)}</a>`).join('')}</div>`;
+}
+function setCompactToggleState(panel){
+  panel.querySelectorAll('.focus-action[data-toggle]').forEach(button => {
+    const target = button.dataset.toggle;
+    const active = target === 'tools' ? panel.classList.contains('show-tools') : panel.classList.contains('show-timeline');
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-expanded', active ? 'true' : 'false');
+  });
+}
+function initFocusCards(){
+  Object.keys(DAY_INFO).forEach(dayId => {
+    const panel = document.getElementById(dayId);
+    if(!panel || panel.querySelector('.focus-card')) return;
+    const info = DAY_INFO[dayId];
+    const survival = DAILY_SURVIVAL_INFO[dayId] || {};
+    const routeLink = panel.querySelector('.route-card .route-btn[href]');
+    const routeHref = routeLink ? routeLink.getAttribute('href') : buildGoogleRouteUrl(dayId);
+    const title = extractText(panel.querySelector('.day-main-title')) || info.label;
+    const nextStep = getFirstTimelineSummary(panel);
+    const card = document.createElement('div');
+    card.className = 'focus-card';
+    card.innerHTML = `
+      <div class="focus-top">
+        <div><div class="focus-eyebrow">今日一眼看</div><div class="focus-title">${escapeHTML(title)}</div></div>
+        <div class="focus-date">${escapeHTML(info.label.split(' ')[0])}</div>
+      </div>
+      <div class="focus-grid">
+        <div class="focus-bit primary"><span class="focus-label">下一步</span><strong>${escapeHTML(nextStep)}</strong></div>
+        <div class="focus-bit"><span class="focus-label">最晚撤退</span><span class="text">${escapeHTML(survival.leave || '依今日體力調整。')}</span></div>
+        <div class="focus-bit ticket"><span class="focus-label">今日票券</span>${buildFocusTicketHTML(survival.tickets)}</div>
+      </div>
+      <div class="focus-actions">
+        <a class="focus-action primary" href="${escapeHTML(routeHref)}" target="_blank" rel="noopener">開 Google Maps</a>
+        <button type="button" class="focus-action" data-toggle="tools" aria-expanded="false">出門檢查 / 應變</button>
+        <button type="button" class="focus-action" data-toggle="timeline" aria-expanded="false">完整時間軸</button>
+        <button type="button" class="focus-action" data-expand-all>全部展開</button>
+      </div>`;
+    card.querySelectorAll('[data-toggle]').forEach(button => {
+      button.addEventListener('click', () => {
+        panel.classList.toggle(button.dataset.toggle === 'tools' ? 'show-tools' : 'show-timeline');
+        setCompactToggleState(panel);
+      });
+    });
+    card.querySelector('[data-expand-all]').addEventListener('click', event => {
+      const allOpen = panel.classList.contains('show-tools') && panel.classList.contains('show-timeline');
+      panel.classList.toggle('show-tools', !allOpen);
+      panel.classList.toggle('show-timeline', !allOpen);
+      event.currentTarget.textContent = allOpen ? '全部展開' : '全部收起';
+      setCompactToggleState(panel);
+    });
+    const summary = panel.querySelector('.day-summary');
+    if(summary) summary.insertAdjacentElement('afterend', card);
+    else panel.querySelector('.day-body')?.prepend(card);
+    panel.classList.add('compact-view');
+    setCompactToggleState(panel);
+  });
+}
+
 const MAP_DAY_DATA = {
   d1:{label:'7/29（三）抵達倫敦', area:'Heathrow → Stratford', mood:'入境、入住、補給', center:[51.5078,-0.1840], zoom:10, chips:['機場進城','飯店周邊','低步行量'],
     stops:[['home','Heathrow Airport','16:30 抵達，通關與領行李','51.4700','-0.4543'],['transit','Moxy London Stratford','19:30 Check-in，放行李','51.5430','-0.0009'],['food','Westfield Stratford City','晚餐與超市補給','51.5431','-0.0065']],
@@ -1852,6 +2071,9 @@ function switchDay(id, btn) {
   window.scrollTo(0, 120);
 }
 document.getElementById('d1').classList.add('active');
+initDailySurvivalCards();
+initDailyAssistCards();
+initFocusCards();
 initAskButtons();
 updateWeather('d1');
 persistTripInputs();
